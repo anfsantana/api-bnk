@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/blogappgql.iml" filepath="$PROJECT_DIR$/blogappgql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apibnk.iml" filepath="$PROJECT_DIR$/apibnk.iml" />
     </modules>
   </component>
 </project>

@@ -1,4 +1,4 @@
-defmodule BlogAppGql.Repo.Migrations.CreateAccounts do
+defmodule ApiBnK.Repo.Migrations.CreateAccounts do
   use Ecto.Migration
 
   def change do

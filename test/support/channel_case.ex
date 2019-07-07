@@ -1,4 +1,4 @@
-defmodule BlogAppGql.Web.ChannelCase do
+defmodule ApiBnK.Web.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -21,15 +21,15 @@ defmodule BlogAppGql.Web.ChannelCase do
       use Phoenix.ChannelTest
 
       # The default endpoint for testing
-      @endpoint BlogAppGql.Web.Endpoint
+      @endpoint ApiBnK.Web.Endpoint
     end
   end
 
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(BlogAppGql.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(ApiBnK.Repo)
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(BlogAppGql.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(ApiBnK.Repo, {:shared, self()})
     end
     :ok
   end

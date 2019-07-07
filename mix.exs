@@ -1,11 +1,11 @@
-defmodule BlogAppGql.Mixfile do
+defmodule ApiBnK.Mixfile do
   use Mix.Project
 
   def project do
     [
-      app: :blog_app_gql,
+      app: :api_bnk,
       version: "0.0.1",
-      elixir: "~> 1.4",
+      elixir: "~> 1.7",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
@@ -19,7 +19,7 @@ defmodule BlogAppGql.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {BlogAppGql.Application, []},
+      mod: {ApiBnK.Application, []},
       extra_applications: [:logger, :runtime_tools, :absinthe, :absinthe_plug]
     ]
   end

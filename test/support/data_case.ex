@@ -1,4 +1,4 @@
-defmodule BlogAppGql.DataCase do
+defmodule ApiBnK.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -16,20 +16,20 @@ defmodule BlogAppGql.DataCase do
 
   using do
     quote do
-      alias BlogAppGql.Repo
+      alias ApiBnK.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import BlogAppGql.DataCase
+      import ApiBnK.DataCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(BlogAppGql.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(ApiBnK.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(BlogAppGql.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(ApiBnK.Repo, {:shared, self()})
     end
 
     :ok

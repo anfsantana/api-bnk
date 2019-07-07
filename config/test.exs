@@ -2,7 +2,7 @@ use Mix.Config
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :blog_app_gql, BlogAppGql.Web.Endpoint,
+config :api_bnk, ApiBnK.Web.Endpoint,
   http: [port: 4001],
   server: false
 
@@ -10,10 +10,10 @@ config :blog_app_gql, BlogAppGql.Web.Endpoint,
 config :logger, level: :warn
 
 # Configure your database
-config :blog_app_gql, BlogAppGql.Repo,
+config :api_bnk, ApiBnK.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
-  database: "blog_app_gql_test",
+  database: "api_bnk_test",
   pool: Ecto.Adapters.SQL.Sandbox

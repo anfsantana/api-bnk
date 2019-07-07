@@ -5,13 +5,13 @@
 # Inside the script, you can read and write to any of your
 # repositories directly:
 #
-#     BlogAppGql.Repo.insert!(%BlogAppGql.SomeSchema{})
+#     ApiBnK.Repo.insert!(%ApiBnK.SomeSchema{})
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
-alias BlogAppGql.Repo
-alias BlogAppGql.Accounts.User
-alias BlogAppGql.Blog.Post
+alias ApiBnK.Repo
+alias ApiBnK.Accounts.User
+alias ApiBnK.Blog.Post
 
 # Create 10 seed users
 

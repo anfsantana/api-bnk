@@ -6,14 +6,14 @@
 use Mix.Config
 
 # General application configuration
-config :blog_app_gql, ecto_repos: [BlogAppGql.Repo]
+config :api_bnk, ecto_repos: [ApiBnK.Repo]
 
 # Configures the endpoint
-config :blog_app_gql, BlogAppGql.Web.Endpoint,
+config :api_bnk, ApiBnK.Web.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "+yyPTDfUl+8TYkEi6J7ZfNeqsUqlOMQnv6mGW/XIR8a9YnRM46GtkR1Y0Q4JmjkK",
-  render_errors: [view: BlogAppGql.Web.ErrorView, accepts: ~w(json)],
-  pubsub: [name: BlogAppGql.PubSub, adapter: Phoenix.PubSub.PG2]
+  render_errors: [view: ApiBnK.Web.ErrorView, accepts: ~w(json)],
+  pubsub: [name: ApiBnK.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
@@ -21,19 +21,19 @@ config :logger, :console,
   metadata: [:request_id]
 
 # configures Guardian
-config :blog_app_gql, BlogAppGql.Guardian,
+config :api_bnk, ApiBnK.Guardian,
   # optional
   allowed_algos: ["HS512"],
   # optional
   verify_module: Guardian.JWT,
-  issuer: "BlogAppGql",
+  issuer: "ApiBnK",
   ttl: {30, :days},
   allowed_drift: 2000,
   # optional
   verify_issuer: true,
   # generated using: JOSE.JWK.generate_key({:oct, 16}) |> JOSE.JWK.to_map |> elem(1)
   secret_key: %{"k" => "yvstjS3nLJOVXi8lTUBzGA", "kty" => "oct"},
-  serializer: BlogAppGql.Guardian
+  serializer: ApiBnK.Guardian
 
 
 # Import environment specific config. This must remain at the bottom

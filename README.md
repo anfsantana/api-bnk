@@ -1,4 +1,4 @@
-# BlogAppGql
+# ApiBnK
 
 To start your Phoenix server:
 

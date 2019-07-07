@@ -1,4 +1,4 @@
-defmodule BlogAppGql.Repo.Migrations.CreateFinancialTransactions do
+defmodule ApiBnK.Repo.Migrations.CreateFinancialTransactions do
   use Ecto.Migration
 
   def change do
