@@ -1,7 +1,7 @@
 defmodule ApiBnK.UtilsTest do
   use ApiBnK.DataCase
 
-  alias ApiBnK.Utils, as: Utils
+  alias ApiBnK.Utils.Utils, as: Utils
 
   describe "utils" do
 

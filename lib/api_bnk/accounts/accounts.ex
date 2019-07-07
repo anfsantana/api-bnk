@@ -22,7 +22,7 @@ defmodule ApiBnK.Accounts.Accounts do
   def changeset(%Account{} = acc, attrs) do
     acc
     |> cast(attrs, [:acc_name, :acc_agency, :acc_account, :acc_bank_code, :acc_cpf, :acc_password, :acc_email])
-    |> validate_required([:acc_name, :acc_agency, :acc_account, :acc_bank_code, :acc_cpf, :acc_password])
+    |> validate_required([:acc_name, :acc_agency, :acc_account, :acc_bank_code, :acc_cpf, :acc_password, :acc_email])
     |> validate_length(:acc_name, min: 3, max: 60)
     |> validate_length(:acc_password, min: 5, max: 20)
     |> unique_constraint(:acc_email, downcase: true)

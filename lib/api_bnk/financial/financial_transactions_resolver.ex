@@ -7,19 +7,15 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
   alias ApiBnK.Repo
   alias Decimal, as: D
 
-  # TODO Modificado por anf
   def balance(_args, %{context: %{current_user: current_user}}) do
     balance = FinancialTransactionsQuery.get_balance(current_user.acc_agency, current_user.acc_account)
     {:ok, balance}
   end
+  def balance(_args, _info), do: {:error, "Área restrita"}
 
-  def balance(_args, _info) do
-    {:error, "Área restrita"}
-  end
-
-
-  # TODO Modificado por anf
   def transfer(args, ctx= %{context: %{current_user: current_user, token: _token, autho_token: _autho_token}}) do
+    discount = fn(x) -> D.cast((x * -1)) end
+    add = fn(map, key, value) -> Map.put(map, key, value) end
 
     v_balance = FinancialTransactionsQuery.get_balance(current_user.acc_agency, current_user.acc_account)
 
@@ -27,14 +23,17 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
       with {:ok, value_to_deposit} <- args.value |> FinancialUtils.value_greater_than_zero?(),
            {:ok, _} <- v_balance |> FinancialUtils.have_balance?(value_to_deposit),
            {:ok, _} <- args
-                       |> Map.put(:description, "Transferência recebida")
+                       |> add.(:description, "Transferência recebida")
                        |> rename_keys()
                        |> FinancialTransactionsQuery.insert_financial_transaction_deposit(),
-           {:ok, _} <- %{account: current_user.acc_account, agency: current_user.acc_agency,
-                          bank_code: current_user.acc_bank_code, description: "Transferência enviada",
-                          value: D.cast((args.value * -1))}
-                        |> rename_keys()
-                        |> FinancialTransactionsQuery.insert_financial_transaction_deposit()
+           {:ok, _} <- %{}
+                       |> add.(:account, current_user.acc_account)
+                       |> add.(:agency, current_user.acc_agency)
+                       |> add.(:bank_code, current_user.acc_bank_code)
+                       |> add.(:description, "Transferência enviada")
+                       |> add.(:value, discount.(args.value))
+                       |> rename_keys()
+                       |> FinancialTransactionsQuery.insert_financial_transaction_deposit()
 
       do
         AccountsResolver.revoke(args, ctx)
@@ -47,12 +46,41 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
     end)
 
   end
+  def transfer(_args, _info), do:  {:error, "Não autorizado."}
 
-  def transfer(_args, _info) do
-    {:error, "Não autorizado."}
+  def withdrawal(args, ctx = %{context: %{current_user: current_user, token: _token, autho_token: _autho_token}}) do
+    discount = fn(x) -> D.cast((x * -1)) end
+    add = fn(map, key, value) -> Map.put(map, key, value) end
+    edit_value = fn(map,value) -> %{ map | value: value } end
+
+    v_balance = FinancialTransactionsQuery.get_balance(current_user.acc_agency, current_user.acc_account)
+
+    Repo.transaction(fn ->
+      with {:ok, value_to_deposit} <- args.value |> FinancialUtils.value_greater_than_zero?(),
+           {:ok, _} <- v_balance |> FinancialUtils.have_balance?(value_to_deposit),
+           {:ok, _} <- args
+                       |> add.(:description, "Retirada")
+                       |> add.(:account, current_user.acc_account)
+                       |> add.(:agency, current_user.acc_agency)
+                       |> add.(:bank_code, current_user.acc_bank_code)
+                       |> edit_value.(discount.(args.value))
+                       |> rename_keys()
+                       |> FinancialTransactionsQuery.insert_financial_transaction_deposit()
+
+        do
+        AccountsResolver.revoke(args, ctx)
+        StatusResponse.format_output(:OK, "Saque realizado com sucesso. Um e-mail foi enviado para #{current_user.acc_email}")
+      else
+        {:validation_error, msg} -> StatusResponse.format_output(:UNPROCESSABLE_ENTITY, msg)
+        {:error, msg} -> {:error, msg}
+      end
+
+    end)
+
   end
 
-  # TODO Modificado por anf
+  def withdrawal(_args, _info), do:  {:error, "Não autorizado."}
+
   def deposit(args) do
     args
     |> rename_keys()

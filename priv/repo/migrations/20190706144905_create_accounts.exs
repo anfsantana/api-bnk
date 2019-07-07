@@ -8,7 +8,7 @@ defmodule ApiBnK.Repo.Migrations.CreateAccounts do
       add :acc_account, :string, null: false
       add :acc_bank_code, :string, null: false
       add :acc_cpf, :string, null: false
-      add :acc_email, :string
+      add :acc_email, :string, null: false
       add :acc_password_hash, :string
       add :acc_token, :text
       timestamps()
