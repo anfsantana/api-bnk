@@ -3,20 +3,20 @@ defmodule BlogAppGql.AuthHelper do
 
   import Comeonin.Bcrypt, only: [checkpw: 2]
   alias BlogAppGql.Repo
-  alias BlogAppGql.Accounts.User
+  alias BlogAppGql.Accounts, as: Account
 
-  def login_with_email_pass(email, given_pass) do
-    user = Repo.get_by(User, email: String.downcase(email))
+  def login_with_agency_account_pass(agency, account, given_pass) do
+    acc = Repo.get_by(Account, acc_agency: agency, acc_account: account)
 
     cond do
-      user && checkpw(given_pass, user.password_hash) ->
-        {:ok, user}
+      acc && checkpw(given_pass, acc.acc_password_hash) ->
+        {:ok, acc}
 
-      user ->
+      acc ->
         {:error, "Incorrect login credentials"}
 
       true ->
-        {:error, :"User not found"}
+        {:error, :"Account not found"}
     end
   end
 end

@@ -1,5 +1,4 @@
 defmodule BlogAppGql.Blog.PostResolver do
-  require Logger
   alias BlogAppGql.Blog
   alias BlogAppGql.Accounts.UserResolver
 

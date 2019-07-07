@@ -49,7 +49,8 @@ defmodule BlogAppGql.Mixfile do
       {:comeonin, "~> 4.0"},
       {:bcrypt_elixir, "~> 1.0"},
       {:plug_cowboy, "~> 1.0"},
-      {:jason, "~> 1.0"}
+      {:jason, "~> 1.0"},
+      {:decimal, "~> 1.8"}
     ]
   end
 

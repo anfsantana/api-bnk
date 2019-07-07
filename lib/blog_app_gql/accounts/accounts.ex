@@ -1,118 +1,57 @@
 defmodule BlogAppGql.Accounts do
-  @moduledoc """
-  The boundary for the Accounts system.
-  """
+  use Ecto.Schema
+  import Ecto.Changeset
+  alias __MODULE__, as: Account
 
-  import Ecto.Query, warn: false
-  alias BlogAppGql.Repo
+  schema "accounts" do
+    field(:acc_name, :string)
+    field(:acc_agency, :string)
+    field(:acc_account, :string)
+    field(:acc_bank_code, :string)
+    field(:acc_cpf, :string)
+    field(:acc_email, :string)
+    field(:acc_password, :string, virtual: true)
+    field(:acc_password_hash, :string)
+    field(:acc_token, :string)
 
-  alias BlogAppGql.Accounts.User
-
-  @doc """
-  Returns the list of users.
-
-  ## Examples
-
-      iex> list_users()
-      [%User{}, ...]
-
-  """
-  def list_users do
-    Repo.all(User)
+    timestamps()
   end
 
-  @doc """
-  Gets a single user.
-
-  Raises `Ecto.NoResultsError` if the User does not exist.
-
-  ## Examples
-
-      iex> get_user!(123)
-      %User{}
-
-      iex> get_user!(456)
-      ** (Ecto.NoResultsError)
-
-  """
-  def get_user!(id), do: Repo.get!(User, id)
-
-  def get_user_by_email(email), do: Repo.one(from(u in User, where: u.email == ^email))
-
-  @doc """
-  Creates a user.
-
-  ## Examples
-
-      iex> create_user(%{field: value})
-      {:ok, %User{}}
-
-      iex> create_user(%{field: bad_value})
-      {:error, %Ecto.Changeset{}}
-
-  """
-  def create_user(attrs \\ %{}) do
-    %User{}
-    |> User.changeset(attrs)
-    |> Repo.insert()
+  @doc false
+  def changeset(%Account{} = acc, attrs) do
+    acc
+    |> cast(attrs, [:acc_name, :acc_agency, :acc_account, :acc_bank_code, :acc_cpf, :acc_password, :acc_email])
+    |> validate_required([:acc_name, :acc_agency, :acc_account, :acc_bank_code, :acc_cpf, :acc_password])
+    |> validate_length(:acc_name, min: 3, max: 60)
+    |> validate_length(:acc_password, min: 5, max: 20)
+    |> unique_constraint(:acc_email, downcase: true)
+    |> unique_constraint(:acc_cpf)
+    |> unique_constraint(:acc_account, name: :idx_unique_bankcode_accounts_agency_account)
+    |> put_password_hash()
   end
 
-  @doc """
-  Updates a user.
-
-  ## Examples
-
-      iex> update_user(user, %{field: new_value})
-      {:ok, %User{}}
-
-      iex> update_user(user, %{field: bad_value})
-      {:error, %Ecto.Changeset{}}
-
-  """
-  def update_user(%User{} = user, attrs) do
-    user
-    |> User.changeset(attrs)
-    |> Repo.update()
+  @doc false
+  def changeset_simple_update(%Account{} = acc, attrs) do
+    acc
+    |> cast(attrs, [:acc_name, :acc_agency, :acc_account, :acc_email])
+    |> validate_required([:acc_name, :acc_agency, :acc_account])
+    |> validate_length(:acc_name, min: 3, max: 60)
+    |> unique_constraint(:acc_email, downcase: true)
   end
 
-  @doc """
-  Deletes a User.
-
-  ## Examples
-
-      iex> delete_user(user)
-      {:ok, %User{}}
-
-      iex> delete_user(user)
-      {:error, %Ecto.Changeset{}}
-
-  """
-  def delete_user(%User{} = user) do
-    Repo.delete(user)
+  def store_token_changeset(%Account{} = acc, attrs) do
+    acc
+    |> cast(attrs, [:acc_token])
   end
 
-  @doc """
-  Returns an `%Ecto.Changeset{}` for tracking user changes.
 
-  ## Examples
+  defp put_password_hash(changeset) do
+    case changeset do
+      %Ecto.Changeset{valid?: true, changes: %{acc_password: pass}} ->
+        put_change(changeset, :acc_password_hash, Comeonin.Bcrypt.hashpwsalt(pass))
 
-      iex> change_user(user)
-      %Ecto.Changeset{source: %User{}}
-
-  """
-  def change_user(%User{} = user) do
-    User.changeset(user, %{})
-  end
-
-  def store_token(%User{} = user, token) do
-    user
-    |> User.store_token_changeset(%{token: token})
-    |> Repo.update()
-  end
-
-  def revoke_token(%User{} = user, token) do
-    user
-    |> User.store_token_changeset(%{token: token})
-    |> Repo.update()
+      _ ->
+        changeset
+    end
   end
 end

@@ -5,7 +5,7 @@ defmodule BlogAppGql.Context do
 	import Ecto.Query, only: [where: 2]
 
 	alias BlogAppGql.Repo
-	alias BlogAppGql.Accounts.User
+	alias BlogAppGql.Accounts, as: Account
 
 	def init(opts), do: opts
 
@@ -26,8 +26,8 @@ defmodule BlogAppGql.Context do
 	end
 
 	defp authorize(token) do
-    User
-    |> where(token: ^token)
+		Account
+    |> where(acc_token: ^token)
     |> Repo.one()
 		|> case do
 	      nil -> {:error, "Invalid authorization token"}
