@@ -6,7 +6,7 @@ defmodule ApiBnK.Financial.Functions.FinancialUtils do
     if result == :eq || result == :gt do
       {:ok, balance}
     else
-      {:error, "Não possui saldo suficiente."}
+      {:validation_error, "Não possui saldo suficiente."}
     end
 
   end
@@ -15,7 +15,7 @@ defmodule ApiBnK.Financial.Functions.FinancialUtils do
     if D.cmp(D.cast(value), D.cast(0.00)) == :gt do
       {:ok, value}
     else
-      {:error, "Valor informado é menor ou igual a zero."}
+      {:validation_error, "Valor informado é menor ou igual a zero."}
     end
 
   end

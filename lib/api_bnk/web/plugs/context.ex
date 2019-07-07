@@ -10,6 +10,7 @@ defmodule ApiBnK.Context do
 	def init(opts), do: opts
 
 	def call(conn, _) do
+
 		case build_context(conn) do
 			{:ok, context} ->
 				put_private(conn, :absinthe, %{context: context})
@@ -18,25 +19,45 @@ defmodule ApiBnK.Context do
 		end
 	end
 
-	defp build_context(conn) do
-		with ["Bearer " <> token] <- get_req_header(conn, "authentication"),
-		     {:ok, current_user} <- authenticate(token) do
-			{:ok, %{current_user: current_user, token: token}}
+	defp is_authenticated(header_authentication) do
+		with ["Bearer " <> authe_token] <- header_authentication,
+		 {:ok, current_user} <- authenticate(authe_token)
+			do
+		 		{:ok, %{current_user: current_user, token: authe_token}}
+			else
+				_ -> {:error, "Não autenticado"}
 		end
+
 	end
 
-#	defp build_context(conn) do
-#		case get_req_header(conn, "authorization")
-#		with ["Bearer " <> token] <- get_req_header(conn, "authorization"),
-#				 ["Bearer " <> authen_token] <- get_req_header(conn, "authentication"),
-#		     {:ok, current_user} <- authentication(token, authen_token) do
-#			{:ok, %{current_user: current_user, token: token, authen_token: authen_token}}
-#			else
-#				with ["Bearer " <> token] <- get_req_header(conn, "authorization"),
-#						 {:ok, current_user} <- authentication(token, authen_token) do
-#					end
-#		end
-#	end
+	defp is_authorized(header_authentication, header_authorization) do
+
+		with {:ok, current_user} <- is_authenticated(header_authentication),
+				 ["Bearer " <> autho_token] <- header_authorization,
+				 {:ok, current_user} <- current_user.token |> authorization(autho_token)
+			do
+						{:ok, %{current_user: current_user, token: current_user.acc_token, autho_token: autho_token}}
+			else
+				_ -> {:error, "Não autorizado"}
+	 end
+
+	end
+
+	defp build_context(conn) do
+		header_authe = get_req_header(conn, "authentication")
+		header_autho = get_req_header(conn, "authorization")
+
+		case is_authorized(header_authe, header_autho) do
+			{:ok, current_user} -> {:ok, current_user}
+			{:error,_} ->
+				case is_authenticated(header_authe) do
+					{:ok, current_user} -> {:ok, current_user}
+					{:error, message} -> {:error, message}
+				end
+
+		end
+
+	end
 
 	defp authenticate(token) do
 		Account
@@ -48,13 +69,13 @@ defmodule ApiBnK.Context do
 		   end
 	end
 
-#	defp authentication(token, authen_token) do
-#		Account
-#		|> where(acc_token: ^token, acc_authen_token: ^authen_token)
-#		|> Repo.one()
-#		|> case do
-#				 nil -> {:error, "Invalid authorization token"}
-#				 user -> {:ok, user}
-#			 end
-#	end
+	defp authorization(token, autho_token) do
+		Account
+		|> where(acc_token: ^token, acc_autho_token: ^autho_token)
+		|> Repo.one()
+		|> case do
+				 nil -> {:error, "Invalid authorization token"}
+				 user -> {:ok, user}
+			 end
+	end
 end

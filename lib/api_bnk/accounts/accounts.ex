@@ -13,6 +13,7 @@ defmodule ApiBnK.Accounts.Accounts do
     field(:acc_password, :string, virtual: true)
     field(:acc_password_hash, :string)
     field(:acc_token, :string)
+    field(:acc_autho_token, :string)
 
     timestamps()
   end
@@ -44,6 +45,15 @@ defmodule ApiBnK.Accounts.Accounts do
     |> cast(attrs, [:acc_token])
   end
 
+  def store_autho_token_changeset(%Account{} = acc, attrs) do
+    acc
+    |> cast(attrs, [:acc_autho_token])
+  end
+
+  def store_all_token_changeset(%Account{} = acc, attrs) do
+    acc
+    |> cast(attrs, [:acc_token, :acc_autho_token])
+  end
 
   defp put_password_hash(changeset) do
     case changeset do

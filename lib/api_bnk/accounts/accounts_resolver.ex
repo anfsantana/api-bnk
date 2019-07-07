@@ -30,13 +30,21 @@ defmodule ApiBnK.Accounts.AccountsResolver do
   end
 
   def update(_args, _info) do
-    {:error, "Not Authorized"}
+    {:error, "Restrict area"}
   end
 
   def login(%{agency: agency, account: account, password: password}, _info) do
     with {:ok, user} <- login_with_agency_account_pass(agency, account, password),
          {:ok, jwt, _} <- ApiBnK.Guardian.encode_and_sign(user) ,
          {:ok, _ } <- AccountsQuery.store_token(user, jwt) do
+      {:ok, %{token: jwt}}
+    end
+  end
+
+  def authorization(%{agency: agency, account: account, password: password}, _info) do
+    with {:ok, user} <- login_with_agency_account_pass(agency, account, password),
+         {:ok, jwt, _} <- ApiBnK.Guardian.encode_and_sign(user) ,
+         {:ok, _ } <- AccountsQuery.store_autho_token(user, jwt) do
       {:ok, %{token: jwt}}
     end
   end
@@ -59,14 +67,21 @@ defmodule ApiBnK.Accounts.AccountsResolver do
   end
 
   def logout(_args,  %{context: %{current_user: current_user, token: _token}}) do
-    case AccountsQuery.revoke_token(current_user, nil) do
-      {:ok, _} -> StatusResponse.get_status_response_by_key(:OK)
+    case AccountsQuery.revoke_all_token(current_user, nil, nil) do
+      {:ok, _} -> {:ok, StatusResponse.get_status_response_by_key(:OK)}
+      {:error, msg} -> {:error, msg}
+    end
+  end
+
+  def revoke(_args,  %{context: %{current_user: current_user, token: _token}}) do
+    case AccountsQuery.revoke_autho_token(current_user, nil) do
+      {:ok, _} -> {:ok, StatusResponse.get_status_response_by_key(:OK)}
       {:error, msg} -> {:error, msg}
     end
   end
 
   def logout(_args, _info) do
-    {:error, "Please log in first!"}
+    {:error, "Por favor, efetue o login"}
   end
 
   # TODO - Função para adicionar o prefixo no nome das colunas

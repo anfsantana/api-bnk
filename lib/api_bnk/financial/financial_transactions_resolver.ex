@@ -1,6 +1,7 @@
 defmodule ApiBnK.Financial.FinancialTransactionsResolver do
   alias ApiBnK.Financial.FinancialTransactionsQuery
   alias ApiBnK.Financial.Functions.FinancialUtils
+  alias ApiBnK.Accounts.AccountsResolver
   alias ApiBnK.Utils.Utils
   alias ApiBnK.Utils.StatusResponse
   alias ApiBnK.Repo
@@ -13,12 +14,12 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
   end
 
   def balance(_args, _info) do
-    {:error, "Not Authorized"}
+    {:error, "Área restrita"}
   end
 
 
   # TODO Modificado por anf
-  def transfer(args, %{context: %{current_user: current_user}}) do
+  def transfer(args, ctx= %{context: %{current_user: current_user, token: _token, autho_token: _autho_token}}) do
 
     v_balance = FinancialTransactionsQuery.get_balance(current_user.acc_agency, current_user.acc_account)
 
@@ -36,8 +37,10 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
                         |> FinancialTransactionsQuery.insert_financial_transaction_deposit()
 
       do
+        AccountsResolver.revoke(args, ctx)
         StatusResponse.get_status_response_by_key(:OK)
       else
+        {:validation_error, msg} -> StatusResponse.format_output(:UNPROCESSABLE_ENTITY, msg)
         {:error, msg} -> {:error, msg}
       end
 
@@ -46,11 +49,7 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
   end
 
   def transfer(_args, _info) do
-    {:error, "Not Authorized"}
-  end
-
-  def deposit(_args, _info) do
-    {:error, "Not Authorized"}
+    {:error, "Não autorizado."}
   end
 
   # TODO Modificado por anf

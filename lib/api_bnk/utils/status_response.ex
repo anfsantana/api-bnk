@@ -8,4 +8,9 @@ defmodule ApiBnK.Utils.StatusResponse do
       INTERNAL_SERVER_ERROR: %{ code: 500, message: "Internal Server Error"}}
    map[key]
   end
+
+  def format_output(key, message) do
+    %{get_status_response_by_key(key) | message: message}
+  end
+
 end

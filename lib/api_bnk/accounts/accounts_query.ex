@@ -110,9 +110,21 @@ defmodule ApiBnK.Accounts.AccountsQuery do
     |> Repo.update()
   end
 
-  def revoke_token(%Account{} = acc, token) do
+  def revoke_all_token(%Account{} = acc, token, autho_token) do
     acc
-    |> Account.store_token_changeset(%{acc_token: token})
+    |> Account.store_all_token_changeset(%{acc_token: token, acc_autho_token: autho_token})
+    |> Repo.update()
+  end
+
+  def store_autho_token(%Account{} = acc, token) do
+    acc
+    |> Account.store_autho_token_changeset(%{acc_autho_token: token})
+    |> Repo.update()
+  end
+
+  def revoke_autho_token(%Account{} = acc, token) do
+    acc
+    |> Account.store_autho_token_changeset(%{acc_autho_token: token})
     |> Repo.update()
   end
 end
