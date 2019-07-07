@@ -41,6 +41,10 @@ defmodule ApiBnK.Web.Schema do
         resolve(&ApiBnK.Accounts.AccountsResolver.update/2)
       end
 
+      field :logout, type: :status_response do
+        resolve(&ApiBnK.Accounts.AccountsResolver.logout/2)
+      end
+
       field :transferency, type: :status_response do
         arg(:agency, non_null(:string))
         arg(:account, non_null(:string))

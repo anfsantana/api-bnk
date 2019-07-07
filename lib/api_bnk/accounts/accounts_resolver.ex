@@ -10,9 +10,7 @@ defmodule ApiBnK.Accounts.AccountsResolver do
     {:ok, AccountsQuery.list_users()}
   end
 
-  def all(_args, _info) do
-	  {:error, "Not Authorized"}
-  end
+  def all(_args, _info), do: {:error, "Restrict area"}
 
   def find(%{agency: agency, account: account}, %{context: %{current_user: _current_user}}) do
     case AccountsQuery.get_account_by_agency_account(agency, account) do
@@ -21,9 +19,7 @@ defmodule ApiBnK.Accounts.AccountsResolver do
     end
   end
 
-  def find(_args, _info) do
-	  {:error, "Not Authorized"}
-  end
+  def find(_args, _info), do: {:error, "Restrict area"}
 
   def update(args, %{context: %{current_user: current_user}} = info) do
     case find(%{agency: current_user.acc_agency, account: current_user.acc_account}, info) do
@@ -45,20 +41,8 @@ defmodule ApiBnK.Accounts.AccountsResolver do
     end
   end
 
-  def logout(_args,  %{context: %{current_user: current_user, token: _token}}) do
-    AccountsQuery.revoke_token(current_user, nil)
-    {:ok, current_user}
-  end
-
-  def logout(_args, _info) do
-    {:error, "Please log in first!"}
-  end
-
   def create(params, _info) do
     Repo.transaction(fn ->
-
-
-
       with {:ok, params} <- params |> rename_keys()
                                    |> AccountsQuery.create_account(),
            {:ok, _} <- %{account: params.acc_account, agency: params.acc_agency,
@@ -72,6 +56,17 @@ defmodule ApiBnK.Accounts.AccountsResolver do
 
     end)
 
+  end
+
+  def logout(_args,  %{context: %{current_user: current_user, token: _token}}) do
+    case AccountsQuery.revoke_token(current_user, nil) do
+      {:ok, _} -> StatusResponse.get_status_response_by_key(:OK)
+      {:error, msg} -> {:error, msg}
+    end
+  end
+
+  def logout(_args, _info) do
+    {:error, "Please log in first!"}
   end
 
   # TODO - Função para adicionar o prefixo no nome das colunas
