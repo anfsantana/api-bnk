@@ -6,8 +6,6 @@ defmodule ApiBnK.Web.Schema.Types do
     field(:token, :string)
   end
 
-  # TODO Novos - Contas
-
   object :accounts do
     field(:acc_name, :string)
     field(:acc_agency, :string)
@@ -15,6 +13,12 @@ defmodule ApiBnK.Web.Schema.Types do
     field(:acc_bank_code, :string)
     field(:acc_cpf, :string)
     field(:acc_email, :string)
+  end
+
+  object :report_back_office do
+    field(:total_day, :float)
+    field(:total_month, :float)
+    field(:total_year, :float)
   end
 
   input_object :create_account_params do

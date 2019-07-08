@@ -1,4 +1,5 @@
 defmodule ApiBnK.Financial.FinancialTransactionsResolver do
+
   alias ApiBnK.Financial.FinancialTransactionsQuery
   alias ApiBnK.Financial.Functions.FinancialUtils
   alias ApiBnK.Accounts.AccountsResolver
@@ -6,6 +7,51 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
   alias ApiBnK.Utils.StatusResponse
   alias ApiBnK.Repo
   alias Decimal, as: D
+
+
+  def report_back_office(args, _info) do
+    add = fn(map, key, value) -> Map.put(map, key, value) end
+    date_time_now = NaiveDateTime.add(NaiveDateTime.utc_now(), -(3600 * 3), :second)
+    start_date_time_today = %DateTime{year: date_time_now.year, month: date_time_now.month, day: date_time_now.day,
+                              zone_abbr: "BRT", hour: 00, minute: 0, second: 0, microsecond: {0, 0}, utc_offset: -(3600 * 3),
+                              std_offset: 0, time_zone: "Brasilia Time"}
+
+    end_date_time_today = start_date_time_today
+                            |> (&(%{ &1 | hour: 23})).()
+                            |> (&(%{ &1 | minute: 59})).()
+                            |> (&(%{ &1 | second: 59})).()
+                            |> DateTime.to_naive()
+
+    start_date_time_month = start_date_time_today
+                            |> (&(%{ &1 | day: 1})).()
+                            |> DateTime.to_naive()
+
+    end_date_time_month = start_date_time_today
+                            |> (&(%{ &1 | day: Date.days_in_month(&1)})).()
+                            |> (&(%{ &1 | hour: 23})).()
+                            |> (&(%{ &1 | minute: 59})).()
+                            |> (&(%{ &1 | second: 59})).()
+                            |> DateTime.to_naive()
+
+    start_date_time_year = start_date_time_today
+                            |> (&(%{ &1 | day: 1})).()
+                            |> (&(%{ &1 | month: 1})).()
+                            |> DateTime.to_naive()
+
+    end_date_time_year = start_date_time_today
+                            |> (&(%{ &1 | day: 31})).()
+                            |> (&(%{ &1 | month: 12})).()
+                            |> (&(%{ &1 | hour: 23})).()
+                            |> (&(%{ &1 | minute: 59})).()
+                            |> (&(%{ &1 | second: 59})).()
+                            |> DateTime.to_naive()
+
+    result = %{}
+              |> add.(:total_day, FinancialTransactionsQuery.get_report_back_office(DateTime.to_naive(start_date_time_today), end_date_time_today))
+              |> add.(:total_month, FinancialTransactionsQuery.get_report_back_office(start_date_time_month, end_date_time_month))
+              |> add.(:total_year, FinancialTransactionsQuery.get_report_back_office(start_date_time_year, end_date_time_year))
+    {:ok, result}
+  end
 
   def balance(_args, %{context: %{current_user: current_user}}) do
     balance = FinancialTransactionsQuery.get_balance(current_user.acc_agency, current_user.acc_account)

@@ -2,6 +2,7 @@ defmodule ApiBnK.Web.Schema do
   use Absinthe.Schema
 
   import_types ApiBnK.Web.Schema.Types
+  import_types Absinthe.Type.Custom
 
 
   query do
@@ -24,6 +25,10 @@ defmodule ApiBnK.Web.Schema do
       arg(:password, non_null(:string))
 
       resolve(&ApiBnK.Accounts.AccountsResolver.authorization/2)
+    end
+
+    field :report_back_office, type: :report_back_office do
+      resolve(&ApiBnK.Financial.FinancialTransactionsResolver.report_back_office/2)
     end
 
   end
@@ -69,12 +74,7 @@ defmodule ApiBnK.Web.Schema do
         resolve(&ApiBnK.Financial.FinancialTransactionsResolver.withdrawal/2)
 
       end
-#      field :update_post, type: :blog_post do
-#        arg(:id, non_null(:id))
-#        arg(:post, :update_post_params)
-#
-#        resolve(&ApiBnK.Blog.PostResolver.update/2)
-#      end
+
 
 
   end

@@ -40,6 +40,9 @@ defmodule ApiBnK.Financial.FinancialTransactionsQuery do
 
   def get_balance(agency, account), do: Repo.aggregate(from(t in FinancialTransaction, where: t.fint_agency == ^agency and t.fint_account == ^account), :sum, :fint_value)
 
+  def get_report_back_office(init_date, final_date) do
+    Repo.aggregate(from(t in FinancialTransaction, where:  t.inserted_at >= ^init_date and t.inserted_at <= ^final_date), :sum, :fint_value)
+  end
   @doc """
   Creates a user.
 
