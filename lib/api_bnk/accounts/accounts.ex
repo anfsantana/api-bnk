@@ -38,8 +38,8 @@ defmodule ApiBnK.Accounts.Accounts do
   @doc false
   def changeset_simple_update(%Account{} = acc, attrs) do
     acc
-    |> cast(attrs, [:acc_name, :acc_agency, :acc_account, :acc_email])
-    |> validate_required([:acc_agency, :acc_account])
+    |> cast(attrs, [:acc_name, :acc_email])
+    |> validate_required([:acc_name, :acc_email])
     |> validate_length(:acc_name, min: 3, max: 60)
     |> unique_constraint(:acc_email, downcase: true)
   end

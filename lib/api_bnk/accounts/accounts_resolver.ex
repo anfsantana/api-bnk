@@ -6,6 +6,7 @@ defmodule ApiBnK.Accounts.AccountsResolver do
   alias ApiBnK.Repo
   import ApiBnK.AuthHelper
 
+  # TODO Verificar funcionalidade
   def update(args, %{context: %{current_user: current_user}} = info) do
     case find(%{agency: current_user.acc_agency, account: current_user.acc_account}, info) do
       {:ok, acc} -> AccountsQuery.update_account(acc, rename_keys(args))

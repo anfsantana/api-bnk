@@ -58,14 +58,14 @@ defmodule ApiBnK.Accounts.AccountsQuery do
   end
 
   @doc """
-  Updates a user.
+  Atualiza uma conta
 
-  ## Examples
+  ## Exemplos
 
-      iex> update_user(user, %{field: new_value})
-      {:ok, %User{}}
+      iex> update_account(acc, %{field: new_value})
+      {:ok, %Account{}}
 
-      iex> update_user(user, %{field: bad_value})
+      iex> update_account(acc, %{field: bad_value})
       {:error, %Ecto.Changeset{}}
 
   """
