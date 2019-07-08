@@ -50,7 +50,7 @@ defmodule ApiBnK.Financial.FinancialTransactionsQuery do
   end
 
   def get_report_back_office(init_date, final_date) do
-    query = from(t in FinancialTransaction, where:  t.inserted_at >= ^init_date and t.inserted_at <= ^final_date)
+    _query = from(t in FinancialTransaction, where:  t.inserted_at >= ^init_date and t.inserted_at <= ^final_date)
     |> Repo.aggregate(:sum, :fint_value)
     |> case do
         nil -> D.new(0.00)

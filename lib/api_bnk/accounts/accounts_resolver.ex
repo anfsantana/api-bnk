@@ -7,7 +7,7 @@ defmodule ApiBnK.Accounts.AccountsResolver do
   import ApiBnK.AuthHelper
 
   def update(args, %{context: %{current_user: current_user}} = info) do
-    case do_find(%{agency: current_user.acc_agency, account: current_user.acc_account}, info) do
+    case find(%{agency: current_user.acc_agency, account: current_user.acc_account}, info) do
       {:ok, acc} -> AccountsQuery.update_account(acc, rename_keys(args))
       {:error, message} -> {:error, message}
     end
@@ -37,7 +37,7 @@ defmodule ApiBnK.Accounts.AccountsResolver do
 
   end
 
-  def authorization(%{password: password}, %{context: %{current_user: current_user}} = info) do
+  def authorization(%{password: password}, %{context: %{current_user: current_user}} = _info) do
     with {:ok, user} <- login_with_agency_account_pass(current_user.acc_agency, current_user.acc_account, password),
          {:ok, jwt, _} <- ApiBnK.Guardian.encode_and_sign(user) ,
          {:ok, _ } <- AccountsQuery.store_autho_token(user, jwt) do
