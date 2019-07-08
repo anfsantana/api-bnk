@@ -66,12 +66,6 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
               |> (&({trim.(&1.account), trim.(&1.agency), trim.(&1.bank_code)})).()
     orin_acc = origin_acc
                |> (&({trim.(&1.acc_account), trim.(&1.acc_agency), trim.(&1.acc_bank_code)})).()
-#    dest_acc = trim.(destination_acc)
-#    orin_acc = trim.(origin_acc)
-#
-#    {dest_acc.account, dest_acc.agency, dest_acc.bank_code}
-#    {orin_acc.acc_account, orin_acc.acc_agency, orin_acc.acc_bank_code}
-
 
     if dest_acc != orin_acc do
       {:ok, :true}
