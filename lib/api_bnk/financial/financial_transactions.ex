@@ -1,6 +1,10 @@
 defmodule ApiBnK.Financial.FinancialTransactions do
+  @moduledoc false
+
   use Ecto.Schema
+
   import Ecto.Changeset
+
   alias __MODULE__, as: FinancialTransaction
 
   schema "financial_transactions" do

@@ -4,8 +4,8 @@ defmodule ApiBnK.Accounts.AccountsQuery do
   """
 
   import Ecto.Query, warn: false
-  alias ApiBnK.Repo
 
+  alias ApiBnK.Repo
   alias ApiBnK.Accounts.Accounts, as: Account
 
   @doc """

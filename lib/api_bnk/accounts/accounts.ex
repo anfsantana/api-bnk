@@ -1,6 +1,10 @@
 defmodule ApiBnK.Accounts.Accounts do
+  @moduledoc false
+
   use Ecto.Schema
+
   import Ecto.Changeset
+
   alias __MODULE__, as: Account
 
   schema "accounts" do

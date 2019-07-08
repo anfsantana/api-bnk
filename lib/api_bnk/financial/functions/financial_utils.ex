@@ -1,4 +1,6 @@
 defmodule ApiBnK.Financial.Functions.FinancialUtils do
+  @moduledoc false
+
   alias Decimal, as: D
 
   def have_balance?(balance \\ 0.00, value \\ 0.00) do

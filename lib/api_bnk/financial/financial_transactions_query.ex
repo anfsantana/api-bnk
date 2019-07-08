@@ -4,6 +4,7 @@ defmodule ApiBnK.Financial.FinancialTransactionsQuery do
   """
 
   import Ecto.Query, warn: false
+
   alias ApiBnK.Repo
   alias ApiBnK.Financial.FinancialTransactions, as: FinancialTransaction
   alias Decimal, as: D

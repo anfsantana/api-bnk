@@ -10,13 +10,13 @@ defmodule ApiBnK.Context do
 	def init(opts), do: opts
 
 	def call(conn, _) do
-
 		case build_context(conn) do
 			{:ok, context} ->
 				put_private(conn, :absinthe, %{context: context})
 			_ ->
 				conn
 		end
+
 	end
 
 	defp is_authenticated(header_authentication) do
