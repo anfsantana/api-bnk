@@ -2,73 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94eb9475-fd1a-4fa7-8e6f-ddf4c2527925" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/absinthe.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/absinthe_ecto.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/absinthe_plug.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/argon2_elixir.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/base64url.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/bcrypt_elixir.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/benchfella.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/comeonin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/connection.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/coverex.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/cowboy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/cowlib.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/credo.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/dataloader.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/db_connection.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/decimal.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/dialyxir.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/dialyze.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/earmark.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/ecto.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/elixir_make.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/ex_doc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/ex_machina.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/excoveralls.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/exjsx.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/faker.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/gettext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/guardian.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/hackney.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/inch_ex.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jason.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jazz.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jiffy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jose.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jsone.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jsx.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/libdecaf.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/libsodium.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mariaex.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mime.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mix_test_watch.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/ojson.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/pbkdf2_elixir.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/phoenix.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/phoenix_ecto.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/phoenix_guides.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/phoenix_html.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/phoenix_pubsub.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/plug.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/plug_cowboy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/plug_crypto.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/poison.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/poolboy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/postgrex.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/ranch.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbroker.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/telemetry.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/uuid.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/websocket_client.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api_bnk.iml" beforeDir="false" afterPath="$PROJECT_DIR$/api_bnk.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api_bnk/accounts/accounts_resolver.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/accounts/accounts_resolver.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/api_bnk/financial/financial_transactions_resolver.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/financial/financial_transactions_resolver.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api_bnk/web/schema/schema.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/web/schema/schema.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20190706144905_create_accounts.exs" beforeDir="false" afterPath="$PROJECT_DIR$/priv/repo/migrations/20190706144905_create_accounts.exs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/api_bnk/utils/utils_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/test/api_bnk/utils/utils_test.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/priv/repo/seeds.exs" beforeDir="false" afterPath="$PROJECT_DIR$/priv/repo/seeds.exs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -89,8 +25,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/api_bnk/accounts/accounts_resolver.ex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="55" column="59" lean-forward="true" selection-start-line="55" selection-start-column="59" selection-end-line="55" selection-end-column="59" />
+            <state relative-caret-position="-146">
+              <caret line="55" column="59" selection-start-line="55" selection-start-column="59" selection-end-line="55" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="360">
+                <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -99,7 +47,7 @@
         <entry file="file://$PROJECT_DIR$/lib/api_bnk/accounts/accounts_query.ex">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="840">
-              <caret line="116" column="5" lean-forward="true" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
+              <caret line="116" column="5" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -107,8 +55,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/api_bnk/financial/financial_transactions_resolver.ex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="71" column="124" selection-start-line="71" selection-start-column="124" selection-end-line="71" selection-end-column="124" />
+            <state relative-caret-position="414">
+              <caret line="77" column="26" selection-start-line="77" selection-start-column="10" selection-end-line="77" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/priv/repo/seeds.exs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="474">
+              <caret line="32" column="3" lean-forward="true" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -126,7 +83,7 @@
         <entry file="file://$PROJECT_DIR$/priv/repo/migrations/20190706235731_create_financial_transactions.exs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="160">
-              <caret line="8" column="38" lean-forward="true" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+              <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -135,7 +92,7 @@
         <entry file="file://$PROJECT_DIR$/priv/repo/migrations/20190706144905_create_accounts.exs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="260">
-              <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+              <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -149,27 +106,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/api_bnk/web/schema/schema.ex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
+            <state relative-caret-position="434">
+              <caret line="52" column="32" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/api_bnk/utils/status_response.ex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/api_bnk/accounts/accounts_test.exs">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -198,9 +141,10 @@
         <option value="$PROJECT_DIR$/lib/api_bnk/accounts/accounts_query.ex" />
         <option value="$PROJECT_DIR$/test/api_bnk/utils/utils_test.exs" />
         <option value="$PROJECT_DIR$/lib/api_bnk/accounts/accounts_resolver.ex" />
-        <option value="$PROJECT_DIR$/lib/api_bnk/financial/financial_transactions_resolver.ex" />
         <option value="$PROJECT_DIR$/priv/repo/migrations/20190706144905_create_accounts.exs" />
         <option value="$PROJECT_DIR$/lib/api_bnk/web/schema/schema.ex" />
+        <option value="$PROJECT_DIR$/lib/api_bnk/financial/financial_transactions_resolver.ex" />
+        <option value="$PROJECT_DIR$/priv/repo/seeds.exs" />
       </list>
     </option>
   </component>
@@ -283,6 +227,14 @@
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="api_bnk" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="api_bnk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="api_bnk" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="api_bnk" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="helpers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="api_bnk" type="b2602c69:ProjectViewProjectNode" />
@@ -440,21 +392,16 @@
     <frame x="1365" y="0" width="1922" height="1081" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Designer" />
-      <window_info id="Image Layers" />
-      <window_info id="DB Browser" />
-      <window_info id="UI Designer" />
-      <window_info id="Project Explorer" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info id="Capture Tool" />
-      <window_info id="Job Explorer" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2497332" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="DB Execution Console" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32937366" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" weight="0.22354212" />
-      <window_info anchor="bottom" id="Console" />
+      <window_info id="Designer" order="2" />
+      <window_info id="DB Browser" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Project Explorer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Capture Tool" order="7" />
+      <window_info id="Job Explorer" order="8" />
+      <window_info id="Image Layers" order="9" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32937366" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -462,14 +409,19 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="bottom" id="Console" order="7" />
+      <window_info anchor="bottom" id="DB Execution Console" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32937366" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.22354212" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
     </layout>
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -492,8 +444,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/api_bnk/accounts/accounts.ex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
+        <state relative-caret-position="380">
+          <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -548,21 +500,7 @@
     <entry file="file://$PROJECT_DIR$/lib/api_bnk/accounts/accounts_query.ex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
-          <caret line="116" column="5" lean-forward="true" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api_bnk/accounts/accounts_resolver.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="55" column="59" lean-forward="true" selection-start-line="55" selection-start-column="59" selection-end-line="55" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api_bnk/financial/financial_transactions_resolver.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="71" column="124" selection-start-line="71" selection-start-column="124" selection-end-line="71" selection-end-column="124" />
+          <caret line="116" column="5" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -576,21 +514,52 @@
     <entry file="file://$PROJECT_DIR$/priv/repo/migrations/20190706235731_create_financial_transactions.exs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
-          <caret line="8" column="38" lean-forward="true" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/priv/repo/migrations/20190706144905_create_accounts.exs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
-          <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/api_bnk/web/schema/schema.ex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
+        <state relative-caret-position="434">
+          <caret line="52" column="32" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="360">
+            <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/api_bnk/accounts/accounts_resolver.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-146">
+          <caret line="55" column="59" selection-start-line="55" selection-start-column="59" selection-end-line="55" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/api_bnk/financial/financial_transactions_resolver.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="77" column="26" selection-start-line="77" selection-start-column="10" selection-end-line="77" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/priv/repo/seeds.exs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="32" column="3" lean-forward="true" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
         </state>
       </provider>
     </entry>

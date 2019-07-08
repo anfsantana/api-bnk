@@ -39,8 +39,12 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
         AccountsResolver.revoke(args, ctx)
         StatusResponse.get_status_response_by_key(:OK)
       else
-        {:validation_error, msg} -> StatusResponse.format_output(:UNPROCESSABLE_ENTITY, msg)
-        {:error, msg} -> {:error, msg}
+        {:validation_error, msg} ->
+          AccountsResolver.revoke(args, ctx)
+          StatusResponse.format_output(:UNPROCESSABLE_ENTITY, msg)
+        {:error, msg} ->
+          AccountsResolver.revoke(args, ctx)
+          {:error, msg}
       end
 
     end)
@@ -71,8 +75,12 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
         AccountsResolver.revoke(args, ctx)
         StatusResponse.format_output(:OK, "Saque realizado com sucesso. Um e-mail foi enviado para #{current_user.acc_email}")
       else
-        {:validation_error, msg} -> StatusResponse.format_output(:UNPROCESSABLE_ENTITY, msg)
-        {:error, msg} -> {:error, msg}
+        {:validation_error, msg} ->
+          AccountsResolver.revoke(args, ctx)
+          StatusResponse.format_output(:UNPROCESSABLE_ENTITY, msg)
+        {:error, msg} ->
+          AccountsResolver.revoke(args, ctx)
+          {:error, msg}
       end
 
     end)

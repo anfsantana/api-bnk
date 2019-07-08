@@ -14,7 +14,7 @@ alias ApiBnK.Accounts.User
 alias ApiBnK.Blog.Post
 
 # Create 10 seed users
-
+# TODO Criar dados fakes depois
 for _ <- 1..10 do
   Repo.insert!(%User{
     name: Faker.Name.name,
