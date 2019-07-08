@@ -32,8 +32,8 @@ defmodule ApiBnK.Accounts.AccountsResolver do
 
   end
 
-  def authorization(%{agency: agency, account: account, password: password}, %{context: %{current_user: _current_user}} = info) do
-    with {:ok, user} <- login_with_agency_account_pass(agency, account, password),
+  def authorization(%{password: password}, %{context: %{current_user: current_user}} = info) do
+    with {:ok, user} <- login_with_agency_account_pass(current_user.acc_agency, current_user.acc_account, password),
          {:ok, jwt, _} <- ApiBnK.Guardian.encode_and_sign(user) ,
          {:ok, _ } <- AccountsQuery.store_autho_token(user, jwt) do
       {:ok, %{token: jwt}}

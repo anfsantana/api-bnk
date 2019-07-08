@@ -6,6 +6,7 @@ defmodule ApiBnK.Financial.FinancialTransactionsQuery do
   import Ecto.Query, warn: false
   alias ApiBnK.Repo
   alias ApiBnK.Financial.FinancialTransactions, as: FinancialTransaction
+  alias Decimal, as: D
 
   @doc """
   Returns the list of users.
@@ -38,10 +39,22 @@ defmodule ApiBnK.Financial.FinancialTransactionsQuery do
 
   def get_financial_transactions_by_agency_account(agency, account), do: Repo.all(from(t in FinancialTransaction, where: t.fint_agency == ^agency and t.fint_account == ^account))
 
-  def get_balance(agency, account), do: Repo.aggregate(from(t in FinancialTransaction, where: t.fint_agency == ^agency and t.fint_account == ^account), :sum, :fint_value)
+  def get_balance(agency, account) do
+    Repo.aggregate(from(t in FinancialTransaction, where: t.fint_agency == ^agency and t.fint_account == ^account), :sum, :fint_value)
+    |> case do
+        nil -> D.new(0.00)
+        result -> result
+    end
+
+  end
 
   def get_report_back_office(init_date, final_date) do
-    Repo.aggregate(from(t in FinancialTransaction, where:  t.inserted_at >= ^init_date and t.inserted_at <= ^final_date), :sum, :fint_value)
+    query = from(t in FinancialTransaction, where:  t.inserted_at >= ^init_date and t.inserted_at <= ^final_date)
+    |> Repo.aggregate(:sum, :fint_value)
+    |> case do
+        nil -> D.new(0.00)
+        result -> result
+    end
   end
   @doc """
   Creates a user.

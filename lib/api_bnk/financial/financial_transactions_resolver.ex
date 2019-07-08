@@ -59,6 +59,28 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
   end
   def balance(_args, _info), do: {:error, "Área restrita"}
 
+  defp origin_acc_diff_destiny_acc?(destination_acc, origin_acc) do
+    trim = fn(val) -> String.trim(val) end
+
+    dest_acc = destination_acc
+              |> (&({trim.(&1.account), trim.(&1.agency), trim.(&1.bank_code)})).()
+    orin_acc = origin_acc
+               |> (&({trim.(&1.acc_account), trim.(&1.acc_agency), trim.(&1.acc_bank_code)})).()
+#    dest_acc = trim.(destination_acc)
+#    orin_acc = trim.(origin_acc)
+#
+#    {dest_acc.account, dest_acc.agency, dest_acc.bank_code}
+#    {orin_acc.acc_account, orin_acc.acc_agency, orin_acc.acc_bank_code}
+
+
+    if dest_acc != orin_acc do
+      {:ok, :true}
+    else
+      {:validation_error, "A conta de destino é a mesma de origem."}
+    end
+
+  end
+
   def transfer(args, ctx= %{context: %{current_user: current_user, token: _token, autho_token: _autho_token}}) do
     discount = fn(x) -> D.cast((x * -1)) end
     add = fn(map, key, value) -> Map.put(map, key, value) end
@@ -68,6 +90,7 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
     Repo.transaction(fn ->
       with {:ok, value_to_deposit} <- args.value |> FinancialUtils.value_greater_than_zero?(),
            {:ok, _} <- v_balance |> FinancialUtils.have_balance?(value_to_deposit),
+           {:ok, _} <- args |> origin_acc_diff_destiny_acc?(current_user),
            {:ok, _} <- args
                        |> add.(:description, "Transferência recebida")
                        |> rename_keys()

@@ -20,15 +20,14 @@ defmodule ApiBnK.Web.Schema do
     end
 
     field :authorization, type: :session do
-      arg(:agency, non_null(:string))
-      arg(:account, non_null(:string))
       arg(:password, non_null(:string))
-
       resolve(&ApiBnK.Accounts.AccountsResolver.authorization/2)
+
     end
 
     field :report_back_office, type: :report_back_office do
       resolve(&ApiBnK.Financial.FinancialTransactionsResolver.report_back_office/2)
+
     end
 
   end
