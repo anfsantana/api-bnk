@@ -19,7 +19,45 @@ defmodule ApiBnK.SchemaTest do
       {:ok, %{conn: conn}}
     end
 
-    test "[Query] createAccount: sucesso na criação de conta. ", %{conn: conn} do
+    test "[Query GraphQL] login: sucesso em efetuar o login/obter o token de autenticação.", %{conn: conn} do
+      query = """
+        query {
+            login(agency: "#{@login_info.agency}", account: "#{@login_info.account}", password: "#{@login_info.password}") {
+            token
+          }
+        }
+      """
+
+      res =
+        conn
+        |> post("/api/graphiql", %{query: query})
+        |> json_response(200)
+
+      %{"data" => %{"login" => %{"token" => token}}} = res
+      assert String.length(token) > 0
+
+    end
+
+    test "[Query GraphQL] authorization: sucesso em obter o token de autorização da conta logada.", %{conn: conn} do
+      query = """
+        query {
+            authorization(password: "#{@login_info.password}") {
+            token
+          }
+        }
+      """
+
+      res =
+        conn
+        |> post("/api/graphiql", %{query: query})
+        |> json_response(200)
+
+      %{"data" => %{"authorization" => %{"token" => token}}} = res
+      assert String.length(token) > 0
+
+    end
+
+    test "[Mutation GraphQL] createAccount: sucesso na criação de conta. ", %{conn: conn} do
       mutation = """
           mutation {
             createAccount(
@@ -44,7 +82,7 @@ defmodule ApiBnK.SchemaTest do
       assert %{"data" => %{"createAccount" => %{"code" => 201, "message" => _}}} = res
     end
 
-    test "[Mutation] updateAccount: sucesso na atualização de dados da conta.", %{conn: conn} do
+    test "[Mutation GraphQL] updateAccount: sucesso na atualização de dados da conta logada.", %{conn: conn} do
         new_email = "silvajoao@email.com"
 
         mutation = """
@@ -65,7 +103,7 @@ defmodule ApiBnK.SchemaTest do
         assert %{"data" => %{"updateAccount" => %{"accEmail" => new_email}}} = res
     end
 
-    test "[Query] balance: sucesso na consulta de saldo da conta.", %{conn: conn} do
+    test "[Query GraphQL] balance: sucesso na consulta de saldo da conta da conta logada.", %{conn: conn} do
       query = """
       query {
         balance
@@ -80,6 +118,7 @@ defmodule ApiBnK.SchemaTest do
       assert value == "1000"
 
     end
+
   end
 #
 #  describe "createUser" do
