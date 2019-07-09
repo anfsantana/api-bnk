@@ -5,18 +5,20 @@ defmodule ApiBnK.SchemaTest do
   describe "account" do
 
     @login_info %{agency: "0002", account: "456783", password: "123456789"}
-    @account_info %{email: "ric@email.com", name: "João", cpf: "31671727460",
-                    agency: "0002", account: "456783", password: "123456789",
-                    bank_code: "005"}
+    @account_info %{email: "ric@email.com", name: "João",
+                    cpf: "31671727460", bank_code: "005"}
     setup do
 
-      {:ok, _} = AccountsResolver.create(@account_info, nil)
-      {:ok, %{token: authe_token}} = AccountsResolver.login(@login_info, nil)
-      conn = Phoenix.ConnTest.build_conn()
-             |> Plug.Conn.put_req_header("content-type", "application/json")
-             |> Plug.Conn.put_req_header("authentication", "Bearer #{authe_token}")
+      with {:ok, _} <- AccountsResolver.create(Map.merge(@account_info, @login_info), nil),
+      {:ok, %{token: authe_token}} = AccountsResolver.login(@login_info, nil) do
+        conn = Phoenix.ConnTest.build_conn()
+               |> Plug.Conn.put_req_header("content-type", "application/json")
+               |> Plug.Conn.put_req_header("authentication", "Bearer #{authe_token}")
 
-      {:ok, %{conn: conn}}
+        {:ok, %{conn: conn}}
+      else
+        {:error, msg} -> {:error, msg}
+      end
     end
 
     test "[Query GraphQL] login: sucesso em efetuar o login/obter o token de autenticação.", %{conn: conn} do
@@ -54,6 +56,22 @@ defmodule ApiBnK.SchemaTest do
 
       %{"data" => %{"authorization" => %{"token" => token}}} = res
       assert String.length(token) > 0
+
+    end
+
+    test "[Query GraphQL] balance: sucesso na consulta de saldo da conta da conta logada.", %{conn: conn} do
+      query = """
+      query {
+        balance
+      }
+      """
+      res =
+        conn
+        |> post("/api/graphiql", %{query: query})
+        |> json_response(200)
+
+      %{"data" => %{"balance" => value}} = res
+      assert value == "1000"
 
     end
 
@@ -103,20 +121,77 @@ defmodule ApiBnK.SchemaTest do
         assert %{"data" => %{"updateAccount" => %{"accEmail" => new_email}}} = res
     end
 
-    test "[Query GraphQL] balance: sucesso na consulta de saldo da conta da conta logada.", %{conn: conn} do
-      query = """
-      query {
-        balance
+    test "[Mutation GraphQL] logout: sucesso ao efetuar logout.", %{conn: conn} do
+      mutation = """
+        mutation {
+          logout {
+            code
+            message
+          }
       }
       """
       res =
         conn
-        |> post("/api/graphiql", %{query: query})
+        |> post("/api/graphiql", %{query: mutation})
         |> json_response(200)
 
-      %{"data" => %{"balance" => value}} = res
-      assert value == "1000"
+      %{"data" => %{"logout" => %{"code" => code, "message" => _}}} = res
+      assert code == 200
 
+    end
+
+  end
+
+  describe "financial_transactions" do
+
+    @login_info %{agency: "0002", account: "456784", password: "323245"}
+
+    @login_info_authorization %{acc_agency: "0002", acc_account: "456784", acc_password: "323245"}
+
+    @account_origin_info %{email: "ric@email.com", name: "Ricardo", cpf: "31671727460",
+      bank_code: "005"}
+
+    @account_destination_info %{email: "jo@email.com", name: "João", cpf: "41671727460",
+      agency: "0002", account: "456785", password: "123456789",
+      bank_code: "005"}
+
+    setup do
+
+      with {:ok, _} <- AccountsResolver.create(Map.merge(@account_origin_info, @login_info), nil),
+      {:ok, _} <- AccountsResolver.create(@account_destination_info, nil),
+      {:ok, %{token: authe_token}} <- AccountsResolver.login(@login_info, nil),
+      {:ok, %{token: autho_token}} <- AccountsResolver.authorization(@login_info, %{context: %{current_user: @login_info_authorization}}) do
+        conn = Phoenix.ConnTest.build_conn()
+               |> Plug.Conn.put_req_header("content-type", "application/json")
+               |> Plug.Conn.put_req_header("authentication", "Bearer #{authe_token}")
+               |> Plug.Conn.put_req_header("authorization", "Bearer #{autho_token}")
+          {:ok, %{conn: conn}}
+      else
+        {:error, msg} -> {:error, msg}
+      end
+
+    end
+
+    test "[Mutation GraphQL] transferency: sucesso na transferência de valores. ", %{conn: conn} do
+      interpolation = fn(map) -> ("""
+          mutation {
+            transferency(account: "#{map.account}",
+                         agency: "#{map.agency}",
+                         bankCode: "#{map.bank_code}", value: 500.55){
+              message
+              code
+            }
+          }
+      """) end
+
+      mutation_transferency = interpolation.(@account_destination_info)
+
+      res =
+        conn
+        |> post("/api/graphiql", %{query: mutation_transferency})
+        |> json_response(200)
+
+        assert %{"data" => %{"transferency" => %{"code" => 200, "message" => _}}} = res
     end
 
   end

@@ -106,6 +106,7 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
            {:ok, _} <- origin_acc_diff_destiny_acc?(args, current_user),
            {:ok, _} <- args
                        |> add.(:description, "Transferência recebida")
+                       |> add.(:value, D.cast(args.value))
                        |> rename_keys()
                        |> FinancialTransactionsQuery.insert_financial_transaction_deposit(),
            {:ok, _} <- %{}
