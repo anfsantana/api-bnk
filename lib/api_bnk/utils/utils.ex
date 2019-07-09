@@ -4,7 +4,7 @@ defmodule ApiBnK.Utils.Utils do
   """
 
   @doc """
-  Adiciona um prefixo no nome do variável do tipo atomo.
+  Adiciona um prefixo no nome da variável de tipo atomo.
 
   ## Parâmetros
 
@@ -19,7 +19,7 @@ defmodule ApiBnK.Utils.Utils do
       iex> ApiBnK.Utils.Utils.add_prefix_on_atom(:last_name, "first_name_")
       :first_name_last_name
   """
-  @spec add_prefix_on_atom(Atom.t(), String.t()) :: Atom.t()
+  @spec add_prefix_on_atom(Atom.t, String.t) :: Atom.t
   def add_prefix_on_atom(atom, prefix) do
     atom
     |> Atom.to_string
@@ -29,7 +29,7 @@ defmodule ApiBnK.Utils.Utils do
 
 
   @doc """
-  Remove um prefixo no nome do variável do tipo atomo.
+  Remove um prefixo do nome da variável de tipo atomo.
 
   ## Parâmetros
 
@@ -44,7 +44,7 @@ defmodule ApiBnK.Utils.Utils do
       iex> ApiBnK.Utils.Utils.remove_prefix_on_atom(:first_name_last_name, "first_name_")
       :last_name
   """
-  @spec remove_prefix_on_atom(Atom.t(), String.t()) :: Atom.t()
+  @spec remove_prefix_on_atom(Atom.t, String.t) :: Atom.t
   def remove_prefix_on_atom(atom, prefix) do
     base = String.length(prefix)
     atom

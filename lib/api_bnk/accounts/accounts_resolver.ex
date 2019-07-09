@@ -1,10 +1,11 @@
 defmodule ApiBnK.Accounts.AccountsResolver do
+
+  import ApiBnK.AuthHelper
+
   alias ApiBnK.Accounts.AccountsQuery
-  alias ApiBnK.Utils.Utils
-  alias ApiBnK.Utils.StatusResponse
+  alias ApiBnK.Utils.{Utils, StatusResponse}
   alias ApiBnK.Financial.FinancialTransactionsResolver
   alias ApiBnK.Repo
-  import ApiBnK.AuthHelper
 
   # TODO Verificar funcionalidade
   def update(args, %{context: %{current_user: current_user}} = info) do

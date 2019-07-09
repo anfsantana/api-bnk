@@ -11,12 +11,12 @@ defmodule ApiBnK.AuthHelper do
     cond do
       acc && checkpw(given_pass, acc.acc_password_hash) ->
         {:ok, acc}
-
       acc ->
         {:error, "Incorrect login credentials"}
-
       true ->
         {:error, :"Account not found"}
     end
+
   end
+
 end

@@ -4,11 +4,9 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
   de negócio.
   """
 
-  alias ApiBnK.Financial.FinancialTransactionsQuery
-  alias ApiBnK.Financial.Functions.FinancialUtils
+  alias ApiBnK.Financial.{Functions.FinancialUtils, FinancialTransactionsQuery}
+  alias ApiBnK.Utils.{Utils, StatusResponse}
   alias ApiBnK.Accounts.AccountsResolver
-  alias ApiBnK.Utils.Utils
-  alias ApiBnK.Utils.StatusResponse
   alias ApiBnK.Repo
   alias Decimal, as: D
 

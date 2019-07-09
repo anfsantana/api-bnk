@@ -50,7 +50,9 @@ defmodule ApiBnK.Mixfile do
       {:bcrypt_elixir, "~> 1.0"},
       {:plug_cowboy, "~> 1.0"},
       {:jason, "~> 1.0"},
-      {:decimal, "~> 1.8"}
+      {:decimal, "~> 1.8"},
+      {:earmark, "~> 1.2", only: :dev},
+      {:ex_doc, "~> 0.19", only: :dev}
     ]
   end
 
