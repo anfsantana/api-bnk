@@ -6,6 +6,7 @@ defmodule ApiBnK.Accounts.AccountsResolver do
   alias ApiBnK.Utils.{Utils, StatusResponse}
   alias ApiBnK.Financial.FinancialTransactionsResolver
   alias ApiBnK.Repo
+  alias Decimal, as: D
 
   # TODO Verificar funcionalidade
   def update(args, %{context: %{current_user: current_user}} = info) do
@@ -53,7 +54,6 @@ defmodule ApiBnK.Accounts.AccountsResolver do
 
   def create(params, _info) do
     add = fn(map, key, value) -> Map.put(map, key, value) end
-
     Repo.transaction(fn ->
       with {:ok, params} <- params |> rename_keys()
                                    |> AccountsQuery.create_account(),
@@ -62,11 +62,11 @@ defmodule ApiBnK.Accounts.AccountsResolver do
                        |> add.(:agency, params.acc_agency)
                        |> add.(:bank_code, params.acc_bank_code)
                        |> add.(:description, "Cadastro completo!")
-                       |> add.(:value, 1000.00)
+                       |> add.(:value, D.cast(1000.00))
                        |> FinancialTransactionsResolver.deposit() do
         StatusResponse.get_status_response_by_key(:CREATED)
       else
-        {:error, msg} -> {:error, msg}
+         {:error, msg} -> {:error, StatusResponse.format_output(:UNPROCESSABLE_ENTITY, msg)}
       end
 
     end)
