@@ -11,6 +11,7 @@
       <change beforePath="$PROJECT_DIR$/lib/api_bnk/blog/post_resolver.ex" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/api_bnk/utils/status_response.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/utils/status_response.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/api_bnk/utils/utils.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/utils/utils.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api_bnk/web/schema/schema.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/web/schema/schema.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/priv/repo/seeds.exs" beforeDir="false" afterPath="$PROJECT_DIR$/priv/repo/seeds.exs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/api_bnk/blog/blog_test.exs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test/api_bnk/web/views/error_view_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/test/api_bnk/web/views/error_view_test.exs" afterDir="false" />
@@ -101,8 +102,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/api_bnk/web/schema/schema.ex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1460">
-              <caret line="73" column="23" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="23" />
+            <state relative-caret-position="140">
+              <caret line="94" column="47" selection-start-line="94" selection-start-column="47" selection-end-line="94" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -161,7 +162,6 @@
         <option value="$PROJECT_DIR$/lib/api_bnk/web/helpers/auth_helper.ex" />
         <option value="$PROJECT_DIR$/test/support/absinthe_helpers.ex" />
         <option value="$PROJECT_DIR$/test/api_bnk/utils/utils_test.exs" />
-        <option value="$PROJECT_DIR$/lib/api_bnk/web/schema/schema.ex" />
         <option value="$PROJECT_DIR$/lib/api_bnk/financial/financial_transactions_resolver.ex" />
         <option value="$PROJECT_DIR$/test/api_bnk/web/schema/schema_test.exs" />
         <option value="$PROJECT_DIR$/test/api_bnk/web/views/error_view_test.exs" />
@@ -171,6 +171,7 @@
         <option value="$PROJECT_DIR$/lib/api_bnk/accounts/accounts_query.ex" />
         <option value="$PROJECT_DIR$/priv/repo/seeds.exs" />
         <option value="$PROJECT_DIR$/lib/api_bnk/accounts/accounts_resolver.ex" />
+        <option value="$PROJECT_DIR$/lib/api_bnk/web/schema/schema.ex" />
       </list>
     </option>
   </component>
@@ -382,6 +383,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="28" width="1368" height="713" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1969697" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -559,9 +561,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api_bnk/blog/blog.ex">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/api_bnk/blog/blog.ex" />
     <entry file="file://$PROJECT_DIR$/test/api_bnk/financial/functions/financial_utils_test.exs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -593,13 +593,7 @@
         <state relative-caret-position="-241" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/api_bnk/blog/blog_test.exs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="59" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test/api_bnk/blog/blog_test.exs" />
     <entry file="file://$PROJECT_DIR$/test/api_bnk/web/controllers/post_controller_test.exs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-600" />
@@ -732,8 +726,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/api_bnk/web/schema/schema.ex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1460">
-          <caret line="73" column="23" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="23" />
+        <state relative-caret-position="140">
+          <caret line="94" column="47" selection-start-line="94" selection-start-column="47" selection-end-line="94" selection-end-column="47" />
         </state>
       </provider>
     </entry>

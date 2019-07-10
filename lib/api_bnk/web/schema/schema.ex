@@ -10,7 +10,11 @@ defmodule ApiBnK.Web.Schema do
 
   query do
 
-    field(:balance, type: :float, description: "Query para obter o saldo da conta logada.")  do
+    @desc """
+    Query para obter o saldo da conta logada. É necessário possuir o
+    token de autenticação
+    """
+    field(:balance, type: :float)  do
       resolve(&FinancialTransactionsResolver.balance/2)
     end
 
@@ -22,13 +26,19 @@ defmodule ApiBnK.Web.Schema do
       resolve(&AccountsResolver.login/2)
     end
 
-    field(:authorization, type: :autho_session, description: "Query para obter o token de autorização para efetuar cada transação") do
+    @desc """
+    Query para obter o token de autorização para efetuar cada transação
+    """
+    field(:authorization, type: :autho_session) do
       arg(:password, non_null(:string), description: "Senha da conta logada.")
       resolve(&AccountsResolver.authorization/2)
 
     end
 
-    field(:report_back_office, type: :report_back_office, description: "Query para emitir relatório de back office.") do
+    @desc """
+    Query para emitir relatório de back office.
+    """
+    field(:report_back_office, type: :report_back_office) do
       resolve(&FinancialTransactionsResolver.report_back_office/2)
 
     end
@@ -49,7 +59,10 @@ defmodule ApiBnK.Web.Schema do
         resolve(&AccountsResolver.create/2)
       end
 
-      field(:update_account, type: :accounts, description: "Mutation para atualizar a conta") do
+      @desc """
+      Mutation para atualizar a conta. É necessário possuir o token de autenticação.
+      """
+      field(:update_account, type: :accounts) do
         arg(:name, non_null(:string), description: "Nome do titular da conta")
         arg(:email, non_null(:string), description: "E-mail do titular da conta")
 
@@ -61,7 +74,11 @@ defmodule ApiBnK.Web.Schema do
         resolve(&AccountsResolver.logout/2)
       end
 
-      field(:transferency, type: :status_response, description: "Mutation para efetuar transferência") do
+      @desc """
+      Mutation para efetuar transferência. É necessário possuir o token de autenticação e autorização.
+      Para cada operação de transferência, é necessário gerar um novo token de autorização.
+      """
+      field(:transferency, type: :status_response) do
         arg(:agency, non_null(:string), description: "Agência da conta de destino")
         arg(:account, non_null(:string), description: "Conta de destino")
         arg(:bank_code, non_null(:string), description: "Código do banco da conta de destino")
@@ -71,7 +88,11 @@ defmodule ApiBnK.Web.Schema do
 
       end
 
-      field(:withdrawal, type: :status_response, description: "Mutation para efetuar saque") do
+      @desc """
+      Mutation para efetuar saque. É necessário possuir o token de autenticação e autorização.
+      Para cada operação de saque, é necessário gerar um novo token de autorização.
+      """
+      field(:withdrawal, type: :status_response) do
         arg(:value, non_null(:float), description: "Valor para sacar")
         resolve(&FinancialTransactionsResolver.withdrawal/2)
 
