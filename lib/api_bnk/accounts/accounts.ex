@@ -44,21 +44,25 @@ defmodule ApiBnK.Accounts.Accounts do
     |> unique_constraint(:acc_email, downcase: true)
   end
 
+  @doc false
   def store_token_changeset(%Account{} = acc, attrs) do
     acc
     |> cast(attrs, [:acc_token])
   end
 
+  @doc false
   def store_autho_token_changeset(%Account{} = acc, attrs) do
     acc
     |> cast(attrs, [:acc_autho_token])
   end
 
+  @doc false
   def store_all_token_changeset(%Account{} = acc, attrs) do
     acc
     |> cast(attrs, [:acc_token, :acc_autho_token])
   end
 
+  @doc false
   defp put_password_hash(changeset) do
     case changeset do
       %Ecto.Changeset{valid?: true, changes: %{acc_password: pass}} ->

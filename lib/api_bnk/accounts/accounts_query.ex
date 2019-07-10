@@ -1,6 +1,6 @@
 defmodule ApiBnK.Accounts.AccountsQuery do
   @moduledoc """
-  The boundary for the Accounts system.
+  Módulo que efetua operações diretamente com banco
   """
 
   import Ecto.Query, warn: false
@@ -9,29 +9,16 @@ defmodule ApiBnK.Accounts.AccountsQuery do
   alias ApiBnK.Accounts.Accounts, as: Account
 
   @doc """
-  Returns the list of users.
+  Obter uma única conta.
 
-  ## Examples
+  Devolve `Ecto.NoResultsError` se a conta não existir.
 
-      iex> list_users()
-      [%User{}, ...]
+  ## Exemplos
 
-  """
-  def list_users do
-    Repo.all(Account)
-  end
+      iex> get_account!(123)
+      %Account{}
 
-  @doc """
-  Gets a single user.
-
-  Raises `Ecto.NoResultsError` if the User does not exist.
-
-  ## Examples
-
-      iex> get_user!(123)
-      %User{}
-
-      iex> get_user!(456)
+      iex> get_account!(456)
       ** (Ecto.NoResultsError)
 
   """
@@ -40,14 +27,14 @@ defmodule ApiBnK.Accounts.AccountsQuery do
   def get_account_by_agency_account(agency, account), do: Repo.one(from(a in Account, where: a.acc_agency == ^agency and a.acc_account == ^account))
 
   @doc """
-  Creates a user.
+  Cria uma conta
 
-  ## Examples
+  ## Exemplos
 
-      iex> create_user(%{field: value})
+      iex> create_account(%{field: value})
       {:ok, %User{}}
 
-      iex> create_user(%{field: bad_value})
+      iex> create_account(%{field: bad_value})
       {:error, %Ecto.Changeset{}}
 
   """
@@ -76,52 +63,60 @@ defmodule ApiBnK.Accounts.AccountsQuery do
   end
 
   @doc """
-  Deletes a User.
+  Armazena o token de autenticação na conta
 
-  ## Examples
+  ## Exemplos
 
-      iex> delete_user(user)
-      {:ok, %User{}}
-
-      iex> delete_user(user)
-      {:error, %Ecto.Changeset{}}
+      iex> store_token(acc, token)
+      {:ok, %Account{}}
 
   """
-  def delete_user(%Account{} = acc) do
-    Repo.delete(acc)
-  end
-
-  @doc """
-  Returns an `%Ecto.Changeset{}` for tracking user changes.
-
-  ## Examples
-
-      iex> change_user(user)
-      %Ecto.Changeset{source: %User{}}
-
-  """
-  def change_user(%Account{} = acc) do
-    Account.changeset(acc, %{})
-  end
-
   def store_token(%Account{} = acc, token) do
     acc
     |> Account.store_token_changeset(%{acc_token: token})
     |> Repo.update()
   end
 
+
+  @doc """
+  Remove todos os tokens (autenticação e autorização) associados na conta
+
+  ## Exemplos
+
+      iex> revoke_all_token(acc, token, autho_token)
+      {:ok, %Account{}}
+
+  """
   def revoke_all_token(%Account{} = acc, token, autho_token) do
     acc
     |> Account.store_all_token_changeset(%{acc_token: token, acc_autho_token: autho_token})
     |> Repo.update()
   end
 
+  @doc """
+  Armazena o token de autenticação na conta
+
+  ## Exemplos
+
+      iex> store_autho_token(acc, autho_token)
+      {:ok, %Account{}}
+
+  """
   def store_autho_token(%Account{} = acc, token) do
     acc
     |> Account.store_autho_token_changeset(%{acc_autho_token: token})
     |> Repo.update()
   end
 
+  @doc """
+  Remove o token de autenticação associado na conta
+
+  ## Exemplos
+
+      iex> revoke_autho_token(acc, token)
+      {:ok, %Account{}}
+
+  """
   def revoke_autho_token(%Account{} = acc, token) do
     acc
     |> Account.store_autho_token_changeset(%{acc_autho_token: token})

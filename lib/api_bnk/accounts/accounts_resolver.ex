@@ -1,5 +1,8 @@
 defmodule ApiBnK.Accounts.AccountsResolver do
-
+  @moduledoc """
+  Módulo que gerência funções que implementam as regras
+  de negócio de conta (account).
+  """
   import ApiBnK.AuthHelper
 
   alias ApiBnK.Accounts.AccountsQuery
@@ -8,7 +11,17 @@ defmodule ApiBnK.Accounts.AccountsResolver do
   alias ApiBnK.Repo
   alias Decimal, as: D
 
-  # TODO Verificar funcionalidade
+  @doc """
+  Atualiza a conta
+
+  ## Parâmetros
+
+    - args: Argumentos que serão modificados
+    - %{context: %{current_user: current_user}} = info: Pattern Matching que indica
+    que para usar esse método, é necessário ter as informações referentes a conta logada.
+
+  """
+  @spec update(map(), map()) :: {atom, any}
   def update(args, %{context: %{current_user: current_user}} = info) do
     case find(%{agency: current_user.acc_agency, account: current_user.acc_account}, info) do
       {:ok, acc} -> AccountsQuery.update_account(acc, rename_keys(args))
@@ -16,6 +29,8 @@ defmodule ApiBnK.Accounts.AccountsResolver do
     end
 
   end
+
+  @doc false
   def update(_args, _info) do
     {:error, "Restrict area"}
   end
@@ -31,6 +46,7 @@ defmodule ApiBnK.Accounts.AccountsResolver do
     {:error, "Restrict area"}
   end
 
+  @spec login(map(), none()) :: {atom, %{token: String.t}}
   def login(%{agency: agency, account: account, password: password}, _info) do
     with {:ok, user} <- login_with_agency_account_pass(agency, account, password),
          {:ok, jwt, _} <- ApiBnK.Guardian.encode_and_sign(user) ,
@@ -40,6 +56,7 @@ defmodule ApiBnK.Accounts.AccountsResolver do
 
   end
 
+  @spec authorization(map(), map()) :: {atom, %{token: String.t}}
   def authorization(%{password: password}, %{context: %{current_user: current_user}} = _info) do
     with {:ok, user} <- login_with_agency_account_pass(current_user.acc_agency, current_user.acc_account, password),
          {:ok, jwt, _} <- ApiBnK.Guardian.encode_and_sign(user) ,
@@ -48,10 +65,12 @@ defmodule ApiBnK.Accounts.AccountsResolver do
     end
 
   end
+  @doc false
   def authorization(_args, _info) do
     {:error, "Por favor, efetue o login."}
   end
 
+  @spec create(map(), none()) :: {atom, String.t}
   def create(params, _info) do
     add = fn(map, key, value) -> Map.put(map, key, value) end
     Repo.transaction(fn ->
@@ -73,6 +92,7 @@ defmodule ApiBnK.Accounts.AccountsResolver do
 
   end
 
+  @spec logout(none(), map()) :: {atom, String.t}
   def logout(_args,  %{context: %{current_user: current_user, token: _token}}) do
     case AccountsQuery.revoke_all_token(current_user, nil, nil) do
       {:ok, _} -> {:ok, StatusResponse.get_status_response_by_key(:OK)}
@@ -80,10 +100,12 @@ defmodule ApiBnK.Accounts.AccountsResolver do
     end
 
   end
+  @doc false
   def logout(_args, _info) do
     {:error, "Por favor, efetue o login"}
   end
 
+  @spec revoke(none(), map()) :: {atom, any}
   def revoke(_args,  %{context: %{current_user: current_user, token: _token}}) do
     case AccountsQuery.revoke_autho_token(current_user, nil) do
       {:ok, _} -> {:ok, StatusResponse.get_status_response_by_key(:OK)}
@@ -95,10 +117,6 @@ defmodule ApiBnK.Accounts.AccountsResolver do
   # TODO - Função para adicionar o prefixo no nome das colunas
   defp rename_keys(map) do
     for {key, val} <- map, into: %{}, do: {Utils.add_prefix_on_atom(key, "acc_"), val}
-  end
-
-  defp remove_prefix_keys(map) do
-    for {key, val} <- map, into: %{}, do: {Utils.remove_prefix_on_atom(key, "acc_"), val}
   end
 
 end
