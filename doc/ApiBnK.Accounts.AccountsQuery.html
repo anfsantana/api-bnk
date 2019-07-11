@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.20.2">
+    <meta name="project" content="api_bnk v0.0.1">
+    <title>ApiBnK.Accounts.AccountsQuery — api_bnk v0.0.1</title>
+    <link rel="stylesheet" href="dist/html-d9f58a6320b5bfa6dd77.css" />
+    <script src="dist/sidebar_items-d9fb46c5da.js"></script>
+      <script src="docs_config.js"></script>
+    <script async src="dist/html-d9f58a6320b5bfa6dd77.js"></script>
+    
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
+    <div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="api-reference.html" class="sidebar-projectName">
+api_bnk      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.0.1
+      </h2>
+    </div>
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+      <h1>
+        <small class="app-vsn">api_bnk v0.0.1</small>
+ApiBnK.Accounts.AccountsQuery              </h1>
+
+
+        <section id="moduledoc">
+<p>Módulo que efetua operações diretamente com banco</p>
+        </section>
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_account/1">create_account(attrs \\ %{})</a>
+  </div>
+    <div class="summary-synopsis"><p>Cria uma conta</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_account!/1">get_account!(id)</a>
+  </div>
+    <div class="summary-synopsis"><p>Obter uma única conta.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_account_by_agency_account/2">get_account_by_agency_account(agency, account)</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#revoke_all_token/3">revoke_all_token(acc, token, autho_token)</a>
+  </div>
+    <div class="summary-synopsis"><p>Remove todos os tokens (autenticação e autorização) associados na conta</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#revoke_autho_token/2">revoke_autho_token(acc, token)</a>
+  </div>
+    <div class="summary-synopsis"><p>Remove o token de autenticação associado na conta</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#store_autho_token/2">store_autho_token(acc, token)</a>
+  </div>
+    <div class="summary-synopsis"><p>Armazena o token de autenticação na conta</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#store_token/2">store_token(acc, token)</a>
+  </div>
+    <div class="summary-synopsis"><p>Armazena o token de autenticação na conta</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_account/2">update_account(acc, attrs)</a>
+  </div>
+    <div class="summary-synopsis"><p>Atualiza uma conta</p></div>
+</div>
+  </div>
+        </section>
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions          </h1>
+          <div class="functions-list">
+<section class="detail" id="create_account/1">
+  
+    <span id="create_account/0"></span>
+  <div class="detail-header">
+    <a href="#create_account/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_account(attrs \\ %{})</span>
+          </div>
+  <section class="docstring">
+<p>Cria uma conta</p>
+<h2 id="create_account/1-exemplos" class="section-heading">
+  <a href="#create_account/1-exemplos" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Exemplos
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">create_account</span><span class="p" data-group-id="2968690826-1">(</span><span class="p" data-group-id="2968690826-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">value</span><span class="p" data-group-id="2968690826-2">}</span><span class="p" data-group-id="2968690826-1">)</span><span class="w">
+</span><span class="p" data-group-id="2968690826-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2968690826-4">%</span><span class="nc" data-group-id="2968690826-4">User</span><span class="p" data-group-id="2968690826-4">{</span><span class="p" data-group-id="2968690826-4">}</span><span class="p" data-group-id="2968690826-3">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">create_account</span><span class="p" data-group-id="2968690826-5">(</span><span class="p" data-group-id="2968690826-6">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">bad_value</span><span class="p" data-group-id="2968690826-6">}</span><span class="p" data-group-id="2968690826-5">)</span><span class="w">
+</span><span class="p" data-group-id="2968690826-7">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2968690826-8">%</span><span class="nc" data-group-id="2968690826-8">Ecto.Changeset</span><span class="p" data-group-id="2968690826-8">{</span><span class="p" data-group-id="2968690826-8">}</span><span class="p" data-group-id="2968690826-7">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="get_account!/1">
+    <div class="detail-header">
+    <a href="#get_account!/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_account!(id)</span>
+          </div>
+  <section class="docstring">
+<p>Obter uma única conta.</p>
+<p>Devolve <a href="https://hexdocs.pm/ecto/2.2.12/Ecto.NoResultsError.html"><code class="inline">Ecto.NoResultsError</code></a> se a conta não existir.</p>
+<h2 id="get_account!/1-exemplos" class="section-heading">
+  <a href="#get_account!/1-exemplos" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Exemplos
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">get_account!</span><span class="p" data-group-id="1027813101-1">(</span><span class="mi">123</span><span class="p" data-group-id="1027813101-1">)</span><span class="w">
+</span><span class="p" data-group-id="1027813101-2">%</span><span class="nc" data-group-id="1027813101-2">Account</span><span class="p" data-group-id="1027813101-2">{</span><span class="p" data-group-id="1027813101-2">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">get_account!</span><span class="p" data-group-id="1027813101-3">(</span><span class="mi">456</span><span class="p" data-group-id="1027813101-3">)</span><span class="w">
+</span><span class="gt">** (Ecto.NoResultsError)</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="get_account_by_agency_account/2">
+    <div class="detail-header">
+    <a href="#get_account_by_agency_account/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_account_by_agency_account(agency, account)</span>
+          </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="revoke_all_token/3">
+    <div class="detail-header">
+    <a href="#revoke_all_token/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">revoke_all_token(acc, token, autho_token)</span>
+          </div>
+  <section class="docstring">
+<p>Remove todos os tokens (autenticação e autorização) associados na conta</p>
+<h2 id="revoke_all_token/3-exemplos" class="section-heading">
+  <a href="#revoke_all_token/3-exemplos" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Exemplos
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">revoke_all_token</span><span class="p" data-group-id="2170936370-1">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">,</span><span class="w"> </span><span class="n">autho_token</span><span class="p" data-group-id="2170936370-1">)</span><span class="w">
+</span><span class="p" data-group-id="2170936370-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2170936370-3">%</span><span class="nc" data-group-id="2170936370-3">Account</span><span class="p" data-group-id="2170936370-3">{</span><span class="p" data-group-id="2170936370-3">}</span><span class="p" data-group-id="2170936370-2">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="revoke_autho_token/2">
+    <div class="detail-header">
+    <a href="#revoke_autho_token/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">revoke_autho_token(acc, token)</span>
+          </div>
+  <section class="docstring">
+<p>Remove o token de autenticação associado na conta</p>
+<h2 id="revoke_autho_token/2-exemplos" class="section-heading">
+  <a href="#revoke_autho_token/2-exemplos" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Exemplos
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">revoke_autho_token</span><span class="p" data-group-id="6393204913-1">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p" data-group-id="6393204913-1">)</span><span class="w">
+</span><span class="p" data-group-id="6393204913-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6393204913-3">%</span><span class="nc" data-group-id="6393204913-3">Account</span><span class="p" data-group-id="6393204913-3">{</span><span class="p" data-group-id="6393204913-3">}</span><span class="p" data-group-id="6393204913-2">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="store_autho_token/2">
+    <div class="detail-header">
+    <a href="#store_autho_token/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">store_autho_token(acc, token)</span>
+          </div>
+  <section class="docstring">
+<p>Armazena o token de autenticação na conta</p>
+<h2 id="store_autho_token/2-exemplos" class="section-heading">
+  <a href="#store_autho_token/2-exemplos" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Exemplos
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">store_autho_token</span><span class="p" data-group-id="6655962142-1">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="n">autho_token</span><span class="p" data-group-id="6655962142-1">)</span><span class="w">
+</span><span class="p" data-group-id="6655962142-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6655962142-3">%</span><span class="nc" data-group-id="6655962142-3">Account</span><span class="p" data-group-id="6655962142-3">{</span><span class="p" data-group-id="6655962142-3">}</span><span class="p" data-group-id="6655962142-2">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="store_token/2">
+    <div class="detail-header">
+    <a href="#store_token/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">store_token(acc, token)</span>
+          </div>
+  <section class="docstring">
+<p>Armazena o token de autenticação na conta</p>
+<h2 id="store_token/2-exemplos" class="section-heading">
+  <a href="#store_token/2-exemplos" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Exemplos
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">store_token</span><span class="p" data-group-id="4743038003-1">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p" data-group-id="4743038003-1">)</span><span class="w">
+</span><span class="p" data-group-id="4743038003-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4743038003-3">%</span><span class="nc" data-group-id="4743038003-3">Account</span><span class="p" data-group-id="4743038003-3">{</span><span class="p" data-group-id="4743038003-3">}</span><span class="p" data-group-id="4743038003-2">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="update_account/2">
+    <div class="detail-header">
+    <a href="#update_account/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_account(acc, attrs)</span>
+          </div>
+  <section class="docstring">
+<p>Atualiza uma conta</p>
+<h2 id="update_account/2-exemplos" class="section-heading">
+  <a href="#update_account/2-exemplos" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Exemplos
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">update_account</span><span class="p" data-group-id="4790352285-1">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4790352285-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">new_value</span><span class="p" data-group-id="4790352285-2">}</span><span class="p" data-group-id="4790352285-1">)</span><span class="w">
+</span><span class="p" data-group-id="4790352285-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4790352285-4">%</span><span class="nc" data-group-id="4790352285-4">Account</span><span class="p" data-group-id="4790352285-4">{</span><span class="p" data-group-id="4790352285-4">}</span><span class="p" data-group-id="4790352285-3">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">update_account</span><span class="p" data-group-id="4790352285-5">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4790352285-6">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">bad_value</span><span class="p" data-group-id="4790352285-6">}</span><span class="p" data-group-id="4790352285-5">)</span><span class="w">
+</span><span class="p" data-group-id="4790352285-7">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4790352285-8">%</span><span class="nc" data-group-id="4790352285-8">Ecto.Changeset</span><span class="p" data-group-id="4790352285-8">{</span><span class="p" data-group-id="4790352285-8">}</span><span class="p" data-group-id="4790352285-7">}</span></code></pre>
+  </section>
+</section>
+          </div>
+        </section>
+          <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.20.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  
+  </body>
+</html>
+

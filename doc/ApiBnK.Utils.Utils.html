@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.20.2">
+    <meta name="project" content="api_bnk v0.0.1">
+    <title>ApiBnK.Utils.Utils — api_bnk v0.0.1</title>
+    <link rel="stylesheet" href="dist/html-d9f58a6320b5bfa6dd77.css" />
+    <script src="dist/sidebar_items-d9fb46c5da.js"></script>
+      <script src="docs_config.js"></script>
+    <script async src="dist/html-d9f58a6320b5bfa6dd77.js"></script>
+    
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
+    <div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="api-reference.html" class="sidebar-projectName">
+api_bnk      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.0.1
+      </h2>
+    </div>
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+      <h1>
+        <small class="app-vsn">api_bnk v0.0.1</small>
+ApiBnK.Utils.Utils              </h1>
+
+
+        <section id="moduledoc">
+<p>Módulo que contém funções utilitárias</p>
+        </section>
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#add_prefix_on_atom/2">add_prefix_on_atom(atom, prefix)</a>
+  </div>
+    <div class="summary-synopsis"><p>Adiciona um prefixo no nome da variável de tipo atomo.</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#remove_prefix_on_atom/2">remove_prefix_on_atom(atom, prefix)</a>
+  </div>
+    <div class="summary-synopsis"><p>Remove um prefixo do nome da variável de tipo atomo.</p></div>
+</div>
+  </div>
+        </section>
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions          </h1>
+          <div class="functions-list">
+<section class="detail" id="add_prefix_on_atom/2">
+    <div class="detail-header">
+    <a href="#add_prefix_on_atom/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">add_prefix_on_atom(atom, prefix)</span>
+        
+      <div class="specs">
+          <pre>add_prefix_on_atom(<a href="https://hexdocs.pm/elixir/Atom.html#t:t/0">Atom.t</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) :: <a href="https://hexdocs.pm/elixir/Atom.html#t:t/0">Atom.t</a>()</pre>
+      </div>
+  </div>
+  <section class="docstring">
+<p>Adiciona um prefixo no nome da variável de tipo atomo.</p>
+<h2 id="add_prefix_on_atom/2-parâmetros" class="section-heading">
+  <a href="#add_prefix_on_atom/2-parâmetros" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parâmetros
+</h2>
+
+<ul>
+<li>atom: Variável do tipo átomo em que o prefixo será adicionado.
+</li>
+<li>prefix: Prefixo que será adicionado na variável informada.
+</li>
+</ul>
+<h2 id="add_prefix_on_atom/2-exemplos" class="section-heading">
+  <a href="#add_prefix_on_atom/2-exemplos" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Exemplos
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">ApiBnK.Utils.Utils</span><span class="o">.</span><span class="n">add_prefix_on_atom</span><span class="p" data-group-id="5041749061-1">(</span><span class="ss">:last</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;first_&quot;</span><span class="p" data-group-id="5041749061-1">)</span><span class="w">
+</span><span class="ss">:first_last</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">ApiBnK.Utils.Utils</span><span class="o">.</span><span class="n">add_prefix_on_atom</span><span class="p" data-group-id="5041749061-2">(</span><span class="ss">:last_name</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;first_name_&quot;</span><span class="p" data-group-id="5041749061-2">)</span><span class="w">
+</span><span class="ss">:first_name_last_name</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="remove_prefix_on_atom/2">
+    <div class="detail-header">
+    <a href="#remove_prefix_on_atom/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">remove_prefix_on_atom(atom, prefix)</span>
+        
+      <div class="specs">
+          <pre>remove_prefix_on_atom(<a href="https://hexdocs.pm/elixir/Atom.html#t:t/0">Atom.t</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) :: <a href="https://hexdocs.pm/elixir/Atom.html#t:t/0">Atom.t</a>()</pre>
+      </div>
+  </div>
+  <section class="docstring">
+<p>Remove um prefixo do nome da variável de tipo atomo.</p>
+<h2 id="remove_prefix_on_atom/2-parâmetros" class="section-heading">
+  <a href="#remove_prefix_on_atom/2-parâmetros" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parâmetros
+</h2>
+
+<ul>
+<li>atom: Variável do tipo átomo em que o prefixo será removido.
+</li>
+<li>prefix: Prefixo que será removido na variável informada.
+</li>
+</ul>
+<h2 id="remove_prefix_on_atom/2-exemplos" class="section-heading">
+  <a href="#remove_prefix_on_atom/2-exemplos" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Exemplos
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">ApiBnK.Utils.Utils</span><span class="o">.</span><span class="n">remove_prefix_on_atom</span><span class="p" data-group-id="0123495362-1">(</span><span class="ss">:first_last</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;first_&quot;</span><span class="p" data-group-id="0123495362-1">)</span><span class="w">
+</span><span class="ss">:last</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">ApiBnK.Utils.Utils</span><span class="o">.</span><span class="n">remove_prefix_on_atom</span><span class="p" data-group-id="0123495362-2">(</span><span class="ss">:first_name_last_name</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;first_name_&quot;</span><span class="p" data-group-id="0123495362-2">)</span><span class="w">
+</span><span class="ss">:last_name</span></code></pre>
+  </section>
+</section>
+          </div>
+        </section>
+          <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.20.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  
+  </body>
+</html>
+

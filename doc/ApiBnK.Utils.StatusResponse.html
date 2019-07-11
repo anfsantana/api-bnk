@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.20.2">
+    <meta name="project" content="api_bnk v0.0.1">
+    <title>ApiBnK.Utils.StatusResponse — api_bnk v0.0.1</title>
+    <link rel="stylesheet" href="dist/html-d9f58a6320b5bfa6dd77.css" />
+    <script src="dist/sidebar_items-d9fb46c5da.js"></script>
+      <script src="docs_config.js"></script>
+    <script async src="dist/html-d9f58a6320b5bfa6dd77.js"></script>
+    
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
+    <div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="api-reference.html" class="sidebar-projectName">
+api_bnk      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.0.1
+      </h2>
+    </div>
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+      <h1>
+        <small class="app-vsn">api_bnk v0.0.1</small>
+ApiBnK.Utils.StatusResponse              </h1>
+
+
+        <section id="moduledoc">
+<p>Módulo que contém a definição dos códigos de resposta</p>
+        </section>
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+  <div class="summary-types summary">
+    <h2>
+      <a href="#types">Types</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#t:status_response/0">status_response()</a>
+  </div>
+</div>
+  </div>
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#format_output/2">format_output(key, message)</a>
+  </div>
+    <div class="summary-synopsis"><p>Obtém o map %{code message} de código de resposta com a nova mensagem informada</p></div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_status_response_by_key/1">get_status_response_by_key(key)</a>
+  </div>
+    <div class="summary-synopsis"><p>Obtém o map %{code message} de código de resposta de sua descrição</p></div>
+</div>
+  </div>
+        </section>
+
+        <section id="types" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#types">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Types          </h1>
+          <div class="types-list">
+<section class="detail" id="t:status_response/0">
+    <div class="detail-header">
+    <a href="#t:status_response/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature">status_response()</span>
+        
+      <div class="specs">
+          <pre>status_response() :: %{code: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), message: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()}</pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+          </div>
+        </section>
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions          </h1>
+          <div class="functions-list">
+<section class="detail" id="format_output/2">
+    <div class="detail-header">
+    <a href="#format_output/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">format_output(key, message)</span>
+        
+      <div class="specs">
+          <pre>format_output(<a href="https://hexdocs.pm/elixir/Atom.html#t:t/0">Atom.t</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()) :: <a href="#t:status_response/0">status_response</a>()</pre>
+      </div>
+  </div>
+  <section class="docstring">
+<p>Obtém o map %{code message} de código de resposta com a nova mensagem informada</p>
+<h2 id="format_output/2-parâmetros" class="section-heading">
+  <a href="#format_output/2-parâmetros" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parâmetros
+</h2>
+
+<ul>
+<li>key: Chave do map que contêm os códigos de resposta
+</li>
+<li>message: Nova mensagem do código de resposta
+</li>
+</ul>
+<h2 id="format_output/2-exemplos" class="section-heading">
+  <a href="#format_output/2-exemplos" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Exemplos
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">ApiBnK.Utils.StatusResponse</span><span class="o">.</span><span class="n">format_output</span><span class="p" data-group-id="7361130527-1">(</span><span class="ss">:OK</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Nova mensagem&quot;</span><span class="p" data-group-id="7361130527-1">)</span><span class="w">
+</span><span class="p" data-group-id="7361130527-2">%{</span><span class="w"> </span><span class="ss">code</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="ss">message</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Nova mensagem&quot;</span><span class="w"> </span><span class="p" data-group-id="7361130527-2">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">ApiBnK.Utils.StatusResponse</span><span class="o">.</span><span class="n">format_output</span><span class="p" data-group-id="7361130527-3">(</span><span class="ss">:UNPROCESSABLE_ENTITY</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Mensagem nova&quot;</span><span class="p" data-group-id="7361130527-3">)</span><span class="w">
+</span><span class="p" data-group-id="7361130527-4">%{</span><span class="w"> </span><span class="ss">code</span><span class="p">:</span><span class="w"> </span><span class="mi">422</span><span class="p">,</span><span class="w"> </span><span class="ss">message</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Mensagem nova&quot;</span><span class="p" data-group-id="7361130527-4">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="get_status_response_by_key/1">
+    <div class="detail-header">
+    <a href="#get_status_response_by_key/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_status_response_by_key(key)</span>
+        
+      <div class="specs">
+          <pre>get_status_response_by_key(<a href="https://hexdocs.pm/elixir/Atom.html#t:t/0">Atom.t</a>()) :: <a href="#t:status_response/0">status_response</a>()</pre>
+      </div>
+  </div>
+  <section class="docstring">
+<p>Obtém o map %{code message} de código de resposta de sua descrição</p>
+<h2 id="get_status_response_by_key/1-parâmetros" class="section-heading">
+  <a href="#get_status_response_by_key/1-parâmetros" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parâmetros
+</h2>
+
+<ul>
+<li>key: Chave de tipo atomo do map que contêm os códigos de resposta com as descrições
+</li>
+</ul>
+<h2 id="get_status_response_by_key/1-exemplos" class="section-heading">
+  <a href="#get_status_response_by_key/1-exemplos" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Exemplos
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">ApiBnK.Utils.StatusResponse</span><span class="o">.</span><span class="n">get_status_response_by_key</span><span class="p" data-group-id="4558106958-1">(</span><span class="ss">:OK</span><span class="p" data-group-id="4558106958-1">)</span><span class="w">
+</span><span class="p" data-group-id="4558106958-2">%{</span><span class="w"> </span><span class="ss">code</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="ss">message</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;OK&quot;</span><span class="w"> </span><span class="p" data-group-id="4558106958-2">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">ApiBnK.Utils.StatusResponse</span><span class="o">.</span><span class="n">get_status_response_by_key</span><span class="p" data-group-id="4558106958-3">(</span><span class="ss">:UNPROCESSABLE_ENTITY</span><span class="p" data-group-id="4558106958-3">)</span><span class="w">
+</span><span class="p" data-group-id="4558106958-4">%{</span><span class="w"> </span><span class="ss">code</span><span class="p">:</span><span class="w"> </span><span class="mi">422</span><span class="p">,</span><span class="w"> </span><span class="ss">message</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Unprocessable Entity&quot;</span><span class="p" data-group-id="4558106958-4">}</span></code></pre>
+  </section>
+</section>
+          </div>
+        </section>
+          <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.20.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  
+  </body>
+</html>
+

@@ -3,8 +3,8 @@
 # Extend from the official Elixir image
 FROM elixir:latest
 
-RUN apt-get update && \
-  apt-get install -y postgresql-client
+# RUN apt-get update && \
+#  apt-get install -y postgresql-client
 
 # Create app directory and copy the Elixir projects into it
 RUN mkdir /app
@@ -17,11 +17,13 @@ RUN mix local.hex --force
 
 RUN mix local.rebar --force
 
+RUN mix deps.get
+
+RUN mix deps.compile
+
 # Compile the project
 RUN mix do compile
 
-RUN mix deps.get
+# RUN  mix ecto.create && mix ecto.migrate
 
-RUN  mix ecto.create && mix ecto.migrate
-
-RUN mix phx.server
+# RUN mix phx.server
