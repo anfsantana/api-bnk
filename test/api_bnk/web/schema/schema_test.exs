@@ -1,4 +1,7 @@
 defmodule ApiBnK.SchemaTest do
+  @moduledoc """
+  Módulo responsável por efetuar os testes das chamadas GraphQL no módulo Schema.
+  """
   use ApiBnK.Support.ConnCase, async: true
   alias ApiBnK.Accounts.AccountsResolver
 
@@ -207,6 +210,32 @@ defmodule ApiBnK.SchemaTest do
         |> json_response(200)
 
       assert %{"data" => %{"withdrawal" => %{"code" => 200, "message" => _}}} = res
+    end
+
+
+    test "[Query GraphQL] reportBackOffice: sucesso na consulta do relatório back office.", %{conn: conn} do
+      query = """
+      query {
+        reportBackOffice {
+          totalDay
+          totalYear
+          totalMonth
+        }
+      }
+      """
+      res =
+        conn
+        |> post("/api/graphiql", %{query: query})
+        |> json_response(200)
+
+      %{"data" =>
+                %{"reportBackOffice" =>
+                                      %{"totalDay" => total_day,
+                                        "totalYear" => total_year,
+                                        "totalMonth" => total_month}}} = res
+      # Duas contas foram criadas nos testes, portanto R$ 1000 de cada conta
+      assert {"2000", "2000", "2000"} == {total_day, total_month, total_year}
+
     end
 
   end

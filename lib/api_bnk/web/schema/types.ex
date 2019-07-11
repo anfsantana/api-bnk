@@ -1,4 +1,7 @@
 defmodule ApiBnK.Web.Schema.Types do
+  @moduledoc """
+  Módulo que contêm os tipos utilizados nos mutations e/ou queries GraphQL
+  """
 
   use Absinthe.Schema.Notation
   use Absinthe.Ecto, repo: ApiBnK.Repo

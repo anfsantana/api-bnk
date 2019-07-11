@@ -1,6 +1,6 @@
 defmodule ApiBnK.Financial.FinancialTransactionsQuery do
   @moduledoc """
-  The boundary for the Accounts system.
+  Módulo que efetua operações diretamente com banco
   """
 
   import Ecto.Query, warn: false
@@ -9,33 +9,6 @@ defmodule ApiBnK.Financial.FinancialTransactionsQuery do
   alias ApiBnK.Financial.FinancialTransactions, as: FinancialTransaction
   alias Decimal, as: D
 
-  @doc """
-  Returns the list of users.
-
-  ## Examples
-
-      iex> list_users()
-      [%User{}, ...]
-
-  """
-  def list_users do
-    Repo.all(FinancialTransaction)
-  end
-
-  @doc """
-  Gets a single user.
-
-  Raises `Ecto.NoResultsError` if the User does not exist.
-
-  ## Examples
-
-      iex> get_user!(123)
-      %User{}
-
-      iex> get_user!(456)
-      ** (Ecto.NoResultsError)
-
-  """
   def get_financial_transaction!(id), do: Repo.get!(FinancialTransaction, id)
 
   def get_financial_transactions_by_agency_account(agency, account), do: Repo.all(from(t in FinancialTransaction, where: t.fint_agency == ^agency and t.fint_account == ^account))
@@ -57,18 +30,6 @@ defmodule ApiBnK.Financial.FinancialTransactionsQuery do
         result -> result
     end
   end
-  @doc """
-  Creates a user.
-
-  ## Examples
-
-      iex> create_user(%{field: value})
-      {:ok, %User{}}
-
-      iex> create_user(%{field: bad_value})
-      {:error, %Ecto.Changeset{}}
-
-  """
 
   def insert_financial_transaction_deposit(attrs \\ %{}) do
       %FinancialTransaction{}

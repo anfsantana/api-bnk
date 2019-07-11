@@ -1,4 +1,6 @@
 defmodule ApiBnK.Guardian do
+	@moduledoc false
+
 	use Guardian, otp_app: :api_bnk
 	alias ApiBnK.Accounts.AccountsQuery
 

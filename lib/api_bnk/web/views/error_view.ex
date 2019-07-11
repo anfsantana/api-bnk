@@ -1,4 +1,6 @@
 defmodule ApiBnK.Web.ErrorView do
+  @moduledoc false
+
   use ApiBnK.Web, :view
 
   def render("404.json", _assigns) do

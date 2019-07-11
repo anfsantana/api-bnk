@@ -1,4 +1,4 @@
-defmodule ApiBnK.UtilsTest do
+defmodule ApiBnK.Utils.UtilsTest do
   use ApiBnK.DataCase
   use ExUnit.Case
 

@@ -1,4 +1,6 @@
 defmodule ApiBnK.Web.PostView do
+  @moduledoc false
+
   use ApiBnK.Web, :view
   alias ApiBnK.Web.PostView
 

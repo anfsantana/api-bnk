@@ -1,4 +1,8 @@
 defmodule ApiBnK.Web.Schema do
+  @moduledoc """
+  Módulo que contêm os mutations e queries GraphQL
+  """
+
   use Absinthe.Schema
 
   import_types ApiBnK.Web.Schema.Types

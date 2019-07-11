@@ -1,4 +1,6 @@
 defmodule ApiBnK.Web.Endpoint do
+  @moduledoc false
+
   use Phoenix.Endpoint, otp_app: :api_bnk
 
   socket("/socket", ApiBnK.Web.UserSocket)

@@ -1,4 +1,6 @@
 defmodule ApiBnK.Web.UserView do
+  @moduledoc false
+
   use ApiBnK.Web, :view
   alias ApiBnK.Web.UserView
 

@@ -1,4 +1,6 @@
 defmodule ApiBnK.Web.Router do
+  @moduledoc false
+
   use ApiBnK.Web, :router
 
   pipeline :graphql do

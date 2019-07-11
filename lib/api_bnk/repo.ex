@@ -1,4 +1,6 @@
 defmodule ApiBnK.Repo do
+  @moduledoc false
+
   use Ecto.Repo, otp_app: :api_bnk
 
   @doc """

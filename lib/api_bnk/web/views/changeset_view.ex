@@ -1,4 +1,6 @@
 defmodule ApiBnK.Web.ChangesetView do
+  @moduledoc false
+
   use ApiBnK.Web, :view
 
   @doc """

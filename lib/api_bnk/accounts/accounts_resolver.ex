@@ -46,6 +46,16 @@ defmodule ApiBnK.Accounts.AccountsResolver do
     {:error, "Restrict area"}
   end
 
+  @doc """
+  Executa as operações necessárias para efetuar login
+
+  ## Parâmetros
+
+    - %{agency: agency, account: account, password: password}: Map com valores necessários para efetuar login
+
+  ## Retorno
+    - Token de autenticação
+  """
   @spec login(map(), none()) :: {atom, %{token: String.t}}
   def login(%{agency: agency, account: account, password: password}, _info) do
     with {:ok, user} <- login_with_agency_account_pass(agency, account, password),
@@ -56,6 +66,16 @@ defmodule ApiBnK.Accounts.AccountsResolver do
 
   end
 
+  @doc """
+  Obtém token de autorização
+
+  ## Parâmetros
+
+    - %{password: password}: Senha da conta logada
+    - %{context: %{current_user: current_user}} = info: Pattern Matching que indica
+    que para usar esse método, é necessário ter as informações referentes a conta logada.
+
+  """
   @spec authorization(map(), map()) :: {atom, %{token: String.t}}
   def authorization(%{password: password}, %{context: %{current_user: current_user}} = _info) do
     with {:ok, user} <- login_with_agency_account_pass(current_user.acc_agency, current_user.acc_account, password),
@@ -70,6 +90,15 @@ defmodule ApiBnK.Accounts.AccountsResolver do
     {:error, "Por favor, efetue o login."}
   end
 
+  @doc """
+  Cria uma conta
+  Ao criar uma conta, é creditado R$ 1000,00 nela.
+
+  ## Parâmetros
+
+    - params: Map com as informações necessárias para criação da conta
+
+  """
   @spec create(map(), none()) :: {atom, String.t}
   def create(params, _info) do
     add = fn(map, key, value) -> Map.put(map, key, value) end
@@ -92,6 +121,16 @@ defmodule ApiBnK.Accounts.AccountsResolver do
 
   end
 
+  @doc """
+  Efetua logout da conta
+
+  ## Parâmetros
+
+    - _args: Não utilizado
+    - %{context: %{current_user: current_user}} = info: Pattern Matching que indica
+    que para usar esse método, é necessário ter as informações referentes a conta logada.
+
+  """
   @spec logout(none(), map()) :: {atom, String.t}
   def logout(_args,  %{context: %{current_user: current_user, token: _token}}) do
     case AccountsQuery.revoke_all_token(current_user, nil, nil) do
