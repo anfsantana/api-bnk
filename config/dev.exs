@@ -39,8 +39,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :api_bnk, ApiBnK.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  hostname: "localhost",
-  database: "api_bnk_dev",
-  pool_size: 10
+  username: System.get_env("PGUSER") || "postgres",
+  password: System.get_env("PGPASSWORD") || "postgres",
+  hostname: System.get_env("PGHOST") || "localhost",
+  database: System.get_env("PGDATABASE") || "api_bnk_dev",
+  pool_size: System.get_env("PGPOOL") || 10

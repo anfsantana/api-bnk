@@ -1,46 +1,16 @@
-# Version of docker-compose
 version: '3'
 
 services:
-  phoenix:
+  apibnk:
     image: apibnk
     command: >
             bash -c "mix ecto.create &&
-                    mix ecto.migrate && mix test && mix phx.server"
-    environment:
-      PGUSER: postgres
-      PGPASSWORD: postgres
-      PGDATABASE: api_bnk_dev
-      PGPORT: 5432
-      # Hostname of our Postgres container
-      PGHOST: db
+                    mix ecto.migrate && mix phx.server"
     ports:
       - "4000:4000"
     depends_on:
-      - db
-    networks:
-      - aplication
+      - postgres_db
 
-  db:
-    # We use the predefined Postgres image
+  postgres_db:
     image: postgres:9.6-alpine
-    environment:
-      # Set user/password for Postgres
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      # Set a path where Postgres should store the data
-      PGDATA: /var/lib/postgresql/data/pgdata
     restart: always
-    ports:
-      - "5432:5000"
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-    networks:
-      - aplication
-
-# Define the volumes
-volumes:
-  pgdata:
-
-networks:
-  aplication:

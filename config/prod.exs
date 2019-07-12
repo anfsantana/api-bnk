@@ -58,7 +58,10 @@ config :logger, level: :info
 #
 #     config :api_bnk, ApiBnK.Web.Endpoint, server: true
 #
-
+config :api_bnk, ApiBnK.Repo,
+       url: System.get_env("DATABASE_URL"),
+       pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
+       ssl: true
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
 import_config "prod.secret.exs"

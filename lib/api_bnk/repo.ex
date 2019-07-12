@@ -8,13 +8,6 @@ defmodule ApiBnK.Repo do
   DATABASE_URL environment variable.
   """
   def init(_, opts) do
-    opts = opts
-             |> Keyword.put(:username, System.get_env("PGUSER") || "postgres")
-             |> Keyword.put(:password, System.get_env("PGPASSWORD") || "postgres")
-             |> Keyword.put(:database, System.get_env("PGDATABASE") || "api_bnk_dev")
-             |> Keyword.put(:hostname, System.get_env("PGHOST") || "localhost")
-             |> Keyword.put(:port, System.get_env("PGPORT") || "5000")
-             |> Keyword.put(:url, System.get_env("DATABASE_URL"))
-    {:ok, opts}
+    {:ok, Keyword.put(opts, :url, System.get_env("DATABASE_URL"))}
   end
 end
