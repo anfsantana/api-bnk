@@ -1,7 +1,7 @@
 defmodule ApiBnK.Accounts.AccountsResolver do
   @moduledoc """
-  Módulo que gerência funções que implementam as regras
-  de negócio de conta (account).
+  Módulo que contêm funções que implementam as regras
+  de negócio de conta antes de serem persistidas no banco de dados.
   """
   import ApiBnK.AuthHelper
 
@@ -12,7 +12,7 @@ defmodule ApiBnK.Accounts.AccountsResolver do
   alias Decimal, as: D
 
   @doc """
-  Atualiza a conta
+  Função que atualiza a conta
 
   ## Parâmetros
 
@@ -47,7 +47,7 @@ defmodule ApiBnK.Accounts.AccountsResolver do
   end
 
   @doc """
-  Executa as operações necessárias para efetuar login
+  Função que executa as operações necessárias para efetuar login
 
   ## Parâmetros
 
@@ -67,7 +67,7 @@ defmodule ApiBnK.Accounts.AccountsResolver do
   end
 
   @doc """
-  Obtém token de autorização
+  Função que obtém um token de autorização
 
   ## Parâmetros
 
@@ -91,7 +91,7 @@ defmodule ApiBnK.Accounts.AccountsResolver do
   end
 
   @doc """
-  Cria uma conta
+  Função que cria uma conta
   Ao criar uma conta, é creditado R$ 1000,00 nela.
 
   ## Parâmetros
@@ -122,7 +122,7 @@ defmodule ApiBnK.Accounts.AccountsResolver do
   end
 
   @doc """
-  Efetua logout da conta
+  Função que efetua logout da conta
 
   ## Parâmetros
 
@@ -145,7 +145,7 @@ defmodule ApiBnK.Accounts.AccountsResolver do
   end
 
   @doc """
-  Remove o token de autorização
+  Função que remove o token de autorização
 
   ## Parâmetros
 
@@ -163,7 +163,7 @@ defmodule ApiBnK.Accounts.AccountsResolver do
 
   end
 
-  # TODO - Função para adicionar o prefixo no nome das colunas
+  # Função para adicionar o prefixo no nome das colunas
   defp rename_keys(map) do
     for {key, val} <- map, into: %{}, do: {Utils.add_prefix_on_atom(key, "acc_"), val}
   end

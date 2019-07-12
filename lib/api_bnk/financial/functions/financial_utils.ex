@@ -6,7 +6,7 @@ defmodule ApiBnK.Financial.Functions.FinancialUtils do
   alias Decimal, as: D
 
   @doc """
-  Verifica se existe saldo
+  Função que verifica se existe saldo
 
   ## Parâmetros
 

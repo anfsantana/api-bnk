@@ -15,7 +15,7 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
   @type account_logged_with_autho_token :: %{context: %{current_user: map(), token: String.t, autho_token: String.t}}
 
   @doc """
-  Gera o relatório back office por dia (atual), mês (atual) e ano (atual)
+  Função que retorna o relatório back office sumarizado por dia (atual), mês (atual) e ano (atual)
   """
   @spec report_back_office(none(), none()) :: {atom, %{total_day: Decimal.t(), total_month: Decimal.t() , total_year: Decimal.t()}}
   def report_back_office(_args, _info) do
@@ -69,7 +69,7 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
   end
 
   @doc """
-  Exibe o saldo atual da conta logada
+  Função que retorna o saldo atual da conta logada
   """
   @spec balance(none(), account_logged) :: Decimal.t
   def balance(_args, %{context: %{current_user: current_user}}) do
@@ -103,7 +103,7 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
   end
 
   @doc """
-  Efetua a transferência entre contas. Para essa acção, é necessário possuir o
+  Função que efetua a transferência entre contas. Para essa ação, é necessário possuir o
   token de autenticação e autorização. Após a operação ser executada, o token de autorização é
   consumido; portanto, será necessário solicitar um novo token.
   """
@@ -151,7 +151,7 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
   end
 
   @doc """
-  Efetua saque.
+  Função que efetua o saque.
   Para essa ação, é necessário possuir o  token de autenticação e autorização.
   Após a operação ser executada, o token de autorização é consumido; portanto,
   será necessário solicitar um novo token.
@@ -201,7 +201,7 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
     |> FinancialTransactionsQuery.insert_financial_transaction_deposit()
   end
 
-  # TODO - Função para adicionar o prefixo no nome das colunas
+  # Função para adicionar o prefixo no nome das colunas
   @doc false
   defp rename_keys(map) do
     for {key, val} <- map, into: %{}, do: {Utils.add_prefix_on_atom(key, "fint_"), val}

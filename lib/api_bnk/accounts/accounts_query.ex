@@ -1,6 +1,6 @@
 defmodule ApiBnK.Accounts.AccountsQuery do
   @moduledoc """
-  Módulo que efetua operações diretamente com banco
+  Módulo que efetua operações diretamente com o banco de dados
   """
 
   import Ecto.Query, warn: false
@@ -9,7 +9,7 @@ defmodule ApiBnK.Accounts.AccountsQuery do
   alias ApiBnK.Accounts.Accounts, as: Account
 
   @doc """
-  Obter uma única conta.
+  Função que obtém uma única conta.
 
   Devolve `Ecto.NoResultsError` se a conta não existir.
 
@@ -28,7 +28,7 @@ defmodule ApiBnK.Accounts.AccountsQuery do
   def get_account_by_agency_account(agency, account), do: Repo.one(from(a in Account, where: a.acc_agency == ^agency and a.acc_account == ^account))
 
   @doc """
-  Cria uma conta
+  Função que cria uma conta
 
   ## Exemplos
 
@@ -46,7 +46,7 @@ defmodule ApiBnK.Accounts.AccountsQuery do
   end
 
   @doc """
-  Atualiza uma conta
+  Função que atualiza uma conta
 
   ## Exemplos
 
@@ -64,7 +64,7 @@ defmodule ApiBnK.Accounts.AccountsQuery do
   end
 
   @doc """
-  Armazena o token de autenticação na conta
+  Função que armazena o token de autenticação na conta
 
   ## Exemplos
 

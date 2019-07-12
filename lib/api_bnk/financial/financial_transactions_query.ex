@@ -1,6 +1,7 @@
 defmodule ApiBnK.Financial.FinancialTransactionsQuery do
   @moduledoc """
-  Módulo que efetua operações diretamente com banco
+  Módulo que contêm funções que efetuam operações diretamente
+  com o banco de dados
   """
 
   import Ecto.Query, warn: false
