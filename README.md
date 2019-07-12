@@ -17,7 +17,7 @@
        * Crie e migre seu banco de dados com `mix ecto.create && mix ecto.migrate`;
        * Incie o endpoint do serviço com `mix phx.server`.
     
-    2.2. Para utilizar **docker**:
+3. Para utilizar **docker**:
     1. Execute o comando: `docker build --tag apibnk .`
     2. Execute o comando: `docker-compose up`
 

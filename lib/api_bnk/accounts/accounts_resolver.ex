@@ -144,6 +144,16 @@ defmodule ApiBnK.Accounts.AccountsResolver do
     {:error, "Por favor, efetue o login"}
   end
 
+  @doc """
+  Remove o token de autorização
+
+  ## Parâmetros
+
+    - _args: Não utilizado
+    - %{context: %{current_user: current_user}} = info: Pattern Matching que indica
+    que para usar esse método, é necessário ter as informações referentes a conta logada.
+
+  """
   @spec revoke(none(), map()) :: {atom, any}
   def revoke(_args,  %{context: %{current_user: current_user, token: _token}}) do
     case AccountsQuery.revoke_autho_token(current_user, nil) do

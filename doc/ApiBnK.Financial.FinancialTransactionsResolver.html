@@ -8,7 +8,7 @@
     <meta name="project" content="api_bnk v0.0.1">
     <title>ApiBnK.Financial.FinancialTransactionsResolver — api_bnk v0.0.1</title>
     <link rel="stylesheet" href="dist/html-d9f58a6320b5bfa6dd77.css" />
-    <script src="dist/sidebar_items-d9fb46c5da.js"></script>
+    <script src="dist/sidebar_items-c97297b344.js"></script>
       <script src="docs_config.js"></script>
     <script async src="dist/html-d9f58a6320b5bfa6dd77.js"></script>
     
@@ -83,39 +83,113 @@ de negócio.</p>
             </a>
             Summary
           </h1>
+  <div class="summary-types summary">
+    <h2>
+      <a href="#types">Types</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#t:account/0">account()</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#t:account_logged/0">account_logged()</a>
+  </div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#t:account_logged_with_autho_token/0">account_logged_with_autho_token()</a>
+  </div>
+</div>
+  </div>
   <div class="summary-functions summary">
     <h2>
       <a href="#functions">Functions</a>
     </h2>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#balance/2">balance(args, arg2)</a>
-  </div>
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
-    <a href="#deposit/1">deposit(args)</a>
-  </div>
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
     <a href="#report_back_office/2">report_back_office(args, info)</a>
   </div>
-    <div class="summary-synopsis"><p>Gera o relatório back office</p></div>
+    <div class="summary-synopsis"><p>Gera o relatório back office por dia (atual), mês (atual) e ano (atual)</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#transfer/2">transfer(args, ctx)</a>
   </div>
+    <div class="summary-synopsis"><p>Efetua a transferência entre contas. Para essa acção, é necessário possuir o
+token de autenticação e autorização. Após a operação ser executada, o token de autorização é
+consumido; portanto, será necessário solicitar um novo token.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#withdrawal/2">withdrawal(args, ctx)</a>
   </div>
+    <div class="summary-synopsis"><p>Efetua saque.
+Para essa ação, é necessário possuir o  token de autenticação e autorização.
+Após a operação ser executada, o token de autorização é consumido; portanto,
+será necessário solicitar um novo token.</p></div>
 </div>
   </div>
         </section>
 
+        <section id="types" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#types">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Types          </h1>
+          <div class="types-list">
+<section class="detail" id="t:account/0">
+    <div class="detail-header">
+    <a href="#t:account/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature">account()</span>
+        
+      <div class="specs">
+          <pre>account() :: %{account: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), agency: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), bank_code: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()}</pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="t:account_logged/0">
+    <div class="detail-header">
+    <a href="#t:account_logged/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature">account_logged()</span>
+        
+      <div class="specs">
+          <pre>account_logged() :: %{context: %{current_user: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()}}</pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+<section class="detail" id="t:account_logged_with_autho_token/0">
+    <div class="detail-header">
+    <a href="#t:account_logged_with_autho_token/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature">account_logged_with_autho_token()</span>
+        
+      <div class="specs">
+          <pre>account_logged_with_autho_token() :: %{
+  context: %{current_user: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>(), token: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), autho_token: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()}
+}</pre>
+      </div>
+  </div>
+  <section class="docstring">
+  </section>
+</section>
+          </div>
+        </section>
         <section id="functions" class="details-list">
           <h1 class="section-heading">
             <a class="hover-link" href="#functions">
@@ -124,28 +198,6 @@ de negócio.</p>
             </a>
 Functions          </h1>
           <div class="functions-list">
-<section class="detail" id="balance/2">
-    <div class="detail-header">
-    <a href="#balance/2" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature">balance(args, arg2)</span>
-          </div>
-  <section class="docstring">
-  </section>
-</section>
-<section class="detail" id="deposit/1">
-    <div class="detail-header">
-    <a href="#deposit/1" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature">deposit(args)</span>
-          </div>
-  <section class="docstring">
-  </section>
-</section>
 <section class="detail" id="report_back_office/2">
     <div class="detail-header">
     <a href="#report_back_office/2" class="detail-link" title="Link to this function">
@@ -153,18 +205,15 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">report_back_office(args, info)</span>
-          </div>
+        
+      <div class="specs">
+          <pre>report_back_office(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">none</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">none</a>()) ::
+  {<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">atom</a>(),
+   %{total_day: <a href="https://hexdocs.pm/decimal/1.8.0/Decimal.html#t:t/0">Decimal.t</a>(), total_month: <a href="https://hexdocs.pm/decimal/1.8.0/Decimal.html#t:t/0">Decimal.t</a>(), total_year: <a href="https://hexdocs.pm/decimal/1.8.0/Decimal.html#t:t/0">Decimal.t</a>()}}</pre>
+      </div>
+  </div>
   <section class="docstring">
-<p>Gera o relatório back office</p>
-<h2 id="report_back_office/2-parameters" class="section-heading">
-  <a href="#report_back_office/2-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
-  Parameters
-</h2>
-
-<ul>
-<li>name: String that represents the name of the person.
-</li>
-</ul>
+<p>Gera o relatório back office por dia (atual), mês (atual) e ano (atual)</p>
   </section>
 </section>
 <section class="detail" id="transfer/2">
@@ -174,8 +223,16 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">transfer(args, ctx)</span>
-          </div>
+        
+      <div class="specs">
+          <pre>transfer(<a href="#t:account/0">account</a>(), <a href="#t:account_logged_with_autho_token/0">account_logged_with_autho_token</a>()) :: {<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">atom</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()}</pre>
+          <pre>transfer(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">none</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">none</a>()) :: {<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">atom</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()}</pre>
+      </div>
+  </div>
   <section class="docstring">
+<p>Efetua a transferência entre contas. Para essa acção, é necessário possuir o
+token de autenticação e autorização. Após a operação ser executada, o token de autorização é
+consumido; portanto, será necessário solicitar um novo token.</p>
   </section>
 </section>
 <section class="detail" id="withdrawal/2">
@@ -185,8 +242,17 @@ Functions          </h1>
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature">withdrawal(args, ctx)</span>
-          </div>
+        
+      <div class="specs">
+          <pre>withdrawal(<a href="#t:account/0">account</a>(), <a href="#t:account_logged_with_autho_token/0">account_logged_with_autho_token</a>()) :: {<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">atom</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()}</pre>
+          <pre>withdrawal(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">none</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">none</a>()) :: {<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">atom</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()}</pre>
+      </div>
+  </div>
   <section class="docstring">
+<p>Efetua saque.
+Para essa ação, é necessário possuir o  token de autenticação e autorização.
+Após a operação ser executada, o token de autorização é consumido; portanto,
+será necessário solicitar um novo token.</p>
   </section>
 </section>
           </div>

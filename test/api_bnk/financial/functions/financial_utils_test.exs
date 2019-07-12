@@ -5,15 +5,17 @@ defmodule ApiBnK.Financial.Functions.FinancialUtilsTest do
   """
   use ApiBnK.DataCase
 
+  doctest ApiBnK.Financial.Functions.FinancialUtils
+
   alias ApiBnK.Financial.Functions.FinancialUtils, as: Utils
 
   describe "financial_utils" do
 
-    test "have_balance/2 returns :ok with balance" do
+    test "have_balance/2 : sucesso retorna uma tupla com :ok e o saldo" do
       assert {:ok, 30.55} == Utils.have_balance?(30.55, 30.00)
     end
 
-    test "value_greater_than_zero/1 returns :ok with value" do
+    test "value_greater_than_zero/1 : sucesso retorna uma tupla com :ok e o valor informado" do
       assert {:ok, 20} == Utils.value_greater_than_zero?(20)
     end
 

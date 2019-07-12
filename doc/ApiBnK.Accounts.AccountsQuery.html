@@ -8,7 +8,7 @@
     <meta name="project" content="api_bnk v0.0.1">
     <title>ApiBnK.Accounts.AccountsQuery — api_bnk v0.0.1</title>
     <link rel="stylesheet" href="dist/html-d9f58a6320b5bfa6dd77.css" />
-    <script src="dist/sidebar_items-d9fb46c5da.js"></script>
+    <script src="dist/sidebar_items-c97297b344.js"></script>
       <script src="docs_config.js"></script>
     <script async src="dist/html-d9f58a6320b5bfa6dd77.js"></script>
     
@@ -100,26 +100,21 @@ ApiBnK.Accounts.AccountsQuery              </h1>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#get_account_by_agency_account/2">get_account_by_agency_account(agency, account)</a>
-  </div>
-</div>
-<div class="summary-row">
-  <div class="summary-signature">
     <a href="#revoke_all_token/3">revoke_all_token(acc, token, autho_token)</a>
   </div>
-    <div class="summary-synopsis"><p>Remove todos os tokens (autenticação e autorização) associados na conta</p></div>
+    <div class="summary-synopsis"><p>Remove todos os tokens (autenticação e autorização) associados da conta</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#revoke_autho_token/2">revoke_autho_token(acc, token)</a>
   </div>
-    <div class="summary-synopsis"><p>Remove o token de autenticação associado na conta</p></div>
+    <div class="summary-synopsis"><p>Remove o token de autenticação associado da conta</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#store_autho_token/2">store_autho_token(acc, token)</a>
   </div>
-    <div class="summary-synopsis"><p>Armazena o token de autenticação na conta</p></div>
+    <div class="summary-synopsis"><p>Armazena o token de autorização na conta</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
@@ -161,11 +156,11 @@ Functions          </h1>
   Exemplos
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">create_account</span><span class="p" data-group-id="2968690826-1">(</span><span class="p" data-group-id="2968690826-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">value</span><span class="p" data-group-id="2968690826-2">}</span><span class="p" data-group-id="2968690826-1">)</span><span class="w">
-</span><span class="p" data-group-id="2968690826-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2968690826-4">%</span><span class="nc" data-group-id="2968690826-4">User</span><span class="p" data-group-id="2968690826-4">{</span><span class="p" data-group-id="2968690826-4">}</span><span class="p" data-group-id="2968690826-3">}</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">create_account</span><span class="p" data-group-id="1152729242-1">(</span><span class="p" data-group-id="1152729242-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">value</span><span class="p" data-group-id="1152729242-2">}</span><span class="p" data-group-id="1152729242-1">)</span><span class="w">
+</span><span class="p" data-group-id="1152729242-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1152729242-4">%</span><span class="nc" data-group-id="1152729242-4">User</span><span class="p" data-group-id="1152729242-4">{</span><span class="p" data-group-id="1152729242-4">}</span><span class="p" data-group-id="1152729242-3">}</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="n">create_account</span><span class="p" data-group-id="2968690826-5">(</span><span class="p" data-group-id="2968690826-6">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">bad_value</span><span class="p" data-group-id="2968690826-6">}</span><span class="p" data-group-id="2968690826-5">)</span><span class="w">
-</span><span class="p" data-group-id="2968690826-7">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2968690826-8">%</span><span class="nc" data-group-id="2968690826-8">Ecto.Changeset</span><span class="p" data-group-id="2968690826-8">{</span><span class="p" data-group-id="2968690826-8">}</span><span class="p" data-group-id="2968690826-7">}</span></code></pre>
+</span><span class="gp unselectable">iex&gt; </span><span class="n">create_account</span><span class="p" data-group-id="1152729242-5">(</span><span class="p" data-group-id="1152729242-6">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">bad_value</span><span class="p" data-group-id="1152729242-6">}</span><span class="p" data-group-id="1152729242-5">)</span><span class="w">
+</span><span class="p" data-group-id="1152729242-7">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1152729242-8">%</span><span class="nc" data-group-id="1152729242-8">Ecto.Changeset</span><span class="p" data-group-id="1152729242-8">{</span><span class="p" data-group-id="1152729242-8">}</span><span class="p" data-group-id="1152729242-7">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="get_account!/1">
@@ -184,22 +179,11 @@ Functions          </h1>
   Exemplos
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">get_account!</span><span class="p" data-group-id="1027813101-1">(</span><span class="mi">123</span><span class="p" data-group-id="1027813101-1">)</span><span class="w">
-</span><span class="p" data-group-id="1027813101-2">%</span><span class="nc" data-group-id="1027813101-2">Account</span><span class="p" data-group-id="1027813101-2">{</span><span class="p" data-group-id="1027813101-2">}</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">get_account!</span><span class="p" data-group-id="6933337796-1">(</span><span class="mi">123</span><span class="p" data-group-id="6933337796-1">)</span><span class="w">
+</span><span class="p" data-group-id="6933337796-2">%</span><span class="nc" data-group-id="6933337796-2">Account</span><span class="p" data-group-id="6933337796-2">{</span><span class="p" data-group-id="6933337796-2">}</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="n">get_account!</span><span class="p" data-group-id="1027813101-3">(</span><span class="mi">456</span><span class="p" data-group-id="1027813101-3">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">get_account!</span><span class="p" data-group-id="6933337796-3">(</span><span class="mi">456</span><span class="p" data-group-id="6933337796-3">)</span><span class="w">
 </span><span class="gt">** (Ecto.NoResultsError)</span></code></pre>
-  </section>
-</section>
-<section class="detail" id="get_account_by_agency_account/2">
-    <div class="detail-header">
-    <a href="#get_account_by_agency_account/2" class="detail-link" title="Link to this function">
-      <span class="icon-link" aria-hidden="true"></span>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature">get_account_by_agency_account(agency, account)</span>
-          </div>
-  <section class="docstring">
   </section>
 </section>
 <section class="detail" id="revoke_all_token/3">
@@ -211,14 +195,14 @@ Functions          </h1>
     <h1 class="signature">revoke_all_token(acc, token, autho_token)</span>
           </div>
   <section class="docstring">
-<p>Remove todos os tokens (autenticação e autorização) associados na conta</p>
+<p>Remove todos os tokens (autenticação e autorização) associados da conta</p>
 <h2 id="revoke_all_token/3-exemplos" class="section-heading">
   <a href="#revoke_all_token/3-exemplos" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
   Exemplos
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">revoke_all_token</span><span class="p" data-group-id="2170936370-1">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">,</span><span class="w"> </span><span class="n">autho_token</span><span class="p" data-group-id="2170936370-1">)</span><span class="w">
-</span><span class="p" data-group-id="2170936370-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2170936370-3">%</span><span class="nc" data-group-id="2170936370-3">Account</span><span class="p" data-group-id="2170936370-3">{</span><span class="p" data-group-id="2170936370-3">}</span><span class="p" data-group-id="2170936370-2">}</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">revoke_all_token</span><span class="p" data-group-id="1535191766-1">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">,</span><span class="w"> </span><span class="n">autho_token</span><span class="p" data-group-id="1535191766-1">)</span><span class="w">
+</span><span class="p" data-group-id="1535191766-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1535191766-3">%</span><span class="nc" data-group-id="1535191766-3">Account</span><span class="p" data-group-id="1535191766-3">{</span><span class="p" data-group-id="1535191766-3">}</span><span class="p" data-group-id="1535191766-2">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="revoke_autho_token/2">
@@ -230,14 +214,14 @@ Functions          </h1>
     <h1 class="signature">revoke_autho_token(acc, token)</span>
           </div>
   <section class="docstring">
-<p>Remove o token de autenticação associado na conta</p>
+<p>Remove o token de autenticação associado da conta</p>
 <h2 id="revoke_autho_token/2-exemplos" class="section-heading">
   <a href="#revoke_autho_token/2-exemplos" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
   Exemplos
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">revoke_autho_token</span><span class="p" data-group-id="6393204913-1">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p" data-group-id="6393204913-1">)</span><span class="w">
-</span><span class="p" data-group-id="6393204913-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6393204913-3">%</span><span class="nc" data-group-id="6393204913-3">Account</span><span class="p" data-group-id="6393204913-3">{</span><span class="p" data-group-id="6393204913-3">}</span><span class="p" data-group-id="6393204913-2">}</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">revoke_autho_token</span><span class="p" data-group-id="8192113191-1">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p" data-group-id="8192113191-1">)</span><span class="w">
+</span><span class="p" data-group-id="8192113191-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8192113191-3">%</span><span class="nc" data-group-id="8192113191-3">Account</span><span class="p" data-group-id="8192113191-3">{</span><span class="p" data-group-id="8192113191-3">}</span><span class="p" data-group-id="8192113191-2">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="store_autho_token/2">
@@ -249,14 +233,14 @@ Functions          </h1>
     <h1 class="signature">store_autho_token(acc, token)</span>
           </div>
   <section class="docstring">
-<p>Armazena o token de autenticação na conta</p>
+<p>Armazena o token de autorização na conta</p>
 <h2 id="store_autho_token/2-exemplos" class="section-heading">
   <a href="#store_autho_token/2-exemplos" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
   Exemplos
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">store_autho_token</span><span class="p" data-group-id="6655962142-1">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="n">autho_token</span><span class="p" data-group-id="6655962142-1">)</span><span class="w">
-</span><span class="p" data-group-id="6655962142-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6655962142-3">%</span><span class="nc" data-group-id="6655962142-3">Account</span><span class="p" data-group-id="6655962142-3">{</span><span class="p" data-group-id="6655962142-3">}</span><span class="p" data-group-id="6655962142-2">}</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">store_autho_token</span><span class="p" data-group-id="3533247815-1">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="n">autho_token</span><span class="p" data-group-id="3533247815-1">)</span><span class="w">
+</span><span class="p" data-group-id="3533247815-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3533247815-3">%</span><span class="nc" data-group-id="3533247815-3">Account</span><span class="p" data-group-id="3533247815-3">{</span><span class="p" data-group-id="3533247815-3">}</span><span class="p" data-group-id="3533247815-2">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="store_token/2">
@@ -274,8 +258,8 @@ Functions          </h1>
   Exemplos
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">store_token</span><span class="p" data-group-id="4743038003-1">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p" data-group-id="4743038003-1">)</span><span class="w">
-</span><span class="p" data-group-id="4743038003-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4743038003-3">%</span><span class="nc" data-group-id="4743038003-3">Account</span><span class="p" data-group-id="4743038003-3">{</span><span class="p" data-group-id="4743038003-3">}</span><span class="p" data-group-id="4743038003-2">}</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">store_token</span><span class="p" data-group-id="7195378836-1">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p" data-group-id="7195378836-1">)</span><span class="w">
+</span><span class="p" data-group-id="7195378836-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7195378836-3">%</span><span class="nc" data-group-id="7195378836-3">Account</span><span class="p" data-group-id="7195378836-3">{</span><span class="p" data-group-id="7195378836-3">}</span><span class="p" data-group-id="7195378836-2">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="update_account/2">
@@ -293,11 +277,11 @@ Functions          </h1>
   Exemplos
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">update_account</span><span class="p" data-group-id="4790352285-1">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4790352285-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">new_value</span><span class="p" data-group-id="4790352285-2">}</span><span class="p" data-group-id="4790352285-1">)</span><span class="w">
-</span><span class="p" data-group-id="4790352285-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4790352285-4">%</span><span class="nc" data-group-id="4790352285-4">Account</span><span class="p" data-group-id="4790352285-4">{</span><span class="p" data-group-id="4790352285-4">}</span><span class="p" data-group-id="4790352285-3">}</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">update_account</span><span class="p" data-group-id="0891358122-1">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0891358122-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">new_value</span><span class="p" data-group-id="0891358122-2">}</span><span class="p" data-group-id="0891358122-1">)</span><span class="w">
+</span><span class="p" data-group-id="0891358122-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0891358122-4">%</span><span class="nc" data-group-id="0891358122-4">Account</span><span class="p" data-group-id="0891358122-4">{</span><span class="p" data-group-id="0891358122-4">}</span><span class="p" data-group-id="0891358122-3">}</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="n">update_account</span><span class="p" data-group-id="4790352285-5">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4790352285-6">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">bad_value</span><span class="p" data-group-id="4790352285-6">}</span><span class="p" data-group-id="4790352285-5">)</span><span class="w">
-</span><span class="p" data-group-id="4790352285-7">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4790352285-8">%</span><span class="nc" data-group-id="4790352285-8">Ecto.Changeset</span><span class="p" data-group-id="4790352285-8">{</span><span class="p" data-group-id="4790352285-8">}</span><span class="p" data-group-id="4790352285-7">}</span></code></pre>
+</span><span class="gp unselectable">iex&gt; </span><span class="n">update_account</span><span class="p" data-group-id="0891358122-5">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0891358122-6">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">bad_value</span><span class="p" data-group-id="0891358122-6">}</span><span class="p" data-group-id="0891358122-5">)</span><span class="w">
+</span><span class="p" data-group-id="0891358122-7">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0891358122-8">%</span><span class="nc" data-group-id="0891358122-8">Ecto.Changeset</span><span class="p" data-group-id="0891358122-8">{</span><span class="p" data-group-id="0891358122-8">}</span><span class="p" data-group-id="0891358122-7">}</span></code></pre>
   </section>
 </section>
           </div>

@@ -24,6 +24,7 @@ defmodule ApiBnK.Accounts.AccountsQuery do
   """
   def get_account!(id), do: Repo.get!(Account, id)
 
+  @doc false
   def get_account_by_agency_account(agency, account), do: Repo.one(from(a in Account, where: a.acc_agency == ^agency and a.acc_account == ^account))
 
   @doc """
@@ -79,7 +80,7 @@ defmodule ApiBnK.Accounts.AccountsQuery do
 
 
   @doc """
-  Remove todos os tokens (autenticação e autorização) associados na conta
+  Remove todos os tokens (autenticação e autorização) associados da conta
 
   ## Exemplos
 
@@ -94,7 +95,7 @@ defmodule ApiBnK.Accounts.AccountsQuery do
   end
 
   @doc """
-  Armazena o token de autenticação na conta
+  Armazena o token de autorização na conta
 
   ## Exemplos
 
@@ -109,7 +110,7 @@ defmodule ApiBnK.Accounts.AccountsQuery do
   end
 
   @doc """
-  Remove o token de autenticação associado na conta
+  Remove o token de autenticação associado da conta
 
   ## Exemplos
 

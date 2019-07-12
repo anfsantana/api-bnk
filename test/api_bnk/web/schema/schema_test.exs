@@ -230,11 +230,11 @@ defmodule ApiBnK.SchemaTest do
 
       %{"data" =>
                 %{"reportBackOffice" =>
-                                      %{"totalDay" => total_day,
+                                      %{
                                         "totalYear" => total_year,
                                         "totalMonth" => total_month}}} = res
       # Duas contas foram criadas nos testes, portanto R$ 1000 de cada conta
-      assert {"2000", "2000", "2000"} == {total_day, total_month, total_year}
+      assert {"2000", "2000"} == {total_month, total_year}
 
     end
 

@@ -10,13 +10,14 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
   alias ApiBnK.Repo
   alias Decimal, as: D
 
+  @type account :: %{account: String.t(), agency: String.t(), bank_code: String.t()}
+  @type account_logged :: %{context: %{current_user: map()}}
+  @type account_logged_with_autho_token :: %{context: %{current_user: map(), token: String.t, autho_token: String.t}}
+
   @doc """
-  Gera o relatório back office
-
-  ## Parameters
-
-    - name: String that represents the name of the person.
+  Gera o relatório back office por dia (atual), mês (atual) e ano (atual)
   """
+  @spec report_back_office(none(), none()) :: {atom, %{total_day: Decimal.t(), total_month: Decimal.t() , total_year: Decimal.t()}}
   def report_back_office(_args, _info) do
     add = fn(map, key, value) -> Map.put(map, key, value) end
     date_time_now = NaiveDateTime.add(NaiveDateTime.utc_now(), -(3600 * 3), :second)
@@ -67,14 +68,21 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
     {:ok, result}
   end
 
+  @doc """
+  Exibe o saldo atual da conta logada
+  """
+  @spec balance(none(), account_logged) :: Decimal.t
   def balance(_args, %{context: %{current_user: current_user}}) do
     balance = FinancialTransactionsQuery.get_balance(current_user.acc_agency, current_user.acc_account)
     {:ok, balance}
   end
+
+  @doc false
   def balance(_args, _info) do
     {:error, "Área restrita"}
   end
 
+  # Verifica se a conta de origem é diferente da conta de destino
   defp origin_acc_diff_destiny_acc?(destination_acc, origin_acc) do
     trim = fn(val) -> String.trim(val) end
 
@@ -94,7 +102,13 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
 
   end
 
-  def transfer(args, ctx= %{context: %{current_user: current_user, token: _token, autho_token: _autho_token}}) do
+  @doc """
+  Efetua a transferência entre contas. Para essa acção, é necessário possuir o
+  token de autenticação e autorização. Após a operação ser executada, o token de autorização é
+  consumido; portanto, será necessário solicitar um novo token.
+  """
+  @spec transfer(account, account_logged_with_autho_token) :: {atom, String.t}
+  def transfer(args, ctx = %{context: %{current_user: current_user, token: _token, autho_token: _autho_token}}) do
     discount = fn(x) -> D.cast((x * -1)) end
     add = fn(map, key, value) -> Map.put(map, key, value) end
 
@@ -131,10 +145,18 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
     end)
 
   end
+  @spec transfer(none(), none()) :: {atom, String.t}
   def transfer(_args, _info) do
     {:error, "Não autorizado."}
   end
 
+  @doc """
+  Efetua saque.
+  Para essa ação, é necessário possuir o  token de autenticação e autorização.
+  Após a operação ser executada, o token de autorização é consumido; portanto,
+  será necessário solicitar um novo token.
+  """
+  @spec withdrawal(account, account_logged_with_autho_token) :: {atom, String.t}
   def withdrawal(args, ctx = %{context: %{current_user: current_user, token: _token, autho_token: _autho_token}}) do
     discount = fn(x) -> D.cast((x * -1)) end
     add = fn(map, key, value) -> Map.put(map, key, value) end
@@ -167,10 +189,12 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
     end)
 
   end
+  @spec withdrawal(none(), none()) :: {atom, String.t}
   def withdrawal(_args, _info) do
     {:error, "Não autorizado."}
   end
 
+  @doc false
   def deposit(args) do
     args
     |> rename_keys()
@@ -178,6 +202,7 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
   end
 
   # TODO - Função para adicionar o prefixo no nome das colunas
+  @doc false
   defp rename_keys(map) do
     for {key, val} <- map, into: %{}, do: {Utils.add_prefix_on_atom(key, "fint_"), val}
   end
