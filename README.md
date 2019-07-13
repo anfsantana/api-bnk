@@ -1,7 +1,7 @@
 # API Banking
 
 ### Introdução
-A API Banking é um projeto que simula um processo de transações financeiras desde cadastro de contas até o logout da conta.
+API Banking é um projeto que simula um processo de transações financeiras desde cadastro de contas até o logout da conta.
 
 O projeto contribuiu para o aprendizado sobre a linguagem Elixir.
 
@@ -49,7 +49,9 @@ O projeto contribuiu para o aprendizado sobre a linguagem Elixir.
 
 ### Detalhamento das funcionalidades
 
-##### Cadastro de contas
+---
+
+#### Cadastro de contas
 Qualquer usuário pode criar sua própria conta. Para esse simulador é necessário informar:
 - Conta (obrigatório); Ex.: 0001
 - Agência (obrigatório); Ex.: 05289
@@ -59,14 +61,14 @@ Qualquer usuário pode criar sua própria conta. Para esse simulador é necessá
 - E-mail (obrigatório); Ex.: email@email.com
 - Senha da conta
 
-##### Autenticação da conta
+#### Autenticação da conta
 O processo de autenticação da conta, pode se entender como processo de entrar/logar na conta. Para efetuar essa ação, é necessário informar:
 - Conta (obrigatório); Ex.: 0001
 - Agência (obrigatório); Ex.: 04589
 - Código do banco (obrigatório); Ex.: 002
 - Senha (obrigatório)
 
-##### Autorização da conta
+#### Autorização da conta
 O processo de autenticação da conta, só será possível se o usuário estiver logado. Esse processo é basicamente a confirmação de alguma operação específica; portanto, é necessário informar a senha da conta autenticada.
 
 - Atualização de dados cadastrais da conta
@@ -74,7 +76,7 @@ Só é possível atualizar dados cadastrais da conta, se ela estiver logada. Os 
 - E-mail (obrigatório)
 - Nome do titular da conta (obrigatório)
 
-##### Transferência de valores entre contas
+#### Transferência de valores entre contas
 Para realizar transferência de valores, é necessário informar os seguintes dados da conta de destino:
 - Conta (obrigatório); Ex.: 0001
 - Agência (obrigatório); Ex.: 01548
@@ -87,50 +89,59 @@ Não é permitido transferir para própria conta logada.
 
 Para efetuar essa operação, é necessário que a conta esteja logada e autorizada.
 
-##### Saque
+#### Saque
 Para realizar a operação de saque, é necessário: 
 - Informar o valor para saque;
 - Possuir saldo para saque;
 - A conta precisa estar autenticada e autorizada.
 
-##### Emissão de relatório back office
+#### Emissão de relatório back office
 Exibe um sumário das transações feitas no dia, no mês e no ano.
-##### Consultar saldo da conta logada
+#### Consultar saldo da conta logada
 Exibe o saldo atual da conta.
-##### Remover autenticação da conta (efetuar logout)
+#### Remover autenticação da conta (efetuar logout)
 Desconecta da conta logada.
 
 ### Documentação técnica
 
-1. Requerimentos
+---
 
-    1. Erlang/OTP 22 \[erts-10.4.2\]
-    2. Elixir 1.8.2 (compiled with Erlang/OTP 20)   
-    3. Postgres 10.9.
+#### Requerimentos
 
-2. API desenvolvida utilizando:
+1. Erlang/OTP 22 \[erts-10.4.2\]
+2. Elixir 1.8.2 (compiled with Erlang/OTP 20)   
+3. Postgres 10.9.
 
-    - Elixir;
-    - Postgres;
-    - **[GraphQL](https://graphql.org/)**.
+#### API desenvolvida utilizando:
+
+- Elixir;
+- Postgres;
+- **[GraphQL](https://graphql.org/)**.
+
+### Principais dependências:
+- [absinthe](https://absinthe-graphql.org/): Conjunto de ferramentas GraphQL para Elixir;
+- [phoenix](https://phoenixframework.org/): Para a API; 
+- [guardian](https://hexdocs.pm/guardian/Guardian.html): Para autenticação e autorização;
+- [ecto](https://hexdocs.pm/ecto/Ecto.html): Conjuntos de ferramentas para mapeamento de dados e consulta integrada
     
-3. Para iniciar o serviço:
+### Utilizando o serviço:
    
+- Executando o projeto:   
    * Instale as dependências com `mix deps.get`;
    * Crie e migre seu banco de dados com `mix ecto.create && mix ecto.migrate`;
    * Inicie o endpoint do serviço com `mix phx.server`.
     
-4. Para utilizar **docker**:
+- Executar utilizando **docker**:
     1. Execute o comando: `docker build --tag apibnk .`
     2. Execute o comando: `docker-compose up`
 
-5. A **documentação** dos **módulos** estão localizadas no diretório `api_bnk/doc`
+- A **documentação** dos **módulos** estão localizadas no diretório do projeto `api_bnk/doc`, em que foi gerado utilizando o comando `mix docs`.
 
-6. A **documentação** das consultas **[GraphQL](https://graphql.org/)** são disponibilizadas na própria rota do 
+- A **documentação** das consultas **[GraphQL](https://graphql.org/)** são disponibilizadas na própria rota do 
 serviço [`localhost:4000/api/graphiql`](http://127.0.0.1:4000/api/graphiql); para visualizar a documentação GraphQL, utilize uma espécie 
 de postman para **[GraphQL](https://graphql.org/)**; recomendo https://electronjs.org/apps/graphiql .
 
-8. Utilize a rota [`http://127.0.0.1:4000/api/graphiql`](http://127.0.0.1:4000/api/graphiql) para ter acesso aos recursos da API.
+- Utilize a rota [`http://127.0.0.1:4000/api/graphiql`](http://127.0.0.1:4000/api/graphiql) para ter acesso aos recursos da API.
     - Existem dois tipos de HTTP Headers:
         1. Token de autenticação
             - Header name: **Authentication**
