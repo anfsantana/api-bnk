@@ -29,6 +29,7 @@ defmodule ApiBnK.Accounts.Accounts do
     |> validate_required([:acc_name, :acc_agency, :acc_account, :acc_bank_code, :acc_cpf, :acc_password, :acc_email])
     |> validate_length(:acc_name, min: 3, max: 60)
     |> validate_length(:acc_password, min: 5, max: 20)
+    |> validate_format(:acc_email, ~r/@/)
     |> unique_constraint(:acc_email, downcase: true)
     |> unique_constraint(:acc_cpf)
     |> unique_constraint(:acc_account, name: :idx_unique_bankcode_accounts_agency_account)
@@ -41,6 +42,7 @@ defmodule ApiBnK.Accounts.Accounts do
     |> cast(attrs, [:acc_name, :acc_email])
     |> validate_required([:acc_name, :acc_email])
     |> validate_length(:acc_name, min: 3, max: 60)
+    |> validate_format(:acc_email, ~r/@/)
     |> unique_constraint(:acc_email, downcase: true)
   end
 

@@ -71,8 +71,8 @@ ApiBnK.Accounts.AccountsResolver              </h1>
 
 
         <section id="moduledoc">
-<p>Módulo que gerência funções que implementam as regras
-de negócio de conta (account).</p>
+<p>Módulo que contêm funções que implementam as regras
+de negócio de conta antes de serem persistidas no banco de dados.</p>
         </section>
 
         <section id="summary" class="details-list">
@@ -91,20 +91,20 @@ de negócio de conta (account).</p>
   <div class="summary-signature">
     <a href="#create/2">create(params, info)</a>
   </div>
-    <div class="summary-synopsis"><p>Cria uma conta
+    <div class="summary-synopsis"><p>Função que cria uma conta
 Ao criar uma conta, é creditado R$ 1000,00 nela.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#login/2">login(map, info)</a>
   </div>
-    <div class="summary-synopsis"><p>Executa as operações necessárias para efetuar login</p></div>
+    <div class="summary-synopsis"><p>Função que executa as operações necessárias para efetuar login</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#revoke/2">revoke(args, map)</a>
   </div>
-    <div class="summary-synopsis"><p>Remove o token de autorização</p></div>
+    <div class="summary-synopsis"><p>Função que remove o token de autorização</p></div>
 </div>
   </div>
         </section>
@@ -130,7 +130,7 @@ Functions          </h1>
       </div>
   </div>
   <section class="docstring">
-<p>Cria uma conta
+<p>Função que cria uma conta
 Ao criar uma conta, é creditado R$ 1000,00 nela.</p>
 <h2 id="create/2-parâmetros" class="section-heading">
   <a href="#create/2-parâmetros" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
@@ -156,7 +156,7 @@ Ao criar uma conta, é creditado R$ 1000,00 nela.</p>
       </div>
   </div>
   <section class="docstring">
-<p>Executa as operações necessárias para efetuar login</p>
+<p>Função que executa as operações necessárias para efetuar login</p>
 <h2 id="login/2-parâmetros" class="section-heading">
   <a href="#login/2-parâmetros" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
   Parâmetros
@@ -190,7 +190,7 @@ Ao criar uma conta, é creditado R$ 1000,00 nela.</p>
       </div>
   </div>
   <section class="docstring">
-<p>Remove o token de autorização</p>
+<p>Função que remove o token de autorização</p>
 <h2 id="revoke/2-parâmetros" class="section-heading">
   <a href="#revoke/2-parâmetros" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
   Parâmetros

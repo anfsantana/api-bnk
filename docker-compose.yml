@@ -9,8 +9,8 @@ services:
     ports:
       - "4000:4000"
     depends_on:
-      - postgres_db
+      - postgresdb
 
-  postgres_db:
-    image: postgres:9.6-alpine
+  postgresdb:
+    image: postgres:10.9-alpine
     restart: always

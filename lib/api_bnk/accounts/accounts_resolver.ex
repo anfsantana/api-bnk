@@ -116,7 +116,7 @@ defmodule ApiBnK.Accounts.AccountsResolver do
                        |> FinancialTransactionsResolver.deposit() do
         StatusResponse.get_status_response_by_key(:CREATED)
       else
-         {:error, msg} -> {:error, StatusResponse.format_output(:UNPROCESSABLE_ENTITY, msg)}
+         {:error, msg} -> StatusResponse.format_output(:UNPROCESSABLE_ENTITY, inspect(msg.errors))
       end
 
     end)

@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94eb9475-fd1a-4fa7-8e6f-ddf4c2527925" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/bunt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/bunt.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/credo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/credo.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api_bnk.iml" beforeDir="false" afterPath="$PROJECT_DIR$/api_bnk.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api_bnk/accounts/accounts_query.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/accounts/accounts_query.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api_bnk/accounts/accounts.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/accounts/accounts.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/api_bnk/accounts/accounts_resolver.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/accounts/accounts_resolver.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api_bnk/web/helpers/auth_helper.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/web/helpers/auth_helper.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api_bnk/web/schema/schema.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/web/schema/schema.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/api_bnk/web/schema/schema_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/test/api_bnk/web/schema/schema_test.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api_bnk/financial/financial_transactions_resolver.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/financial/financial_transactions_resolver.ex" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,44 +28,17 @@
         <entry file="file://$PROJECT_DIR$/lib/api_bnk/web/schema/schema.ex">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="200">
-              <caret line="37" column="41" lean-forward="true" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
+              <caret line="37" column="41" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/api_bnk/web/helpers/auth_helper.ex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/test_helper.exs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/api_bnk/utils/status_response.ex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="260">
-                <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+              <first_editor relative-caret-position="131">
+                <caret line="132" column="2" selection-start-line="132" selection-start-column="2" selection-end-line="132" selection-end-column="2" />
               </first_editor>
               <second_editor />
             </state>
@@ -87,26 +57,53 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/api_bnk/accounts/accounts_resolver.ex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-296">
-              <caret line="60" column="6" selection-start-line="60" selection-start-column="6" selection-end-line="60" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/api_bnk/web/schema/schema_test.exs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="29" column="122" selection-start-line="29" selection-start-column="122" selection-end-line="29" selection-end-column="122" />
+            <state relative-caret-position="105">
+              <caret line="118" column="98" lean-forward="true" selection-start-line="118" selection-start-column="26" selection-end-line="118" selection-end-column="98" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/api_bnk/web/plugs/context.ex">
+        <entry file="file://$PROJECT_DIR$/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="-44">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/api_bnk/web/schema/schema_test.exs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="91">
+              <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mix.exs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="45" column="17" lean-forward="true" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/api_bnk/accounts/accounts.ex">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="44" column="41" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -114,8 +111,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/api_bnk/financial/financial_transactions_resolver.ex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="158" column="112" selection-start-line="158" selection-start-column="112" selection-end-line="158" selection-end-column="112" />
+            <state relative-caret-position="-40">
+              <caret line="187" column="8" lean-forward="true" selection-start-line="187" selection-start-column="8" selection-end-line="187" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -141,11 +138,15 @@
       <find>Remove</find>
       <find>postgres_db</find>
       <find>Repo</find>
-      <find>login:</find>
       <find>login_info_authorization</find>
+      <find>create</find>
+      <find>Exemplo</find>
+      <find>inspect(msg.errors)</find>
+      <find>login:</find>
     </findStrings>
     <replaceStrings>
       <replace>auth</replace>
+      <replace>Ex.</replace>
       <replace>account</replace>
     </replaceStrings>
   </component>
@@ -163,7 +164,6 @@
         <option value="$PROJECT_DIR$/test/support/absinthe_helpers.ex" />
         <option value="$PROJECT_DIR$/test/api_bnk/utils/utils_test.exs" />
         <option value="$PROJECT_DIR$/test/api_bnk/web/views/error_view_test.exs" />
-        <option value="$PROJECT_DIR$/lib/api_bnk/accounts/accounts.ex" />
         <option value="$PROJECT_DIR$/priv/repo/seeds.exs" />
         <option value="$PROJECT_DIR$/lib/api_bnk/web/schema/types.ex" />
         <option value="$PROJECT_DIR$/lib/api_bnk/web/views/user_view.ex" />
@@ -182,9 +182,7 @@
         <option value="$PROJECT_DIR$/test/api_bnk/financial/functions/financial_utils_test.exs" />
         <option value="$PROJECT_DIR$/config/dev.exs" />
         <option value="$PROJECT_DIR$/lib/api_bnk/repo.ex" />
-        <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/config/prod.exs" />
-        <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$PROJECT_DIR$/lib/api_bnk/web/router.ex" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/lib/api_bnk/financial/functions/financial_utils.ex" />
@@ -197,14 +195,17 @@
         <option value="$PROJECT_DIR$/test/support/channel_case.ex" />
         <option value="$PROJECT_DIR$/test/test_helper.exs" />
         <option value="$PROJECT_DIR$/lib/api_bnk/web/plugs/context.ex" />
-        <option value="$PROJECT_DIR$/lib/api_bnk/financial/financial_transactions_resolver.ex" />
         <option value="$PROJECT_DIR$/lib/api_bnk/utils/status_response.ex" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/lib/api_bnk/accounts/accounts_query.ex" />
         <option value="$PROJECT_DIR$/lib/api_bnk/web/helpers/auth_helper.ex" />
         <option value="$PROJECT_DIR$/lib/api_bnk/web/schema/schema.ex" />
-        <option value="$PROJECT_DIR$/lib/api_bnk/accounts/accounts_resolver.ex" />
         <option value="$PROJECT_DIR$/test/api_bnk/web/schema/schema_test.exs" />
+        <option value="$PROJECT_DIR$/lib/api_bnk/accounts/accounts.ex" />
+        <option value="$PROJECT_DIR$/lib/api_bnk/accounts/accounts_resolver.ex" />
+        <option value="$PROJECT_DIR$/lib/api_bnk/financial/financial_transactions_resolver.ex" />
+        <option value="$PROJECT_DIR$/Dockerfile" />
+        <option value="$PROJECT_DIR$/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -215,7 +216,7 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="y" value="28" />
     <option name="width" value="683" />
     <option name="height" value="712" />
@@ -456,7 +457,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="28" width="1368" height="713" extended-state="6" />
+    <frame x="-1" y="28" width="1368" height="713" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16515152" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -477,8 +479,8 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Console" order="7" />
       <window_info anchor="bottom" id="DB Execution Console" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.66515154" visible="true" weight="0.33333334" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.3348485" side_tool="true" weight="0.33333334" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.66515154" weight="0.5645161" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.3348485" side_tool="true" weight="0.24193548" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.7409091" weight="0.58960575" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="13" />
@@ -598,13 +600,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/test.exs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-5">
@@ -648,13 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/api_bnk/repo.ex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -690,22 +678,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api_bnk/accounts/accounts.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31">
-          <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mix.lock">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mix.exs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="52" column="63" selection-start-line="52" selection-start-column="63" selection-end-line="52" selection-end-column="63" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/support/data_case.ex">
       <provider selected="true" editor-type-id="text-editor">
@@ -771,27 +745,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api_bnk/financial/financial_transactions_resolver.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="158" column="112" selection-start-line="158" selection-start-column="112" selection-end-line="158" selection-end-column="112" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/api_bnk/utils/status_response.ex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="260">
-            <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-          </first_editor>
-          <second_editor />
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -805,7 +762,14 @@
     <entry file="file://$PROJECT_DIR$/lib/api_bnk/web/schema/schema.ex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
-          <caret line="37" column="41" lean-forward="true" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
+          <caret line="37" column="41" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mix.exs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="45" column="17" lean-forward="true" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -816,17 +780,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/api_bnk/financial/financial_transactions_resolver.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-40">
+          <caret line="187" column="8" lean-forward="true" selection-start-line="187" selection-start-column="8" selection-end-line="187" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/api_bnk/accounts/accounts_resolver.ex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-296">
-          <caret line="60" column="6" selection-start-line="60" selection-start-column="6" selection-end-line="60" selection-end-column="6" />
+        <state relative-caret-position="105">
+          <caret line="118" column="98" lean-forward="true" selection-start-line="118" selection-start-column="26" selection-end-line="118" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/api_bnk/accounts/accounts.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="44" column="41" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/api_bnk/web/schema/schema_test.exs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="29" column="122" selection-start-line="29" selection-start-column="122" selection-end-line="29" selection-end-column="122" />
+        <state relative-caret-position="185">
+          <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-44">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="131">
+            <caret line="132" column="2" selection-start-line="132" selection-start-column="2" selection-end-line="132" selection-end-column="2" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

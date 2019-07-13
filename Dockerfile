@@ -11,7 +11,7 @@ ENV MIX_ENV dev
 ENV PGUSER postgres
 ENV PGPASSWORD postgres
 ENV PGDATABASE api_bnk_dev
-ENV PGHOST postgres_db
+ENV PGHOST postgresdb
 
 
 RUN mix local.hex --force

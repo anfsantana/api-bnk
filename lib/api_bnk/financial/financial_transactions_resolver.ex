@@ -138,7 +138,7 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
           StatusResponse.format_output(:UNPROCESSABLE_ENTITY, msg)
         {:error, msg} ->
           AccountsResolver.revoke(args, ctx)
-          {:error, msg}
+          StatusResponse.format_output(:UNPROCESSABLE_ENTITY, inspect(msg.errors))
       end
 
     end)
@@ -182,7 +182,7 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
           StatusResponse.format_output(:UNPROCESSABLE_ENTITY, msg)
         {:error, msg} ->
           AccountsResolver.revoke(args, ctx)
-          {:error, msg}
+          StatusResponse.format_output(:UNPROCESSABLE_ENTITY, inspect(msg.errors))
       end
 
     end)

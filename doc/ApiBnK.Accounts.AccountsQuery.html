@@ -71,7 +71,7 @@ ApiBnK.Accounts.AccountsQuery              </h1>
 
 
         <section id="moduledoc">
-<p>Módulo que efetua operações diretamente com banco</p>
+<p>Módulo que efetua operações diretamente com o banco de dados</p>
         </section>
 
         <section id="summary" class="details-list">
@@ -90,13 +90,13 @@ ApiBnK.Accounts.AccountsQuery              </h1>
   <div class="summary-signature">
     <a href="#create_account/1">create_account(attrs \\ %{})</a>
   </div>
-    <div class="summary-synopsis"><p>Cria uma conta</p></div>
+    <div class="summary-synopsis"><p>Função que cria uma conta</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#get_account!/1">get_account!(id)</a>
   </div>
-    <div class="summary-synopsis"><p>Obter uma única conta.</p></div>
+    <div class="summary-synopsis"><p>Função que obtém uma única conta.</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
@@ -120,13 +120,13 @@ ApiBnK.Accounts.AccountsQuery              </h1>
   <div class="summary-signature">
     <a href="#store_token/2">store_token(acc, token)</a>
   </div>
-    <div class="summary-synopsis"><p>Armazena o token de autenticação na conta</p></div>
+    <div class="summary-synopsis"><p>Função que armazena o token de autenticação na conta</p></div>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#update_account/2">update_account(acc, attrs)</a>
   </div>
-    <div class="summary-synopsis"><p>Atualiza uma conta</p></div>
+    <div class="summary-synopsis"><p>Função que atualiza uma conta</p></div>
 </div>
   </div>
         </section>
@@ -150,17 +150,17 @@ Functions          </h1>
     <h1 class="signature">create_account(attrs \\ %{})</span>
           </div>
   <section class="docstring">
-<p>Cria uma conta</p>
+<p>Função que cria uma conta</p>
 <h2 id="create_account/1-exemplos" class="section-heading">
   <a href="#create_account/1-exemplos" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
   Exemplos
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">create_account</span><span class="p" data-group-id="1152729242-1">(</span><span class="p" data-group-id="1152729242-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">value</span><span class="p" data-group-id="1152729242-2">}</span><span class="p" data-group-id="1152729242-1">)</span><span class="w">
-</span><span class="p" data-group-id="1152729242-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1152729242-4">%</span><span class="nc" data-group-id="1152729242-4">User</span><span class="p" data-group-id="1152729242-4">{</span><span class="p" data-group-id="1152729242-4">}</span><span class="p" data-group-id="1152729242-3">}</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">create_account</span><span class="p" data-group-id="8510150000-1">(</span><span class="p" data-group-id="8510150000-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">value</span><span class="p" data-group-id="8510150000-2">}</span><span class="p" data-group-id="8510150000-1">)</span><span class="w">
+</span><span class="p" data-group-id="8510150000-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8510150000-4">%</span><span class="nc" data-group-id="8510150000-4">User</span><span class="p" data-group-id="8510150000-4">{</span><span class="p" data-group-id="8510150000-4">}</span><span class="p" data-group-id="8510150000-3">}</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="n">create_account</span><span class="p" data-group-id="1152729242-5">(</span><span class="p" data-group-id="1152729242-6">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">bad_value</span><span class="p" data-group-id="1152729242-6">}</span><span class="p" data-group-id="1152729242-5">)</span><span class="w">
-</span><span class="p" data-group-id="1152729242-7">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1152729242-8">%</span><span class="nc" data-group-id="1152729242-8">Ecto.Changeset</span><span class="p" data-group-id="1152729242-8">{</span><span class="p" data-group-id="1152729242-8">}</span><span class="p" data-group-id="1152729242-7">}</span></code></pre>
+</span><span class="gp unselectable">iex&gt; </span><span class="n">create_account</span><span class="p" data-group-id="8510150000-5">(</span><span class="p" data-group-id="8510150000-6">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">bad_value</span><span class="p" data-group-id="8510150000-6">}</span><span class="p" data-group-id="8510150000-5">)</span><span class="w">
+</span><span class="p" data-group-id="8510150000-7">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8510150000-8">%</span><span class="nc" data-group-id="8510150000-8">Ecto.Changeset</span><span class="p" data-group-id="8510150000-8">{</span><span class="p" data-group-id="8510150000-8">}</span><span class="p" data-group-id="8510150000-7">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="get_account!/1">
@@ -172,17 +172,17 @@ Functions          </h1>
     <h1 class="signature">get_account!(id)</span>
           </div>
   <section class="docstring">
-<p>Obter uma única conta.</p>
+<p>Função que obtém uma única conta.</p>
 <p>Devolve <a href="https://hexdocs.pm/ecto/2.2.12/Ecto.NoResultsError.html"><code class="inline">Ecto.NoResultsError</code></a> se a conta não existir.</p>
 <h2 id="get_account!/1-exemplos" class="section-heading">
   <a href="#get_account!/1-exemplos" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
   Exemplos
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">get_account!</span><span class="p" data-group-id="6933337796-1">(</span><span class="mi">123</span><span class="p" data-group-id="6933337796-1">)</span><span class="w">
-</span><span class="p" data-group-id="6933337796-2">%</span><span class="nc" data-group-id="6933337796-2">Account</span><span class="p" data-group-id="6933337796-2">{</span><span class="p" data-group-id="6933337796-2">}</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">get_account!</span><span class="p" data-group-id="0795945451-1">(</span><span class="mi">123</span><span class="p" data-group-id="0795945451-1">)</span><span class="w">
+</span><span class="p" data-group-id="0795945451-2">%</span><span class="nc" data-group-id="0795945451-2">Account</span><span class="p" data-group-id="0795945451-2">{</span><span class="p" data-group-id="0795945451-2">}</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="n">get_account!</span><span class="p" data-group-id="6933337796-3">(</span><span class="mi">456</span><span class="p" data-group-id="6933337796-3">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">get_account!</span><span class="p" data-group-id="0795945451-3">(</span><span class="mi">456</span><span class="p" data-group-id="0795945451-3">)</span><span class="w">
 </span><span class="gt">** (Ecto.NoResultsError)</span></code></pre>
   </section>
 </section>
@@ -201,8 +201,8 @@ Functions          </h1>
   Exemplos
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">revoke_all_token</span><span class="p" data-group-id="1535191766-1">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">,</span><span class="w"> </span><span class="n">autho_token</span><span class="p" data-group-id="1535191766-1">)</span><span class="w">
-</span><span class="p" data-group-id="1535191766-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1535191766-3">%</span><span class="nc" data-group-id="1535191766-3">Account</span><span class="p" data-group-id="1535191766-3">{</span><span class="p" data-group-id="1535191766-3">}</span><span class="p" data-group-id="1535191766-2">}</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">revoke_all_token</span><span class="p" data-group-id="0224633314-1">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p">,</span><span class="w"> </span><span class="n">autho_token</span><span class="p" data-group-id="0224633314-1">)</span><span class="w">
+</span><span class="p" data-group-id="0224633314-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0224633314-3">%</span><span class="nc" data-group-id="0224633314-3">Account</span><span class="p" data-group-id="0224633314-3">{</span><span class="p" data-group-id="0224633314-3">}</span><span class="p" data-group-id="0224633314-2">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="revoke_autho_token/2">
@@ -220,8 +220,8 @@ Functions          </h1>
   Exemplos
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">revoke_autho_token</span><span class="p" data-group-id="8192113191-1">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p" data-group-id="8192113191-1">)</span><span class="w">
-</span><span class="p" data-group-id="8192113191-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8192113191-3">%</span><span class="nc" data-group-id="8192113191-3">Account</span><span class="p" data-group-id="8192113191-3">{</span><span class="p" data-group-id="8192113191-3">}</span><span class="p" data-group-id="8192113191-2">}</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">revoke_autho_token</span><span class="p" data-group-id="5176456065-1">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p" data-group-id="5176456065-1">)</span><span class="w">
+</span><span class="p" data-group-id="5176456065-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5176456065-3">%</span><span class="nc" data-group-id="5176456065-3">Account</span><span class="p" data-group-id="5176456065-3">{</span><span class="p" data-group-id="5176456065-3">}</span><span class="p" data-group-id="5176456065-2">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="store_autho_token/2">
@@ -239,8 +239,8 @@ Functions          </h1>
   Exemplos
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">store_autho_token</span><span class="p" data-group-id="3533247815-1">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="n">autho_token</span><span class="p" data-group-id="3533247815-1">)</span><span class="w">
-</span><span class="p" data-group-id="3533247815-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3533247815-3">%</span><span class="nc" data-group-id="3533247815-3">Account</span><span class="p" data-group-id="3533247815-3">{</span><span class="p" data-group-id="3533247815-3">}</span><span class="p" data-group-id="3533247815-2">}</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">store_autho_token</span><span class="p" data-group-id="3409027577-1">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="n">autho_token</span><span class="p" data-group-id="3409027577-1">)</span><span class="w">
+</span><span class="p" data-group-id="3409027577-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3409027577-3">%</span><span class="nc" data-group-id="3409027577-3">Account</span><span class="p" data-group-id="3409027577-3">{</span><span class="p" data-group-id="3409027577-3">}</span><span class="p" data-group-id="3409027577-2">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="store_token/2">
@@ -252,14 +252,14 @@ Functions          </h1>
     <h1 class="signature">store_token(acc, token)</span>
           </div>
   <section class="docstring">
-<p>Armazena o token de autenticação na conta</p>
+<p>Função que armazena o token de autenticação na conta</p>
 <h2 id="store_token/2-exemplos" class="section-heading">
   <a href="#store_token/2-exemplos" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
   Exemplos
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">store_token</span><span class="p" data-group-id="7195378836-1">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p" data-group-id="7195378836-1">)</span><span class="w">
-</span><span class="p" data-group-id="7195378836-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7195378836-3">%</span><span class="nc" data-group-id="7195378836-3">Account</span><span class="p" data-group-id="7195378836-3">{</span><span class="p" data-group-id="7195378836-3">}</span><span class="p" data-group-id="7195378836-2">}</span></code></pre>
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">store_token</span><span class="p" data-group-id="1223196320-1">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="n">token</span><span class="p" data-group-id="1223196320-1">)</span><span class="w">
+</span><span class="p" data-group-id="1223196320-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1223196320-3">%</span><span class="nc" data-group-id="1223196320-3">Account</span><span class="p" data-group-id="1223196320-3">{</span><span class="p" data-group-id="1223196320-3">}</span><span class="p" data-group-id="1223196320-2">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="update_account/2">
@@ -271,17 +271,17 @@ Functions          </h1>
     <h1 class="signature">update_account(acc, attrs)</span>
           </div>
   <section class="docstring">
-<p>Atualiza uma conta</p>
+<p>Função que atualiza uma conta</p>
 <h2 id="update_account/2-exemplos" class="section-heading">
   <a href="#update_account/2-exemplos" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
   Exemplos
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">update_account</span><span class="p" data-group-id="0891358122-1">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0891358122-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">new_value</span><span class="p" data-group-id="0891358122-2">}</span><span class="p" data-group-id="0891358122-1">)</span><span class="w">
-</span><span class="p" data-group-id="0891358122-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0891358122-4">%</span><span class="nc" data-group-id="0891358122-4">Account</span><span class="p" data-group-id="0891358122-4">{</span><span class="p" data-group-id="0891358122-4">}</span><span class="p" data-group-id="0891358122-3">}</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">update_account</span><span class="p" data-group-id="3778146438-1">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3778146438-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">new_value</span><span class="p" data-group-id="3778146438-2">}</span><span class="p" data-group-id="3778146438-1">)</span><span class="w">
+</span><span class="p" data-group-id="3778146438-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3778146438-4">%</span><span class="nc" data-group-id="3778146438-4">Account</span><span class="p" data-group-id="3778146438-4">{</span><span class="p" data-group-id="3778146438-4">}</span><span class="p" data-group-id="3778146438-3">}</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="n">update_account</span><span class="p" data-group-id="0891358122-5">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0891358122-6">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">bad_value</span><span class="p" data-group-id="0891358122-6">}</span><span class="p" data-group-id="0891358122-5">)</span><span class="w">
-</span><span class="p" data-group-id="0891358122-7">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0891358122-8">%</span><span class="nc" data-group-id="0891358122-8">Ecto.Changeset</span><span class="p" data-group-id="0891358122-8">{</span><span class="p" data-group-id="0891358122-8">}</span><span class="p" data-group-id="0891358122-7">}</span></code></pre>
+</span><span class="gp unselectable">iex&gt; </span><span class="n">update_account</span><span class="p" data-group-id="3778146438-5">(</span><span class="n">acc</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3778146438-6">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">bad_value</span><span class="p" data-group-id="3778146438-6">}</span><span class="p" data-group-id="3778146438-5">)</span><span class="w">
+</span><span class="p" data-group-id="3778146438-7">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3778146438-8">%</span><span class="nc" data-group-id="3778146438-8">Ecto.Changeset</span><span class="p" data-group-id="3778146438-8">{</span><span class="p" data-group-id="3778146438-8">}</span><span class="p" data-group-id="3778146438-7">}</span></code></pre>
   </section>
 </section>
           </div>
