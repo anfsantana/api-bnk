@@ -11,7 +11,6 @@ defmodule ApiBnK.Web.Schema do
   alias ApiBnK.Accounts.AccountsResolver
   alias ApiBnK.Financial.FinancialTransactionsResolver
 
-
   query do
 
     @desc """
@@ -101,8 +100,6 @@ defmodule ApiBnK.Web.Schema do
         resolve(&FinancialTransactionsResolver.withdrawal/2)
 
       end
-
-
 
   end
 

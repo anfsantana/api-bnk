@@ -3,6 +3,8 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/lib" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/bunt" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/credo" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/earmark" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/ex_doc" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/makeup" />
@@ -76,5 +78,6 @@
     <orderEntry type="library" name="benchee" level="project" />
     <orderEntry type="library" name="nimble_parsec" level="project" />
     <orderEntry type="library" name="stream_data" level="project" />
+    <orderEntry type="library" name="bunt" level="project" />
   </component>
 </module>

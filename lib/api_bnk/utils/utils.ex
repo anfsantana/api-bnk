@@ -27,7 +27,6 @@ defmodule ApiBnK.Utils.Utils do
     |> String.to_atom
   end
 
-
   @doc """
   Remove um prefixo do nome da variável de tipo atomo.
 

@@ -7,5 +7,4 @@ defmodule ApiBnK.Utils.StatusResponseTest do
 
   doctest ApiBnK.Utils.StatusResponse
 
-
 end

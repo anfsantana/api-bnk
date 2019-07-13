@@ -2,6 +2,8 @@
   <library name="mariaex" type="mix">
     <CLASSES />
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/mariaex/lib" />
+    </SOURCES>
   </library>
 </component>

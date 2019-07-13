@@ -5,7 +5,6 @@ defmodule ApiBnK.Mixfile do
     [
       app: :api_bnk,
       version: "0.0.1",
-      elixir: "~> 1.7",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
@@ -39,10 +38,8 @@ defmodule ApiBnK.Mixfile do
       {:postgrex, ">= 0.0.0"},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
-      {:mariaex, ">= 0.0.0"},
       {:absinthe, "~> 1.4"},
       {:absinthe_plug, "~> 1.4.7"},
-      {:poison, "~> 3.1"},
       {:absinthe_ecto, "~> 0.1.3"},
       {:faker, "~> 0.8"},
       {:guardian, "~> 1.0"},
@@ -52,7 +49,8 @@ defmodule ApiBnK.Mixfile do
       {:jason, "~> 1.0"},
       {:decimal, "~> 1.8"},
       {:earmark, "~> 1.2", only: :dev},
-      {:ex_doc, "~> 0.19", only: :dev}
+      {:ex_doc, "~> 0.19", only: :dev},
+      {:credo, "~> 1.0.0", only: [:dev, :test], runtime: false}
     ]
   end
 

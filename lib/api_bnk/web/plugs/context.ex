@@ -6,8 +6,8 @@ defmodule ApiBnK.Context do
 	import Plug.Conn
 	import Ecto.Query, only: [where: 2]
 
-	alias ApiBnK.Repo
 	alias ApiBnK.Accounts.Accounts, as: Account
+	alias ApiBnK.Repo
 
 	def init(opts), do: opts
 
@@ -51,7 +51,7 @@ defmodule ApiBnK.Context do
 
 		case is_authorized(header_authe, header_autho) do
 			{:ok, current_user} -> {:ok, current_user}
-			{:error,_} ->
+			{:error, _} ->
 				case is_authenticated(header_authe) do
 					{:ok, current_user} -> {:ok, current_user}
 					{:error, message} -> {:error, message}
@@ -79,5 +79,6 @@ defmodule ApiBnK.Context do
 				 nil -> {:error, "Invalid authorization token"}
 				 user -> {:ok, user}
 			 end
-	end
+  end
+
 end

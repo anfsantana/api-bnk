@@ -6,9 +6,9 @@ defmodule ApiBnK.Accounts.AccountsResolver do
   import ApiBnK.AuthHelper
 
   alias ApiBnK.Accounts.AccountsQuery
-  alias ApiBnK.Utils.{Utils, StatusResponse}
   alias ApiBnK.Financial.FinancialTransactionsResolver
   alias ApiBnK.Repo
+  alias ApiBnK.Utils.{StatusResponse, Utils}
   alias Decimal, as: D
 
   @doc """

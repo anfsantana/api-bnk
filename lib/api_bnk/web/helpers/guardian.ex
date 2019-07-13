@@ -21,4 +21,5 @@ defmodule ApiBnK.Guardian do
 		acc = claims["sub"] |> AccountsQuery.get_account!
 		{:ok,  acc}
 	end
+
 end

@@ -4,10 +4,10 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
   de negócio.
   """
 
-  alias ApiBnK.Financial.{Functions.FinancialUtils, FinancialTransactionsQuery}
-  alias ApiBnK.Utils.{Utils, StatusResponse}
   alias ApiBnK.Accounts.AccountsResolver
+  alias ApiBnK.Financial.{FinancialTransactionsQuery, Functions.FinancialUtils}
   alias ApiBnK.Repo
+  alias ApiBnK.Utils.{StatusResponse, Utils}
   alias Decimal, as: D
 
   @type account :: %{account: String.t(), agency: String.t(), bank_code: String.t()}
@@ -44,7 +44,6 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
       |> (&(%{ &1 | minute: 59})).()
       |> (&(%{ &1 | second: 59})).()
       |> DateTime.to_naive()
-
 
     start_date_time_year =
       start_date_time_today
@@ -108,7 +107,7 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
   consumido; portanto, será necessário solicitar um novo token.
   """
   @spec transfer(account, account_logged_with_autho_token) :: {atom, String.t}
-  def transfer(args, ctx = %{context: %{current_user: current_user, token: _token, autho_token: _autho_token}}) do
+  def transfer(args, %{context: %{current_user: current_user, token: _token, autho_token: _autho_token}} = ctx) do
     discount = fn(x) -> D.cast((x * -1)) end
     add = fn(map, key, value) -> Map.put(map, key, value) end
 
@@ -157,10 +156,10 @@ defmodule ApiBnK.Financial.FinancialTransactionsResolver do
   será necessário solicitar um novo token.
   """
   @spec withdrawal(account, account_logged_with_autho_token) :: {atom, String.t}
-  def withdrawal(args, ctx = %{context: %{current_user: current_user, token: _token, autho_token: _autho_token}}) do
+  def withdrawal(args, %{context: %{current_user: current_user, token: _token, autho_token: _autho_token}} = ctx) do
     discount = fn(x) -> D.cast((x * -1)) end
     add = fn(map, key, value) -> Map.put(map, key, value) end
-    edit_value = fn(map,value) -> %{ map | value: value } end
+    edit_value = fn(map, value) -> %{map | value: value} end
 
     v_balance = FinancialTransactionsQuery.get_balance(current_user.acc_agency, current_user.acc_account)
 

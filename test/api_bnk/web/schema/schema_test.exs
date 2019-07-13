@@ -212,7 +212,6 @@ defmodule ApiBnK.SchemaTest do
       assert %{"data" => %{"withdrawal" => %{"code" => 200, "message" => _}}} = res
     end
 
-
     test "[Query GraphQL] reportBackOffice: sucesso na consulta do relatório back office.", %{conn: conn} do
       query = """
       query {

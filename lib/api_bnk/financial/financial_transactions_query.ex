@@ -6,8 +6,8 @@ defmodule ApiBnK.Financial.FinancialTransactionsQuery do
 
   import Ecto.Query, warn: false
 
-  alias ApiBnK.Repo
   alias ApiBnK.Financial.FinancialTransactions, as: FinancialTransaction
+  alias ApiBnK.Repo
   alias Decimal, as: D
 
   @doc false
@@ -18,7 +18,8 @@ defmodule ApiBnK.Financial.FinancialTransactionsQuery do
 
   @doc false
   def get_balance(agency, account) do
-    Repo.aggregate(from(t in FinancialTransaction, where: t.fint_agency == ^agency and t.fint_account == ^account), :sum, :fint_value)
+    _query = from(t in FinancialTransaction, where: t.fint_agency == ^agency and t.fint_account == ^account)
+    |> Repo.aggregate(:sum, :fint_value)
     |> case do
         nil -> D.cast(0.00)
         result -> result

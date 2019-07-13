@@ -5,8 +5,8 @@ defmodule ApiBnK.Accounts.AccountsQuery do
 
   import Ecto.Query, warn: false
 
-  alias ApiBnK.Repo
   alias ApiBnK.Accounts.Accounts, as: Account
+  alias ApiBnK.Repo
 
   @doc """
   Função que obtém uma única conta.
@@ -77,7 +77,6 @@ defmodule ApiBnK.Accounts.AccountsQuery do
     |> Account.store_token_changeset(%{acc_token: token})
     |> Repo.update()
   end
-
 
   @doc """
   Remove todos os tokens (autenticação e autorização) associados da conta
