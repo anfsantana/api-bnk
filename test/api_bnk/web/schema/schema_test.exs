@@ -7,9 +7,9 @@ defmodule ApiBnK.SchemaTest do
 
   describe "account" do
 
-    @login_info %{agency: "0002", account: "456783", password: "123456789"}
+    @login_info %{agency: "0002", account: "456783", password: "123456789", bank_code: "005"}
     @account_info %{email: "ric@email.com", name: "João",
-                    cpf: "31671727460", bank_code: "005"}
+                    cpf: "31671727460"}
     setup do
 
       with {:ok, _} <- AccountsResolver.create(Map.merge(@account_info, @login_info), nil),
@@ -27,7 +27,8 @@ defmodule ApiBnK.SchemaTest do
     test "[Query GraphQL] login: sucesso em efetuar o login/obter o token de autenticação.", %{conn: conn} do
       query = """
         query {
-            login(agency: "#{@login_info.agency}", account: "#{@login_info.account}", password: "#{@login_info.password}") {
+            login(agency: "#{@login_info.agency}", account: "#{@login_info.account}", bankCode: "#{@login_info.bank_code}",
+                            password: "#{@login_info.password}") {
             token
           }
         }
@@ -147,9 +148,10 @@ defmodule ApiBnK.SchemaTest do
 
   describe "financial_transactions" do
 
-    @login_info %{agency: "0002", account: "456784", password: "323245"}
-    @login_info_authorization %{acc_agency: "0002", acc_account: "456784", acc_password: "323245"}
-    @account_origin_info %{email: "ric@email.com", name: "Ricardo", cpf: "31671727460", bank_code: "005"}
+    @login_info %{agency: "0002", account: "456784", password: "323245", bank_code: "005"}
+    @login_info_authorization %{acc_agency: "0002", acc_account: "456784", acc_password: "323245", acc_bank_code: "005"}
+    @account_origin_info %{email: "ric@email.com", name: "Ricardo", cpf: "31671727460"}
+
     @account_destination_info %{email: "jo@email.com", name: "João",
                                 cpf: "41671727460", agency: "0002",
                                 account: "456785", password: "123456789",

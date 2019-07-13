@@ -23,7 +23,8 @@ defmodule ApiBnK.Accounts.AccountsResolver do
   """
   @spec update(map(), map()) :: {atom, any}
   def update(args, %{context: %{current_user: current_user}} = info) do
-    case find(%{agency: current_user.acc_agency, account: current_user.acc_account}, info) do
+    case find(%{agency: current_user.acc_agency, account: current_user.acc_account,
+                bank_code: current_user.acc_bank_code}, info) do
       {:ok, acc} -> AccountsQuery.update_account(acc, rename_keys(args))
       {:error, message} -> {:error, message}
     end
@@ -35,9 +36,9 @@ defmodule ApiBnK.Accounts.AccountsResolver do
     {:error, "Restrict area"}
   end
 
-  defp find(%{agency: agency, account: account}, %{context: %{current_user: _current_user}}) do
-    case AccountsQuery.get_account_by_agency_account(agency, account) do
-      nil -> {:error, "Account agency #{agency} and #{account}} not found!"}
+  defp find(%{agency: agency, account: account, bank_code: bank_code}, %{context: %{current_user: _current_user}}) do
+    case AccountsQuery.get_account_by_agency_account(agency, account, bank_code) do
+      nil -> {:error, "Account agency #{agency}, account #{account}} and bank code #{bank_code} not found!"}
       user -> {:ok, user}
     end
 
@@ -57,8 +58,8 @@ defmodule ApiBnK.Accounts.AccountsResolver do
     - Token de autenticação
   """
   @spec login(map(), none()) :: {atom, %{token: String.t}}
-  def login(%{agency: agency, account: account, password: password}, _info) do
-    with {:ok, user} <- login_with_agency_account_pass(agency, account, password),
+  def login(%{agency: agency, account: account, bank_code: bank_code, password: password}, _info) do
+    with {:ok, user} <- login_with_agency_account_pass(agency, account, bank_code, password),
          {:ok, jwt, _} <- ApiBnK.Guardian.encode_and_sign(user) ,
          {:ok, _ } <- AccountsQuery.store_token(user, jwt) do
       {:ok, %{token: jwt}}
@@ -78,7 +79,8 @@ defmodule ApiBnK.Accounts.AccountsResolver do
   """
   @spec authorization(map(), map()) :: {atom, %{token: String.t}}
   def authorization(%{password: password}, %{context: %{current_user: current_user}} = _info) do
-    with {:ok, user} <- login_with_agency_account_pass(current_user.acc_agency, current_user.acc_account, password),
+    with {:ok, user} <- login_with_agency_account_pass(current_user.acc_agency,
+                                                       current_user.acc_account, current_user.acc_bank_code, password),
          {:ok, jwt, _} <- ApiBnK.Guardian.encode_and_sign(user) ,
          {:ok, _ } <- AccountsQuery.store_autho_token(user, jwt) do
       {:ok, %{token: jwt}}

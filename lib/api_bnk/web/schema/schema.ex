@@ -24,6 +24,7 @@ defmodule ApiBnK.Web.Schema do
     field(:login, type: :authe_session, description: "Query para efetuar o login.") do
       arg(:agency, non_null(:string), description: "Agência")
       arg(:account, non_null(:string), description: "Conta")
+      arg(:bank_code, non_null(:string), description: "Código do banco")
       arg(:password, non_null(:string), description: "Senha")
 
       resolve(&AccountsResolver.login/2)

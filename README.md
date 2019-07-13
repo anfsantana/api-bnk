@@ -1,4 +1,8 @@
-# ApiBnK
+# API Banking
+
+### Introdução
+A API Banking é um projeto que simula um processo de transações financeiras, desde do cadastro de contas,
+autenticação de contas, autorização para efetuar transações atualização de dados da conta, 
 
 1. A API foi desenvolvida com:
 

@@ -25,7 +25,11 @@ defmodule ApiBnK.Accounts.AccountsQuery do
   def get_account!(id), do: Repo.get!(Account, id)
 
   @doc false
-  def get_account_by_agency_account(agency, account), do: Repo.one(from(a in Account, where: a.acc_agency == ^agency and a.acc_account == ^account))
+  def get_account_by_agency_account(agency, account, bank_code) do
+    Repo.one(from(a in Account, where: a.acc_agency == ^agency and a.acc_account == ^account
+    and a.acc_bank_code == ^bank_code))
+
+  end
 
   @doc """
   Função que cria uma conta
