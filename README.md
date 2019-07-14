@@ -156,7 +156,7 @@ de postman para **[GraphQL](https://graphql.org/)**; recomendo https://electronj
             - Header value: **Bearer** \<Token\>
                 - Ex.: **Authentication : Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9**
         2. Token de autorização: Utilizado para efetuar determinadas operações financeiras
-            - Header name: **Authentication**
+            - Header name: **Authorization**
             - Header value: **Bearer** \<Token\>
-                - Ex.: **Authentication : Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9**
+                - Ex.: **Authorization : Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9**
         
