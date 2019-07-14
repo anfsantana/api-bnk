@@ -61,6 +61,7 @@ Qualquer usuário pode criar sua própria conta. Para esse simulador é necessá
 - E-mail (obrigatório); Ex.: email@email.com
 - Senha da conta
 
+Quando o cadastro for concluido, o usuário terá **R$ 1000,00** creditado em sua conta.
 #### Autenticação da conta
 O processo de autenticação da conta, pode se entender como processo de entrar/logar na conta. Para efetuar essa ação, é necessário informar:
 - Conta (obrigatório); Ex.: 0001
