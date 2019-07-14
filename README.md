@@ -159,4 +159,9 @@ de postman para **[GraphQL](https://graphql.org/)**; recomendo https://electronj
             - Header name: **Authorization**
             - Header value: **Bearer** \<Token\>
                 - Ex.: **Authorization : Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9**
+    - Efetuar todas a requisições via **POST**, informando os respecitivos tokens a depender da operação, por exemplo:
+        - Para acessar seu saldo, é necessário informar o token de autenticação, ou seja, `Authentication : Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9`
+        - Para efetuar um saque, é necessário informar o token de autenticação e autorização,  ou seja:
+            - `Authentication : Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9`; 
+            - `Authorization : Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9`.          
         
