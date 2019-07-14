@@ -69,9 +69,9 @@ O processo de autenticação da conta, pode se entender como processo de entrar/
 - Senha (obrigatório)
 
 #### Autorização da conta
-O processo de autenticação da conta, só será possível se o usuário estiver logado. Esse processo é basicamente a confirmação de alguma operação específica; portanto, é necessário informar a senha da conta autenticada.
+O processo de autorização da conta, só será possível se o usuário estiver logado. Esse processo é basicamente a confirmação de alguma operação específica; portanto, é necessário informar a senha da conta autenticada.
 
-- Atualização de dados cadastrais da conta
+#### Atualização de dados cadastrais da conta
 Só é possível atualizar dados cadastrais da conta, se ela estiver logada. Os dados que são permitidos para alteração são:
 - E-mail (obrigatório)
 - Nome do titular da conta (obrigatório)
@@ -80,10 +80,10 @@ Só é possível atualizar dados cadastrais da conta, se ela estiver logada. Os 
 Para realizar transferência de valores, é necessário informar os seguintes dados da conta de destino:
 - Conta (obrigatório); Ex.: 0001
 - Agência (obrigatório); Ex.: 01548
-- Código do banco (obrigatório); Ex.: 05874
+- Código do banco (obrigatório); Ex.: 005
 - Valor
-    - É permitido apenas transferir valores maior do que zero;
-    - É necessário ter saldo maior do que o valor da transferência.
+    - É permitido apenas transferir valores superiores a zero;
+    - É necessário ter saldo maior ou igual ao valor da transferência.
     
 Não é permitido transferir para própria conta logada.
 
@@ -96,7 +96,7 @@ Para realizar a operação de saque, é necessário:
 - A conta precisa estar autenticada e autorizada.
 
 #### Emissão de relatório back office
-Exibe um sumário das transações feitas no dia, no mês e no ano.
+Exibe um sumário das transações feitas no dia, no mês e no ano corrente.
 #### Consultar saldo da conta logada
 Exibe o saldo atual da conta.
 #### Remover autenticação da conta (efetuar logout)
@@ -122,7 +122,7 @@ Desconecta da conta logada.
 - [absinthe](https://absinthe-graphql.org/): Conjunto de ferramentas GraphQL para Elixir;
 - [phoenix](https://phoenixframework.org/): Para a API; 
 - [guardian](https://hexdocs.pm/guardian/Guardian.html): Para autenticação e autorização;
-- [ecto](https://hexdocs.pm/ecto/Ecto.html): Conjuntos de ferramentas para mapeamento de dados e consulta integrada
+- [ecto](https://hexdocs.pm/ecto/Ecto.html): Conjuntos de ferramentas para mapeamento de dados e consulta integrada.
     
 ### Utilizando o serviço:
    
@@ -134,6 +134,14 @@ Desconecta da conta logada.
 - Executar utilizando **docker**:
     1. Execute o comando: `docker build --tag apibnk .`
     2. Execute o comando: `docker-compose up`
+    
+- Executar os testes:
+
+Executar o comando `mix test`.
+
+- Executar o analisador de código fonte estático [credo](https://github.com/rrrene/credo):
+
+Executar o comando `mix credo`.
 
 - A **documentação** dos **módulos** estão localizadas no diretório do projeto `api_bnk/doc`, em que foi gerado utilizando o comando `mix docs`.
 
