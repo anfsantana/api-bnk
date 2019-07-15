@@ -9,7 +9,6 @@ defmodule ApiBnK.Accounts.AccountsResolver do
   alias ApiBnK.Financial.FinancialTransactionsResolver
   alias ApiBnK.Repo
   alias ApiBnK.Utils.{StatusResponse, Utils}
-  alias ApiBnK.Web.ErrorHelpers
   alias Decimal, as: D
 
   @doc """
