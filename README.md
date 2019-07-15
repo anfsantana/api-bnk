@@ -173,7 +173,7 @@ de postman para **[GraphQL](https://graphql.org/)**; recomendo https://electronj
 Exemplos de consultas GraphQL:
 
 
-##### Criar conta
+#### Criar conta
 
 ---
 
@@ -209,7 +209,7 @@ mutation {
 
 
 
-##### Login
+#### Login
 
 ---
 
@@ -232,7 +232,7 @@ query {
 }
 ````
 
-##### Autorização
+#### Autorização
 
 ---
 
@@ -257,7 +257,7 @@ query {
 }
 ````
 
-##### Relatório back office
+#### Relatório back office
 
 ---
 
@@ -284,7 +284,7 @@ query {
 }
 ````
 
-##### Saque
+#### Saque
 
 ---
 
@@ -312,7 +312,7 @@ mutation {
 ````
 
 
-##### Transferência
+#### Transferência
 
 ---
 
@@ -340,7 +340,7 @@ mutation {
 ````
 
 
-##### Saldo
+#### Saldo
 
 ---
 
@@ -361,7 +361,7 @@ query {
 }
 ````
 
-##### Logout
+#### Logout
 
 ---
 
