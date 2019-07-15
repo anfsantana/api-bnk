@@ -148,8 +148,7 @@ mix credo
 - A **documentação** dos **módulos** estão localizadas no diretório do projeto `doc`, em que foi gerado utilizando o comando `$ mix docs`.
 
 - A **documentação** das consultas **[GraphQL](https://graphql.org/)** são disponibilizadas na própria rota do 
-serviço [`localhost:4000/api/graphiql`](http://127.0.0.1:4000/api/graphiql); para visualizar a documentação GraphQL, utilize uma espécie 
-de postman para **[GraphQL](https://graphql.org/)**; recomendo https://electronjs.org/apps/graphiql .
+serviço [`localhost:4000/api/graphiql`](http://127.0.0.1:4000/api/graphiql).
 
 - Utilize a rota [`http://127.0.0.1:4000/api/graphiql`](http://127.0.0.1:4000/api/graphiql) para ter acesso aos recursos da API.
     - Existem dois tipos de HTTP Headers:
