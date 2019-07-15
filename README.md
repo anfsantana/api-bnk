@@ -178,7 +178,7 @@ Exemplos de consultas GraphQL:
 ---
 
 ##### Request
-```json
+```javascript
 mutation {
   createAccount(
     account: "14026",
@@ -214,7 +214,7 @@ mutation {
 ---
 
 ##### Request
-```json
+```javascript
 query {
   login(bankCode:"003" agency: "0001", account: "14025", password: "123456") {
     token
@@ -236,8 +236,10 @@ query {
 
 ---
 
+Lembrete: Deverá ter o header **Authentication**, informando o token, para efetuar essa requisição. Lembrando que o formato do header é `Authentication : Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9`.
+
 ##### Request
-```json
+```javascript
 query {
   authorization(password: "123456") {
     token
@@ -260,7 +262,7 @@ query {
 ---
 
 ##### Request
-```json
+```javascript
 query {
   reportBackOffice {
     totalDay
@@ -286,8 +288,10 @@ query {
 
 ---
 
+Lembrete: Deverá ter o header **Authentication** e **Authorization**, informando seus respectivos tokens, para efetuar essa requisição. Lembrando que o formato do header é `Authentication : Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9` e `Authorization : Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9`; para cada saque é necessário gerar um novo token de autorização.
+
 ##### Request
-```json
+```javascript
 mutation {
   withdrawal(value: 50.55){
     message
@@ -312,8 +316,10 @@ mutation {
 
 ---
 
+Lembrete: Deverá ter o header **Authentication** e **Authorization**, informando seus respectivos tokens, para efetuar essa requisição. Lembrando que o formato do header é `Authentication : Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9` e `Authorization : Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9`;para cada transferência é necessário gerar um novo token de autorização.
+
 ##### Request
-```json
+```javascript
 mutation {
   transferency(account: "14026", agency: "0001", bankCode: "003", value: 100.63){
     message
@@ -338,8 +344,10 @@ mutation {
 
 ---
 
+Lembrete: Deverá ter o header **Authentication**, informando o token, para efetuar essa requisição. Lembrando que o formato do header é `Authentication : Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9`.
+
 ##### Request
-```json
+```javascript
 query {
   balance
 }
@@ -358,7 +366,7 @@ query {
 ---
 
 ##### Request
-```json
+```javascript
 mutation{
   logout{
   	code
