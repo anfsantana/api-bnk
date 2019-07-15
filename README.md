@@ -9,7 +9,6 @@ O projeto contribuiu para o aprendizado sobre a linguagem Elixir.
 1.	Cadastro de contas;
 2.	Autenticação da conta (entrar na conta);
 3.	Autorização da conta;
-4.	Atualização de dados cadastrais da conta;
 5.	Transferência de valores entre as contas;
 6.	Saque;
 7.	Emissão de relatório back office;
@@ -25,9 +24,6 @@ O projeto contribuiu para o aprendizado sobre a linguagem Elixir.
         - Cadastrar conta
 - Autorizar conta
     - Pré-requisito(s):
-        - Autenticar conta
-- Atualizar dados cadastrais da conta
-    - Pré-requisito(s): 
         - Autenticar conta
 - Transferir valor 
     - Pré-requisito(s)
@@ -71,11 +67,6 @@ O processo de autenticação da conta, pode se entender como processo de entrar/
 
 #### Autorização da conta
 O processo de autorização da conta, só será possível se o usuário estiver logado. Esse processo é basicamente a confirmação de alguma operação específica; portanto, é necessário informar a senha da conta autenticada.
-
-#### Atualização de dados cadastrais da conta
-Só é possível atualizar dados cadastrais da conta, se ela estiver logada. Os dados que são permitidos para alteração são:
-- E-mail (obrigatório)
-- Nome do titular da conta (obrigatório)
 
 #### Transferência de valores entre contas
 Para realizar transferência de valores, é necessário informar os seguintes dados da conta de destino:
