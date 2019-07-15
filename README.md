@@ -57,7 +57,11 @@ Qualquer usuário pode criar sua própria conta. Para esse simulador é necessá
 - E-mail (obrigatório); Ex.: email@email.com
 - Senha da conta
 
-Quando o cadastro for concluido, o usuário terá **R$ 1000,00** creditado em sua conta.
+1. Quando o cadastro for concluido, o usuário terá **R$ 1000,00** creditado em sua conta;
+2. A composição de Conta, Agência e Código do banco, são únicos;
+3. O CPF é único;
+4. O e-mail é único.
+
 #### Autenticação da conta
 O processo de autenticação da conta, pode se entender como processo de entrar/logar na conta. Para efetuar essa ação, é necessário informar:
 - Conta (obrigatório); Ex.: 0001
@@ -161,6 +165,8 @@ de postman para **[GraphQL](https://graphql.org/)**; recomendo https://electronj
 
 #### POST /api/graphiql
 
+OBS.: Seguindo o padrão da notação do GraphQL, a exclamação (**!**) indica que o campo é obrigatório.
+
 Exemplos de consultas GraphQL:
 
 
@@ -168,7 +174,31 @@ Exemplos de consultas GraphQL:
 
 ---
 
-##### Request
+Observações: 
+1. Existe a unicidade de CPF;
+2. Existe a unidade de E-mail;
+3. Existe a unicidade dacomposição Conta, Agência e Código do banco.
+
+##### Request - Schema
+
+```javascript
+mutation {
+  createAccount(
+   account: String!
+   agency: String!
+   bankCode: String!
+   cpf: String!
+   email: String!
+   name: String!
+   password: String!    
+  ){
+    code
+    message
+  }
+}
+````
+
+##### Request - Exemplo
 ```javascript
 mutation {
   createAccount(
@@ -203,8 +233,22 @@ mutation {
 #### Login
 
 ---
+##### Request - Schema
 
-##### Request
+```javascript
+query {
+  login(
+   account: String!
+   agency: String!
+   bankCode: String!
+   password: String!
+  ) {
+    token
+  }
+}
+````
+
+##### Request - Exemplo
 ```javascript
 query {
   login(bankCode:"003" agency: "0001", account: "14025", password: "123456") {
@@ -229,7 +273,16 @@ query {
 
 Lembrete: Deverá ter o header **Authentication**, informando o token, para efetuar essa requisição. Lembrando que o formato do header é `Authentication : Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9`.
 
-##### Request
+##### Request - Schema
+```javascript
+query {
+  authorization(password: String!) {
+    token
+  }
+}
+````
+
+##### Request - Exemplo
 ```javascript
 query {
   authorization(password: "123456") {
@@ -252,7 +305,7 @@ query {
 
 ---
 
-##### Request
+##### Request - Exemplo
 ```javascript
 query {
   reportBackOffice {
@@ -281,7 +334,17 @@ query {
 
 Lembrete: Deverá ter o header **Authentication** e **Authorization**, informando seus respectivos tokens, para efetuar essa requisição. Lembrando que o formato do header é `Authentication : Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9` e `Authorization : Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9`; para cada saque é necessário gerar um novo token de autorização.
 
-##### Request
+##### Request -  Schema
+```javascript
+mutation {
+  withdrawal(value: Float!){
+    message
+    code
+  }
+}
+````
+
+##### Request -  Exemplo
 ```javascript
 mutation {
   withdrawal(value: 50.55){
@@ -309,7 +372,22 @@ mutation {
 
 Lembrete: Deverá ter o header **Authentication** e **Authorization**, informando seus respectivos tokens, para efetuar essa requisição. Lembrando que o formato do header é `Authentication : Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9` e `Authorization : Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9`; para cada transferência é necessário gerar um novo token de autorização.
 
-##### Request
+##### Request - Schema
+```javascript
+mutation {
+  transferency(
+   account: String!
+   agency: String!
+   bankCode: String!
+   value: Float!
+  ){
+    message
+    code
+  }
+}
+````
+
+##### Request - Exemplo
 ```javascript
 mutation {
   transferency(account: "14026", agency: "0001", bankCode: "003", value: 100.63){
@@ -337,7 +415,7 @@ mutation {
 
 Lembrete: Deverá ter o header **Authentication**, informando o token, para efetuar essa requisição. Lembrando que o formato do header é `Authentication : Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9`.
 
-##### Request
+##### Request - Exemplo
 ```javascript
 query {
   balance
@@ -356,7 +434,7 @@ query {
 
 ---
 
-##### Request
+##### Request - Exemplo
 ```javascript
 mutation{
   logout{
