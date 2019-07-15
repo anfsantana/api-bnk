@@ -30,8 +30,8 @@ defmodule ApiBnK.Accounts.Accounts do
     |> validate_length(:acc_name, min: 3, max: 60)
     |> validate_length(:acc_password, min: 5, max: 20)
     |> validate_format(:acc_email, ~r/@/)
-    |> unique_constraint(:acc_email, downcase: true)
-    |> unique_constraint(:acc_cpf)
+    |> unique_constraint(:acc_email, downcase: true, name: :accounts_acc_email_index)
+    |> unique_constraint(:acc_cpf, name: :idx_unique_accounts_cpf)
     |> unique_constraint(:acc_account, name: :idx_unique_bankcode_accounts_agency_account)
     |> put_password_hash()
   end
