@@ -50,24 +50,6 @@ defmodule ApiBnK.Accounts.AccountsQuery do
   end
 
   @doc """
-  Função que atualiza uma conta
-
-  ## Exemplos
-
-      iex> update_account(acc, %{field: new_value})
-      {:ok, %Account{}}
-
-      iex> update_account(acc, %{field: bad_value})
-      {:error, %Ecto.Changeset{}}
-
-  """
-  def update_account(%Account{} = acc, attrs) do
-    acc
-    |> Account.changeset_simple_update(attrs)
-    |> Repo.update()
-  end
-
-  @doc """
   Função que armazena o token de autenticação na conta
 
   ## Exemplos

@@ -12,42 +12,6 @@ defmodule ApiBnK.Accounts.AccountsResolver do
   alias Decimal, as: D
 
   @doc """
-  Função que atualiza a conta
-
-  ## Parâmetros
-
-    - args: Argumentos que serão modificados
-    - %{context: %{current_user: current_user}} = info: Pattern Matching que indica
-    que para usar esse método, é necessário ter as informações referentes a conta logada.
-
-  """
-  @spec update(map(), map()) :: {atom, any}
-  def update(args, %{context: %{current_user: current_user}} = info) do
-    case find(%{agency: current_user.acc_agency, account: current_user.acc_account,
-                bank_code: current_user.acc_bank_code}, info) do
-      {:ok, acc} -> AccountsQuery.update_account(acc, rename_keys(args))
-      {:error, message} -> {:error, message}
-    end
-
-  end
-
-  @doc false
-  def update(_args, _info) do
-    {:error, "Restrict area"}
-  end
-
-  defp find(%{agency: agency, account: account, bank_code: bank_code}, %{context: %{current_user: _current_user}}) do
-    case AccountsQuery.get_account_by_agency_account(agency, account, bank_code) do
-      nil -> {:error, "Account agency #{agency}, account #{account}} and bank code #{bank_code} not found!"}
-      user -> {:ok, user}
-    end
-
-  end
-  defp find(_args, _info) do
-    {:error, "Restrict area"}
-  end
-
-  @doc """
   Função que executa as operações necessárias para efetuar login
 
   ## Parâmetros

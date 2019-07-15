@@ -27,23 +27,13 @@ defmodule ApiBnK.Accounts.Accounts do
     acc
     |> cast(attrs, [:acc_name, :acc_agency, :acc_account, :acc_bank_code, :acc_cpf, :acc_password, :acc_email])
     |> validate_required([:acc_name, :acc_agency, :acc_account, :acc_bank_code, :acc_cpf, :acc_password, :acc_email])
-    |> validate_length(:acc_name, min: 3, max: 60)
-    |> validate_length(:acc_password, min: 5, max: 20)
-    |> validate_format(:acc_email, ~r/@/)
-    |> unique_constraint(:acc_email, downcase: true, name: :accounts_acc_email_index)
-    |> unique_constraint(:acc_cpf, name: :idx_unique_accounts_cpf)
-    |> unique_constraint(:acc_account, name: :idx_unique_bankcode_accounts_agency_account)
+    |> validate_length(:acc_name, min: 3, max: 60, message: "O nome do titular da conta, deve ter de 3 até 60 caracteres")
+    |> validate_length(:acc_password, min: 5, max: 20, message: "A senha deve ter no mínimo de 5 até 20 caracteres")
+    |> validate_format(:acc_email, ~r/@/, message: "O formato de e-mail é inválido.")
+    |> unique_constraint(:acc_email, downcase: true, name: :idx_unique_accounts_email, message: "O e-mail informado já está sendo utilizado.")
+    |> unique_constraint(:acc_cpf, name: :idx_unique_accounts_cpf, message: "O CPF informado já está sendo utilizado.")
+    |> unique_constraint(:acc_account, name: :idx_unique_bankcode_accounts_agency_account, message: "Conta, Agência e Código do banco, já estão sendo utilizado.")
     |> put_password_hash()
-  end
-
-  @doc false
-  def changeset_simple_update(%Account{} = acc, attrs) do
-    acc
-    |> cast(attrs, [:acc_name, :acc_email])
-    |> validate_required([:acc_name, :acc_email])
-    |> validate_length(:acc_name, min: 3, max: 60)
-    |> validate_format(:acc_email, ~r/@/)
-    |> unique_constraint(:acc_email, downcase: true)
   end
 
   @doc false

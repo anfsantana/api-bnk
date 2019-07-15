@@ -104,27 +104,6 @@ defmodule ApiBnK.SchemaTest do
       assert %{"data" => %{"createAccount" => %{"code" => 201, "message" => _}}} = res
     end
 
-    test "[Mutation GraphQL] updateAccount: sucesso na atualização de dados da conta logada.", %{conn: conn} do
-        new_email = "silvajoao@email.com"
-
-        mutation = """
-        mutation {
-          updateAccount(
-              name: "João",
-              email: "#{new_email}"
-          ){
-            accEmail
-          }
-        }
-        """
-        res =
-          conn
-          |> post("/api/graphiql", %{query: mutation})
-          |> json_response(200)
-
-        assert %{"data" => %{"updateAccount" => %{"accEmail" => new_email}}} = res
-    end
-
     test "[Mutation GraphQL] logout: sucesso ao efetuar logout.", %{conn: conn} do
       mutation = """
         mutation {

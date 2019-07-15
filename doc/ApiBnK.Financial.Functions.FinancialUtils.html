@@ -8,7 +8,7 @@
     <meta name="project" content="api_bnk v0.0.1">
     <title>ApiBnK.Financial.Functions.FinancialUtils — api_bnk v0.0.1</title>
     <link rel="stylesheet" href="dist/html-d9f58a6320b5bfa6dd77.css" />
-    <script src="dist/sidebar_items-c97297b344.js"></script>
+    <script src="dist/sidebar_items-9585e2ca36.js"></script>
       <script src="docs_config.js"></script>
     <script async src="dist/html-d9f58a6320b5bfa6dd77.js"></script>
     
@@ -139,11 +139,11 @@ Functions          </h1>
   Exemplos
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">ApiBnK.Financial.Functions.FinancialUtils</span><span class="o">.</span><span class="n">have_balance?</span><span class="p" data-group-id="6147896633-1">(</span><span class="mf">132.59</span><span class="p">,</span><span class="w"> </span><span class="mf">102.99</span><span class="p" data-group-id="6147896633-1">)</span><span class="w">
-</span><span class="p" data-group-id="6147896633-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="mf">132.59</span><span class="p" data-group-id="6147896633-2">}</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">ApiBnK.Financial.Functions.FinancialUtils</span><span class="o">.</span><span class="n">have_balance?</span><span class="p" data-group-id="2728308766-1">(</span><span class="mf">132.59</span><span class="p">,</span><span class="w"> </span><span class="mf">102.99</span><span class="p" data-group-id="2728308766-1">)</span><span class="w">
+</span><span class="p" data-group-id="2728308766-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="mf">132.59</span><span class="p" data-group-id="2728308766-2">}</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">ApiBnK.Financial.Functions.FinancialUtils</span><span class="o">.</span><span class="n">have_balance?</span><span class="p" data-group-id="6147896633-3">(</span><span class="mf">1486.98</span><span class="p">,</span><span class="w"> </span><span class="mf">2000.90</span><span class="p" data-group-id="6147896633-3">)</span><span class="w">
-</span><span class="p" data-group-id="6147896633-4">{</span><span class="ss">:validation_error</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Não possui saldo suficiente.&quot;</span><span class="p" data-group-id="6147896633-4">}</span></code></pre>
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">ApiBnK.Financial.Functions.FinancialUtils</span><span class="o">.</span><span class="n">have_balance?</span><span class="p" data-group-id="2728308766-3">(</span><span class="mf">1486.98</span><span class="p">,</span><span class="w"> </span><span class="mf">2000.90</span><span class="p" data-group-id="2728308766-3">)</span><span class="w">
+</span><span class="p" data-group-id="2728308766-4">{</span><span class="ss">:validation_error</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Não possui saldo suficiente.&quot;</span><span class="p" data-group-id="2728308766-4">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="value_greater_than_zero?/1">
@@ -172,14 +172,14 @@ Functions          </h1>
   Exemplos
 </h2>
 
-<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">ApiBnK.Financial.Functions.FinancialUtils</span><span class="o">.</span><span class="n">value_greater_than_zero?</span><span class="p" data-group-id="0533291259-1">(</span><span class="mf">132.59</span><span class="p" data-group-id="0533291259-1">)</span><span class="w">
-</span><span class="p" data-group-id="0533291259-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="mf">132.59</span><span class="p" data-group-id="0533291259-2">}</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="nc">ApiBnK.Financial.Functions.FinancialUtils</span><span class="o">.</span><span class="n">value_greater_than_zero?</span><span class="p" data-group-id="3403406757-1">(</span><span class="mf">132.59</span><span class="p" data-group-id="3403406757-1">)</span><span class="w">
+</span><span class="p" data-group-id="3403406757-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="mf">132.59</span><span class="p" data-group-id="3403406757-2">}</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">ApiBnK.Financial.Functions.FinancialUtils</span><span class="o">.</span><span class="n">value_greater_than_zero?</span><span class="p" data-group-id="0533291259-3">(</span><span class="mi">0</span><span class="p" data-group-id="0533291259-3">)</span><span class="w">
-</span><span class="p" data-group-id="0533291259-4">{</span><span class="ss">:validation_error</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Valor informado é menor ou igual a zero.&quot;</span><span class="p" data-group-id="0533291259-4">}</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">ApiBnK.Financial.Functions.FinancialUtils</span><span class="o">.</span><span class="n">value_greater_than_zero?</span><span class="p" data-group-id="3403406757-3">(</span><span class="mi">0</span><span class="p" data-group-id="3403406757-3">)</span><span class="w">
+</span><span class="p" data-group-id="3403406757-4">{</span><span class="ss">:validation_error</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Valor informado é menor ou igual a zero.&quot;</span><span class="p" data-group-id="3403406757-4">}</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">ApiBnK.Financial.Functions.FinancialUtils</span><span class="o">.</span><span class="n">value_greater_than_zero?</span><span class="p" data-group-id="0533291259-5">(</span><span class="o">-</span><span class="mi">1</span><span class="p" data-group-id="0533291259-5">)</span><span class="w">
-</span><span class="p" data-group-id="0533291259-6">{</span><span class="ss">:validation_error</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Valor informado é menor ou igual a zero.&quot;</span><span class="p" data-group-id="0533291259-6">}</span></code></pre>
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">ApiBnK.Financial.Functions.FinancialUtils</span><span class="o">.</span><span class="n">value_greater_than_zero?</span><span class="p" data-group-id="3403406757-5">(</span><span class="o">-</span><span class="mi">1</span><span class="p" data-group-id="3403406757-5">)</span><span class="w">
+</span><span class="p" data-group-id="3403406757-6">{</span><span class="ss">:validation_error</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Valor informado é menor ou igual a zero.&quot;</span><span class="p" data-group-id="3403406757-6">}</span></code></pre>
   </section>
 </section>
           </div>

@@ -63,17 +63,6 @@ defmodule ApiBnK.Web.Schema do
         resolve(&AccountsResolver.create/2)
       end
 
-      @desc """
-      Mutation para atualizar a conta. É necessário possuir o token de autenticação.
-      """
-      field(:update_account, type: :accounts) do
-        arg(:name, non_null(:string), description: "Nome do titular da conta")
-        arg(:email, non_null(:string), description: "E-mail do titular da conta")
-
-        resolve(&AccountsResolver.update/2)
-
-      end
-
       field(:logout, type: :status_response, description: "Mutation para efetuar logout") do
         resolve(&AccountsResolver.logout/2)
       end
