@@ -316,7 +316,7 @@ mutation {
 
 ---
 
-Lembrete: Deverá ter o header **Authentication** e **Authorization**, informando seus respectivos tokens, para efetuar essa requisição. Lembrando que o formato do header é `Authentication : Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9` e `Authorization : Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9`;para cada transferência é necessário gerar um novo token de autorização.
+Lembrete: Deverá ter o header **Authentication** e **Authorization**, informando seus respectivos tokens, para efetuar essa requisição. Lembrando que o formato do header é `Authentication : Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9` e `Authorization : Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9`; para cada transferência é necessário gerar um novo token de autorização.
 
 ##### Request
 ```javascript
