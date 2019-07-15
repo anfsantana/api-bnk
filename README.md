@@ -166,3 +166,217 @@ de postman para **[GraphQL](https://graphql.org/)**; recomendo https://electronj
             - `Authentication : Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9`; 
             - `Authorization : Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9`.          
         
+### Consultas GraphQL
+
+#### POST /api/graphiql
+
+Exemplos de consultas GraphQL:
+
+
+##### Criar conta
+
+---
+
+##### Request
+```json
+mutation {
+  createAccount(
+    account: "14026",
+    agency: "0001",
+    bankCode: "003",
+    name: "Joana",
+    password: "123456",
+    cpf: "95875628600",
+    email:"joana@email.com"
+    
+  ){
+    code
+    message
+  }
+}
+````
+##### Response
+```json
+{
+  "data": {
+    "createAccount": {
+      "code": 201,
+      "message": "Created"
+    }
+  }
+}
+````
+
+
+
+##### Login
+
+---
+
+##### Request
+```json
+query {
+  login(bankCode:"003" agency: "0001", account: "14025", password: "123456") {
+    token
+  }
+}
+````
+##### Response
+```json
+{
+  "data": {
+    "login": {
+      "token": "eyJhbGciOiJIUzUxMdWQiOBjzLZIjJ2Ur5lGRtD-ifKeOA"
+    }
+  }
+}
+````
+
+##### Autorização
+
+---
+
+##### Request
+```json
+query {
+  authorization(password: "123456") {
+    token
+  }
+}
+````
+##### Response
+```json
+{
+  "data": {
+    "authorization": {
+      "token": "eyJhbGciOiJIUzUxMdWQiOBjzLZIjJ2Ur5lGRtD-ifKeOA"
+    }
+  }
+}
+````
+
+##### Relatório back office
+
+---
+
+##### Request
+```json
+query {
+  reportBackOffice {
+    totalDay
+    totalYear
+    totalMonth
+  }
+}
+````
+##### Response
+```json
+{
+  "data": {
+    "reportBackOffice": {
+      "totalDay": "1000",
+      "totalMonth": "1000",
+      "totalYear": "1000"
+    }
+  }
+}
+````
+
+##### Saque
+
+---
+
+##### Request
+```json
+mutation {
+  withdrawal(value: 50.55){
+    message
+    code
+  }
+}
+````
+##### Response
+```json
+{
+  "data": {
+    "withdrawal": {
+      "code": 200,
+      "message": "Saque realizado com sucesso. Um e-mail foi enviado para maria@email.com"
+    }
+  }
+}
+````
+
+
+##### Transferência
+
+---
+
+##### Request
+```json
+mutation {
+  transferency(account: "14026", agency: "0001", bankCode: "003", value: 100.63){
+    message
+    code
+  }
+}
+````
+##### Response
+```json
+{
+  "data": {
+    "createAccount": {
+      "code": 201,
+      "message": "Created"
+    }
+  }
+}
+````
+
+
+##### Saldo
+
+---
+
+##### Request
+```json
+query {
+  balance
+}
+````
+##### Response
+```json
+{
+  "data": {
+    "balance": "949.45"
+  }
+}
+````
+
+##### Logout
+
+---
+
+##### Request
+```json
+mutation{
+  logout{
+  	code
+    message
+  }
+}
+
+````
+##### Response
+```json
+{
+  "data": {
+    "logout": {
+      "code": 200,
+      "message": "OK"
+    }
+  }
+}
+````
+
+
