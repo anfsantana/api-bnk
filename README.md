@@ -177,7 +177,7 @@ Exemplos de consultas GraphQL:
 Observações: 
 1. Existe a unicidade de CPF;
 2. Existe a unidade de E-mail;
-3. Existe a unicidade dacomposição Conta, Agência e Código do banco.
+3. Existe a unicidade da composição Conta, Agência e Código do banco.
 
 ##### Request - Schema
 
