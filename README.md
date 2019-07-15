@@ -1,7 +1,9 @@
 # API Banking
 
 ### Introdução
+
 API Banking é um projeto que simula um processo de transações financeiras desde cadastro de contas até o logout da conta.
+Como o foco é simular transações financeiras, a API **permite que você informe a conta, agência e código do banco**, com o objetivo de deixar mais flexiível a simulação. É de consciência que em uma situação real, essas informações devem ser geradas pelo serviço, e não ser informado pelo usuário que está criando a conta.
 
 O projeto contribuiu para o aprendizado sobre a linguagem Elixir.
 
