@@ -132,7 +132,7 @@ mix phx.server # Iniciar o endpoint do serviço
 ##### 2. Executar utilizando **docker**:
 
 ```sh
-docker build --tag apibnk
+docker build --tag apibnk .
 docker-compose up
 ``` 
 ##### 3. Executar os testes:
