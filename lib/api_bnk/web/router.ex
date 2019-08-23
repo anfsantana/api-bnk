@@ -9,6 +9,6 @@ defmodule ApiBnK.Web.Router do
 
   scope "/api/graphiql" do
     pipe_through(:graphql)
-    forward("/", Absinthe.Plug.GraphiQL, schema: ApiBnK.Web.Schema)
+    forward("/", Absinthe.Plug.GraphiQL, schema: ApiBnK.Schema.Schema)
   end
 end

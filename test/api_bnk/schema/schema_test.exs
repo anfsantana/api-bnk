@@ -1,9 +1,9 @@
-defmodule ApiBnK.SchemaTest do
+defmodule ApiBnK.Schema.SchemaTest do
   @moduledoc """
   Módulo responsável por efetuar os testes das chamadas GraphQL no módulo Schema.
   """
   use ApiBnK.Support.ConnCase, async: true
-  alias ApiBnK.Accounts.AccountsResolver
+  alias ApiBnK.Service.Accounts.AccountsResolver
 
   describe "account" do
 

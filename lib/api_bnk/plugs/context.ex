@@ -6,8 +6,8 @@ defmodule ApiBnK.Context do
 	import Plug.Conn
 	import Ecto.Query, only: [where: 2]
 
-	alias ApiBnK.Accounts.Accounts, as: Account
 	alias ApiBnK.Repo
+	alias ApiBnK.Service.Accounts.Accounts, as: Account
 
 	def init(opts), do: opts
 

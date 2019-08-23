@@ -1,10 +1,10 @@
-defmodule ApiBnK.Web.Schema.Types do
+defmodule ApiBnK.Schema.Types do
   @moduledoc """
   Módulo que contêm os tipos utilizados nos mutations e/ou queries GraphQL
   """
 
-  use Absinthe.Schema.Notation
   use Absinthe.Ecto, repo: ApiBnK.Repo
+  use Absinthe.Schema.Notation
 
   @desc "Sessão autorizada"
   object :autho_session do

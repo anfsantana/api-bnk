@@ -1,4 +1,4 @@
-defmodule ApiBnK.Financial.FinancialTransactionsQuery do
+defmodule ApiBnK.Service.Financial.FinancialTransactionsQuery do
   @moduledoc """
   Módulo que contêm funções que efetuam operações diretamente
   com o banco de dados
@@ -6,8 +6,8 @@ defmodule ApiBnK.Financial.FinancialTransactionsQuery do
 
   import Ecto.Query, warn: false
 
-  alias ApiBnK.Financial.FinancialTransactions, as: FinancialTransaction
   alias ApiBnK.Repo
+  alias ApiBnK.Service.Financial.FinancialTransactions, as: FinancialTransaction
   alias Decimal, as: D
 
   @doc false

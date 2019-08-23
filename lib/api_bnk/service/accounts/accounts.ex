@@ -1,4 +1,4 @@
-defmodule ApiBnK.Accounts.Accounts do
+defmodule ApiBnK.Service.Accounts.Accounts do
   @moduledoc false
 
   use Ecto.Schema

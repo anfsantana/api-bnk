@@ -2,8 +2,8 @@ defmodule ApiBnK.AuthHelper do
   @moduledoc false
 
   import Comeonin.Bcrypt, only: [checkpw: 2]
-  alias ApiBnK.Accounts.Accounts, as: Account
   alias ApiBnK.Repo
+  alias ApiBnK.Service.Accounts.Accounts, as: Account
 
   def login_with_agency_account_pass(agency, account, bank_code, given_pass) do
     acc = Repo.get_by(Account, acc_agency: agency, acc_account: account, acc_bank_code: bank_code)

@@ -1,13 +1,12 @@
-defmodule ApiBnK.Accounts.AccountsResolver do
+defmodule ApiBnK.Service.Accounts.AccountsResolver do
   @moduledoc """
   Módulo que contêm funções que implementam as regras
   de negócio de conta antes de serem persistidas no banco de dados.
   """
   import ApiBnK.AuthHelper
 
-  alias ApiBnK.Accounts.AccountsQuery
-  alias ApiBnK.Financial.FinancialTransactionsResolver
   alias ApiBnK.Repo
+  alias ApiBnK.Service.{Accounts.AccountsQuery, Financial.FinancialTransactionsResolver}
   alias ApiBnK.Utils.{StatusResponse, Utils}
   alias Decimal, as: D
 

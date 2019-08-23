@@ -1,4 +1,4 @@
-defmodule ApiBnK.Financial.FinancialTransactions do
+defmodule ApiBnK.Service.Financial.FinancialTransactions do
   @moduledoc false
 
   use Ecto.Schema

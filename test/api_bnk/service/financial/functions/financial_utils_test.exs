@@ -1,13 +1,13 @@
-defmodule ApiBnK.Financial.Functions.FinancialUtilsTest do
+defmodule ApiBnK.Service.Financial.Functions.FinancialUtilsTest do
   @moduledoc """
   Módulo que testa as funcções implementadas no módulo
   ApiBnK.Financial.Functions.FinancialUtils
   """
   use ApiBnK.DataCase
 
-  doctest ApiBnK.Financial.Functions.FinancialUtils
+  doctest ApiBnK.Service.Financial.Functions.FinancialUtils
 
-  alias ApiBnK.Financial.Functions.FinancialUtils, as: Utils
+  alias ApiBnK.Service.Financial.Functions.FinancialUtils, as: Utils
 
   describe "financial_utils" do
 

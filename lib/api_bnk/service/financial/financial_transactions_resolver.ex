@@ -1,12 +1,12 @@
-defmodule ApiBnK.Financial.FinancialTransactionsResolver do
+defmodule ApiBnK.Service.Financial.FinancialTransactionsResolver do
   @moduledoc """
   Módulo para gerenciar as funções que implementam as regras
   de negócio.
   """
 
-  alias ApiBnK.Accounts.AccountsResolver
-  alias ApiBnK.Financial.{FinancialTransactionsQuery, Functions.FinancialUtils}
   alias ApiBnK.Repo
+  alias ApiBnK.Service.Accounts.AccountsResolver
+  alias ApiBnK.Service.Financial.{FinancialTransactionsQuery, Functions.FinancialUtils}
   alias ApiBnK.Utils.{StatusResponse, Utils}
   alias Decimal, as: D
 

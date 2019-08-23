@@ -1,15 +1,14 @@
-defmodule ApiBnK.Web.Schema do
+defmodule ApiBnK.Schema.Schema do
   @moduledoc """
   Módulo que contêm os mutations e queries GraphQL
   """
 
   use Absinthe.Schema
 
-  import_types ApiBnK.Web.Schema.Types
+  import_types ApiBnK.Schema.Types
   import_types Absinthe.Type.Custom
 
-  alias ApiBnK.Accounts.AccountsResolver
-  alias ApiBnK.Financial.FinancialTransactionsResolver
+  alias ApiBnK.Service.{Accounts.AccountsResolver, Financial.FinancialTransactionsResolver}
 
   query do
 

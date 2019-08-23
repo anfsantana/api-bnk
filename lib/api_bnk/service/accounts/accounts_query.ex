@@ -1,12 +1,12 @@
-defmodule ApiBnK.Accounts.AccountsQuery do
+defmodule ApiBnK.Service.Accounts.AccountsQuery do
   @moduledoc """
   Módulo que efetua operações diretamente com o banco de dados
   """
 
   import Ecto.Query, warn: false
 
-  alias ApiBnK.Accounts.Accounts, as: Account
   alias ApiBnK.Repo
+  alias ApiBnK.Service.Accounts.Accounts, as: Account
 
   @doc """
   Função que obtém uma única conta.

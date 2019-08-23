@@ -3,11 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="94eb9475-fd1a-4fa7-8e6f-ddf4c2527925" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api_bnk/accounts/accounts.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/accounts/accounts.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api_bnk/accounts/accounts_query.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/accounts/accounts_query.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api_bnk/accounts/accounts_resolver.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/accounts/accounts_resolver.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api_bnk/web/schema/schema.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/web/schema/schema.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/api_bnk/web/schema/schema_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/test/api_bnk/web/schema/schema_test.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api_bnk/accounts/accounts.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/service/accounts/accounts.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api_bnk/accounts/accounts_query.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/service/accounts/accounts_query.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api_bnk/accounts/accounts_resolver.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/service/accounts/accounts_resolver.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api_bnk/application.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/service/application.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api_bnk/financial/financial_transactions.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/service/financial/financial_transactions.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api_bnk/financial/financial_transactions_query.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/service/financial/financial_transactions_query.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api_bnk/financial/financial_transactions_resolver.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/service/financial/financial_transactions_resolver.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api_bnk/financial/functions/financial_utils.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/service/financial/functions/financial_utils.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api_bnk/repo.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/service/repo.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api_bnk/web/helpers/auth_helper.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/helpers/auth_helper.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api_bnk/web/helpers/guardian.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/helpers/guardian.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api_bnk/web/plugs/context.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/plugs/context.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api_bnk/web/schema/schema.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/schema/schema.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api_bnk/web/schema/types.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api_bnk/schema/types.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/api_bnk/web/schema/schema_test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/test/api_bnk/schema/schema_test.exs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,90 +35,91 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="133">
-                <caret line="128" column="3" lean-forward="true" selection-start-line="128" selection-start-column="3" selection-end-line="128" selection-end-column="3" />
-              </first_editor>
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/lib/api_bnk/plugs/context.ex">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/api_bnk/web/views/error_helpers.ex">
+        <entry file="file://$PROJECT_DIR$/lib/api_bnk/helpers/guardian.ex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+            <state relative-caret-position="80">
+              <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/api_bnk/accounts/accounts.ex">
+        <entry file="file://$PROJECT_DIR$/lib/api_bnk/helpers/auth_helper.ex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="39" column="30" selection-end-line="67" />
+            <state relative-caret-position="100">
+              <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/api_bnk/accounts/accounts_resolver.ex">
+        <entry file="file://$PROJECT_DIR$/lib/api_bnk/service/financial/financial_transactions_resolver.ex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="62">
-              <caret line="71" column="18" selection-end-line="138" />
+            <state relative-caret-position="200">
+              <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/api_bnk/service/application.ex">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/api_bnk/service/repo.ex">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/api_bnk/utils/status_response.ex">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-69">
+              <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/api_bnk/accounts/accounts_query.ex">
+        <entry file="file://$PROJECT_DIR$/lib/api_bnk/utils/utils.ex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="44" column="5" lean-forward="true" selection-end-line="111" />
+            <state relative-caret-position="131">
+              <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/api_bnk/financial/financial_transactions.ex">
+        <entry file="file://$PROJECT_DIR$/lib/api_bnk/schema/schema.ex">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/api_bnk/schema/types.ex">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/api_bnk/web/schema/schema_test.exs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="104" column="7" selection-start-line="104" selection-start-column="7" selection-end-line="104" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/api_bnk/web/schema/schema.ex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="59" column="31" selection-start-line="59" selection-start-column="31" selection-end-line="59" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/priv/gettext/errors.pot">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/priv/gettext/en/LC_MESSAGES/errors.po">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-100">
-              <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+              <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -140,9 +151,9 @@
       <find>login:</find>
       <find>##</find>
       <find>updateAccount</find>
-      <find>update</find>
-      <find>changeset_simple_update</find>
       <find>create</find>
+      <find>changeset_simple_update</find>
+      <find>update</find>
     </findStrings>
     <replaceStrings>
       <replace>auth</replace>
@@ -158,17 +169,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/test/api_bnk/blog/blog_test.exs" />
-        <option value="$PROJECT_DIR$/lib/api_bnk/financial/financial_transactions.ex" />
-        <option value="$PROJECT_DIR$/priv/repo/migrations/20190707192233_accounts_add_column_acc_autho_token.exs" />
-        <option value="$PROJECT_DIR$/priv/repo/migrations/20190706235731_create_financial_transactions.exs" />
-        <option value="$PROJECT_DIR$/priv/repo/migrations/20190706144905_create_accounts.exs" />
-        <option value="$PROJECT_DIR$/test/support/absinthe_helpers.ex" />
-        <option value="$PROJECT_DIR$/test/api_bnk/utils/utils_test.exs" />
-        <option value="$PROJECT_DIR$/test/api_bnk/web/views/error_view_test.exs" />
-        <option value="$PROJECT_DIR$/priv/repo/seeds.exs" />
-        <option value="$PROJECT_DIR$/lib/api_bnk/web/schema/types.ex" />
-        <option value="$PROJECT_DIR$/lib/api_bnk/web/views/user_view.ex" />
         <option value="$PROJECT_DIR$/lib/api_bnk/web/views/post_view.ex" />
         <option value="$PROJECT_DIR$/lib/api_bnk/web/views/error_view.ex" />
         <option value="$PROJECT_DIR$/lib/api_bnk/web/views/changeset_view.ex" />
@@ -208,6 +208,18 @@
         <option value="$PROJECT_DIR$/lib/api_bnk/web/schema/schema.ex" />
         <option value="$PROJECT_DIR$/lib/api_bnk/accounts/accounts_resolver.ex" />
         <option value="$PROJECT_DIR$/lib/api_bnk/accounts/accounts_query.ex" />
+        <option value="$PROJECT_DIR$/lib/api_bnk/helpers/guardian.ex" />
+        <option value="$PROJECT_DIR$/lib/api_bnk/schema/schema.ex" />
+        <option value="$PROJECT_DIR$/lib/api_bnk/service/accounts/accounts.ex" />
+        <option value="$PROJECT_DIR$/lib/api_bnk/service/financial/functions/financial_utils.ex" />
+        <option value="$PROJECT_DIR$/lib/api_bnk/service/financial/financial_transactions.ex" />
+        <option value="$PROJECT_DIR$/lib/api_bnk/service/financial/financial_transactions_resolver.ex" />
+        <option value="$PROJECT_DIR$/lib/api_bnk/service/financial/financial_transactions_query.ex" />
+        <option value="$PROJECT_DIR$/lib/api_bnk/service/accounts/accounts_resolver.ex" />
+        <option value="$PROJECT_DIR$/lib/api_bnk/service/accounts/accounts_query.ex" />
+        <option value="$PROJECT_DIR$/lib/api_bnk/schema/types.ex" />
+        <option value="$PROJECT_DIR$/lib/api_bnk/plugs/context.ex" />
+        <option value="$PROJECT_DIR$/lib/api_bnk/helpers/auth_helper.ex" />
       </list>
     </option>
   </component>
@@ -228,7 +240,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -250,75 +262,28 @@
             <path>
               <item name="api_bnk" type="b2602c69:ProjectViewProjectNode" />
               <item name="api_bnk" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="api_bnk" type="462c0819:PsiDirectoryNode" />
-              <item name="accounts" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="api_bnk" type="b2602c69:ProjectViewProjectNode" />
               <item name="api_bnk" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="api_bnk" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="api_bnk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="api_bnk" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="api_bnk" type="462c0819:PsiDirectoryNode" />
               <item name="financial" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="api_bnk" type="b2602c69:ProjectViewProjectNode" />
               <item name="api_bnk" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="api_bnk" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api_bnk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api_bnk" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="api_bnk" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="schema" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api_bnk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api_bnk" type="462c0819:PsiDirectoryNode" />
-              <item name="priv" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api_bnk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api_bnk" type="462c0819:PsiDirectoryNode" />
-              <item name="priv" type="462c0819:PsiDirectoryNode" />
-              <item name="gettext" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api_bnk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api_bnk" type="462c0819:PsiDirectoryNode" />
-              <item name="priv" type="462c0819:PsiDirectoryNode" />
-              <item name="gettext" type="462c0819:PsiDirectoryNode" />
-              <item name="en" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api_bnk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api_bnk" type="462c0819:PsiDirectoryNode" />
-              <item name="priv" type="462c0819:PsiDirectoryNode" />
-              <item name="gettext" type="462c0819:PsiDirectoryNode" />
-              <item name="en" type="462c0819:PsiDirectoryNode" />
-              <item name="LC_MESSAGES" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api_bnk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api_bnk" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api_bnk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api_bnk" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="api_bnk" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="api_bnk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="api_bnk" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="api_bnk" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="financial" type="462c0819:PsiDirectoryNode" />
+              <item name="functions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="api_bnk" type="b2602c69:ProjectViewProjectNode" />
@@ -333,19 +298,25 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="api_bnk" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="schema" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="api_bnk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="api_bnk" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="support" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/deps/ecto/lib/ecto/changeset.ex" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Projetos" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -353,6 +324,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test/api_bnk" />
+      <recent name="$PROJECT_DIR$/lib/api_bnk/service" />
       <recent name="$PROJECT_DIR$/config" />
     </key>
   </component>
@@ -383,9 +356,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="28" width="1368" height="713" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16515152" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16969697" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="DB Browser" order="3" />
@@ -404,7 +376,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Console" order="7" />
       <window_info anchor="bottom" id="DB Execution Console" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.6636364" visible="true" weight="0.34587812" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.6636364" visible="true" weight="0.34587812" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.33560607" side_tool="true" weight="0.2204301" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.7409091" weight="0.58960575" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
@@ -430,13 +402,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/api_bnk/web/channels/user_socket.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/elixir/lib/elixir/ebin/Elixir.System.beam">
       <provider editor-type-id="BEAM" />
       <provider selected="true" editor-type-id="text-editor">
@@ -450,11 +415,6 @@
         <state relative-caret-position="180">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api_bnk/web/web.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-122" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/api_bnk/web/controllers/fallback_controller.ex">
@@ -477,13 +437,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api_bnk/application.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
@@ -515,13 +468,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api_bnk/web/schema/types.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="74" selection-start-line="2" selection-start-column="74" selection-end-line="2" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/config.exs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-152">
@@ -544,31 +490,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api_bnk/repo.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api_bnk/web/router.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api_bnk/financial/functions/financial_utils.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
@@ -582,27 +507,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/doc/ApiBnK.Financial.FinancialTransactionsResolver.html">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api_bnk/utils/utils.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api_bnk/financial/financial_transactions_query.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api_bnk/web/helpers/guardian.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/support/conn_case.ex">
       <provider selected="true" editor-type-id="text-editor">
@@ -632,34 +536,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api_bnk/web/plugs/context.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api_bnk/utils/status_response.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api_bnk/web/helpers/auth_helper.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api_bnk/financial/financial_transactions_resolver.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-40">
-          <caret line="187" column="8" selection-start-line="187" selection-start-column="8" selection-end-line="187" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-42">
@@ -681,20 +557,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/api_bnk/accounts/accounts_test.exs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="48" lean-forward="true" selection-end-line="67" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test/api_bnk/accounts/accounts_test.exs" />
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="133">
-            <caret line="128" column="3" lean-forward="true" selection-start-line="128" selection-start-column="3" selection-end-line="128" selection-end-column="3" />
+          <first_editor relative-caret-position="2460">
+            <caret line="123" column="3" selection-start-line="123" selection-start-column="3" selection-end-line="123" selection-end-column="3" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/api_bnk/web/views/error_helpers.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -703,57 +580,148 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/priv/gettext/en/LC_MESSAGES/errors.po">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-100">
+        <state relative-caret-position="140">
           <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api_bnk/web/views/error_helpers.ex">
+    <entry file="file://$PROJECT_DIR$/test/api_bnk/schema/schema_test.exs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="191" lean-forward="true" selection-start-line="191" selection-end-line="191" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/api_bnk/web/router.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/api_bnk/web/web.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-582">
+          <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/api_bnk/web/channels/user_socket.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-329">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/api_bnk/service/financial/financial_transactions_query.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/api_bnk/service/financial/financial_transactions.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" selection-start-column="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/api_bnk/service/financial/functions/financial_utils.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" selection-start-column="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/api_bnk/service/accounts/accounts_resolver.ex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
-          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api_bnk/financial/financial_transactions.ex">
+    <entry file="file://$PROJECT_DIR$/lib/api_bnk/service/accounts/accounts_query.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/api_bnk/service/accounts/accounts.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" selection-start-column="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/api_bnk/schema/types.ex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/api_bnk/web/schema/schema_test.exs">
+    <entry file="file://$PROJECT_DIR$/lib/api_bnk/schema/schema.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/api_bnk/plugs/context.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/api_bnk/helpers/guardian.ex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
-          <caret line="104" column="7" selection-start-line="104" selection-start-column="7" selection-end-line="104" selection-end-column="7" />
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api_bnk/web/schema/schema.ex">
+    <entry file="file://$PROJECT_DIR$/lib/api_bnk/helpers/auth_helper.ex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="59" column="31" selection-start-line="59" selection-start-column="31" selection-end-line="59" selection-end-column="31" />
+        <state relative-caret-position="100">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api_bnk/accounts/accounts.ex">
+    <entry file="file://$PROJECT_DIR$/lib/api_bnk/service/financial/financial_transactions_resolver.ex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="39" column="30" selection-end-line="67" />
+        <state relative-caret-position="200">
+          <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api_bnk/accounts/accounts_resolver.ex">
+    <entry file="file://$PROJECT_DIR$/lib/api_bnk/service/application.ex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="71" column="18" selection-end-line="138" />
+        <state relative-caret-position="40">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/api_bnk/accounts/accounts_query.ex">
+    <entry file="file://$PROJECT_DIR$/lib/api_bnk/service/repo.ex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="44" column="5" lean-forward="true" selection-end-line="111" />
+        <state relative-caret-position="240">
+          <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/api_bnk/utils/status_response.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-69">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/api_bnk/utils/utils.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
         </state>
       </provider>
     </entry>

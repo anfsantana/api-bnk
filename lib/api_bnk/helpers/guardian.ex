@@ -2,7 +2,7 @@ defmodule ApiBnK.Guardian do
 	@moduledoc false
 
 	use Guardian, otp_app: :api_bnk
-	alias ApiBnK.Accounts.AccountsQuery
+	alias ApiBnK.Service.Accounts.AccountsQuery
 
 	def subject_for_token(acc, _claims) do
 		# You can use any value for the subject of your token but
